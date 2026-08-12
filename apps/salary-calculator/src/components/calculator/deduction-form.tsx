@@ -35,7 +35,7 @@ function DeductionForm({ values, onChange }: SalaryFormProps) {
   )
 
   return (
-    <Accordion defaultValue={["fradrag"]} className={"rounded-xl border"}>
+    <Accordion defaultValue={[]} className={"rounded-xl border"}>
       <AccordionItem value="fradrag">
         <AccordionTrigger
           className={
