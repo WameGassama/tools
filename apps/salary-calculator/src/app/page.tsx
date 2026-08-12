@@ -1,5 +1,6 @@
 import { SalaryCalculator } from "@/src/components/calculator/salary-calculator";
 import { Faq } from "@/src/components/site/faq";
+import { Glossary } from "@/src/components/site/glossary";
 import { Hero } from "@/src/components/site/hero";
 import { HowItWorks } from "@/src/components/site/how-it-works";
 import { NavBar } from "@/src/components/site/nav-bar";
@@ -59,6 +60,7 @@ export default function Home() {
           <SalaryCalculator />
         </div>
         <HowItWorks />
+        <Glossary />
         <Faq />
       </main>
       <SiteFooter />

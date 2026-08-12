@@ -1,4 +1,4 @@
-export type Locale = "da" | "en";
+export type Locale = "da" | "en"
 
 const da = {
   sectionNav: {
@@ -8,7 +8,7 @@ const da = {
     faq: "Spørgsmål",
   },
   hero: {
-    title: "Hvad får jeg udbetalt?",
+    title: "Hvad får jeg udbetalt efter skat?",
     subtitle:
       "Indtast din løn og find din nettoløn efter AM-bidrag, bund-, mellem-, top- og kommuneskat — baseret på de gældende satser for 2026.",
   },
@@ -54,7 +54,7 @@ const da = {
     items: [
       {
         q: 'Skal jeg bruge "Progressiv årsskat" eller "Trækprocent"?',
-        a: 'Progressiv årsskat viser, hvad en given årsløn koster i skat i gennemsnit hen over året — brug den til at få et hurtigt overblik eller sammenligne jobtilbud. Trækprocent (lønseddel) regner derimod på én konkret lønperiode ud fra din trækprocent og dit skattekort (hoved- eller bikort), og tager højde for ting som bikort uden fradrag og ATP — brug den, når du vil tjekke, om din faktiske lønseddel stemmer, fx efter du har fået en ny forskudsopgørelse.',
+        a: "Progressiv årsskat viser, hvad en given årsløn koster i skat i gennemsnit hen over året — brug den til at få et hurtigt overblik eller sammenligne jobtilbud. Trækprocent (lønseddel) regner derimod på én konkret lønperiode ud fra din trækprocent og dit skattekort (hoved- eller bikort), og tager højde for ting som bikort uden fradrag og ATP — brug den, når du vil tjekke, om din faktiske lønseddel stemmer, fx efter du har fået en ny forskudsopgørelse.",
       },
       {
         q: "Hvorfor er kommuneskatten forskellig?",
@@ -71,6 +71,53 @@ const da = {
       {
         q: "Hvorfor sænker pension min skat?",
         a: "Indbetaling til pension trækkes fra, før AM-bidrag og indkomstskat beregnes, så en del af lønnen bliver skattefri her og nu — men beskattes i stedet, når pengene udbetales som pension.",
+      },
+      {
+        q: "Hvad er trækprocent?",
+        a: "Din trækprocent er den andel af lønnen, din arbejdsgiver trækker i skat ved hver lønudbetaling. Den fremgår af dit skattekort og beregnes ud fra din forventede årsindkomst og dine fradrag, så du undgår at betale for meget eller for lidt i skat hen over året.",
+      },
+      {
+        q: "Hvad er forskellen på brutto- og nettoløn?",
+        a: "Bruttoløn er din løn, før skat og andre fradrag er trukket fra. Nettoløn er det beløb, du rent faktisk får udbetalt, når AM-bidrag, skat og eventuelt pensionsbidrag er trukket fra.",
+      },
+      {
+        q: "Hvor meget skal jeg betale i skat?",
+        a: "Det afhænger af din indkomst, kommune og eventuelle fradrag. De fleste betaler 8% i AM-bidrag og 12,01% i bundskat, plus 23-26% i kommune- og kirkeskat — mens mellem- og topskat kun rammer den del af indkomsten, der ligger over hhv. 641.200 kr. og 777.900 kr. om året. Brug beregneren ovenfor for at se dit præcise beløb.",
+      },
+      {
+        q: "Hvor meget må jeg tjene, før jeg skal betale skat?",
+        a: "De første 54.100 kr., du tjener om året, er skattefri på grund af personfradraget. Alt derover beskattes efter de almindelige satser.",
+      },
+    ],
+  },
+  glossary: {
+    title: "Ordliste",
+    subtitle:
+      "Kort forklaring af de vigtigste begreber, du støder på, når du regner din løn ud.",
+    terms: [
+      {
+        term: "Bruttoløn",
+        definition: "Din løn, før skat og andre fradrag er trukket fra.",
+      },
+      {
+        term: "Nettoløn",
+        definition:
+          "Det beløb, du reelt får udbetalt, efter AM-bidrag, skat og eventuel pension er trukket fra bruttolønnen.",
+      },
+      {
+        term: "Trækprocent",
+        definition:
+          "Den procentsats, din arbejdsgiver bruger til at trække skat fra din løn ved hver udbetaling, baseret på dit skattekort.",
+      },
+      {
+        term: "Skattekort",
+        definition:
+          "Dit hovedkort bruges hos din primære arbejdsgiver og giver dig fradrag. Bikortet bruges ved sideindkomster og har normalt intet fradrag.",
+      },
+      {
+        term: "Fradrag",
+        definition:
+          "Beløb, der trækkes fra din indkomst, før skatten beregnes — fx personfradrag, pension eller beskæftigelsesfradrag — og som derfor sænker din skat.",
       },
     ],
   },
@@ -130,7 +177,8 @@ const da = {
     hverAndenUge: "Hver anden uge",
     maanedsfradragLabel: "Månedsfradrag",
     maanedsfradragHintBikort: "Bikort har som udgangspunkt intet fradrag",
-    maanedsfradragHintNormal: "Fra dit skattekort — omregnes automatisk til perioden",
+    maanedsfradragHintNormal:
+      "Fra dit skattekort — omregnes automatisk til perioden",
     under18Checkbox: "Under 18 år (intet AM-bidrag)",
   },
   result: {
@@ -162,7 +210,7 @@ const da = {
     askat: (pct: number) => `A-skat (${pct}%)`,
     tilUdbetaling: "Til udbetaling",
   },
-};
+}
 
 const en: typeof da = {
   sectionNav: {
@@ -172,7 +220,7 @@ const en: typeof da = {
     faq: "FAQ",
   },
   hero: {
-    title: "What do I get paid?",
+    title: "What do I get paid after tax?",
     subtitle:
       "Enter your salary and find your take-home pay after labour-market contribution, bottom-, middle-, top- and municipal tax — based on the current 2026 rates.",
   },
@@ -218,7 +266,7 @@ const en: typeof da = {
     items: [
       {
         q: 'Should I use "Progressive annual tax" or "Withholding percentage"?',
-        a: 'Progressive annual tax shows what a given annual salary costs in tax on average across the year — use it to get a quick overview or compare job offers. Withholding percentage (payslip) instead calculates a single specific pay period based on your withholding percentage and tax card (primary or secondary), and accounts for things like a secondary card having no deduction and ATP — use it when you want to check whether your actual payslip adds up, e.g. after receiving a new preliminary tax assessment.',
+        a: "Progressive annual tax shows what a given annual salary costs in tax on average across the year — use it to get a quick overview or compare job offers. Withholding percentage (payslip) instead calculates a single specific pay period based on your withholding percentage and tax card (primary or secondary), and accounts for things like a secondary card having no deduction and ATP — use it when you want to check whether your actual payslip adds up, e.g. after receiving a new preliminary tax assessment.",
       },
       {
         q: "Why is the municipal tax different?",
@@ -236,10 +284,58 @@ const en: typeof da = {
         q: "Why does pension lower my tax?",
         a: "Pension contributions are deducted before the labour-market contribution and income tax are calculated, so part of your salary becomes tax-free right now — but it's taxed instead when the money is paid out as a pension.",
       },
+      {
+        q: "What is the withholding percentage (trækprocent)?",
+        a: "Your withholding percentage is the share of your salary your employer deducts as tax with each pay period. It's stated on your tax card and calculated from your expected annual income and deductions, so you don't end up paying too much or too little tax over the year.",
+      },
+      {
+        q: "What's the difference between gross and net salary?",
+        a: "Gross salary (bruttoløn) is your pay before tax and other deductions. Net salary (nettoløn) is the amount you actually receive after labour-market contribution, tax, and any pension contribution are deducted.",
+      },
+      {
+        q: "How much tax do I have to pay?",
+        a: "It depends on your income, municipality, and any deductions. Most people pay 8% labour-market contribution and 12.01% bottom-bracket tax, plus 23–26% municipal and church tax — while middle- and top-bracket tax only applies to income above 641,200 kr. and 777,900 kr. a year respectively. Use the calculator above to see your exact amount.",
+      },
+      {
+        q: "How much can I earn before I have to pay tax?",
+        a: "The first 54,100 kr. you earn per year is tax-free thanks to the personal allowance. Everything above that is taxed at the standard rates.",
+      },
+    ],
+  },
+  glossary: {
+    title: "Glossary",
+    subtitle:
+      "A quick explanation of the key terms you'll come across when working out your salary.",
+    terms: [
+      {
+        term: "Gross salary (bruttoløn)",
+        definition: "Your salary before tax and other deductions.",
+      },
+      {
+        term: "Net salary (nettoløn)",
+        definition:
+          "The amount you actually receive after labour-market contribution, tax, and any pension are deducted from your gross salary.",
+      },
+      {
+        term: "Withholding percentage (trækprocent)",
+        definition:
+          "The percentage your employer uses to deduct tax from your pay each period, based on your tax card.",
+      },
+      {
+        term: "Tax card (skattekort)",
+        definition:
+          "Your primary card is used at your main employer and gives you a deduction. The secondary card is used for side income and usually has no deduction.",
+      },
+      {
+        term: "Deduction (fradrag)",
+        definition:
+          "An amount subtracted from your income before tax is calculated — such as the personal allowance, pension, or employment allowance — which lowers your tax.",
+      },
     ],
   },
   footer: {
-    badge: "No data is stored – everything is calculated locally in your browser",
+    badge:
+      "No data is stored – everything is calculated locally in your browser",
     disclaimer:
       "This calculation is indicative and based on the published 2026 rates (Ministry of Taxation). Municipal tax rates are illustrative per municipality. The commuting deduction is calculated based on an assumption of 216 working days/year and does not account for the low-income supplement or the special rates for outlying municipalities. Interest, tradesperson and service deductions are simplified estimates. The calculation does not show the effect of the tax ceiling or other special rules. Contact SKAT or your municipality for an exact figure.",
     copyright: (brand: string) => `© 2026 ${brand}`,
@@ -294,7 +390,8 @@ const en: typeof da = {
     hverAndenUge: "Every other week",
     maanedsfradragLabel: "Monthly deduction",
     maanedsfradragHintBikort: "A secondary card has no deduction by default",
-    maanedsfradragHintNormal: "From your tax card — converted automatically to the period",
+    maanedsfradragHintNormal:
+      "From your tax card — converted automatically to the period",
     under18Checkbox: "Under 18 (no labour-market contribution)",
   },
   result: {
@@ -326,6 +423,6 @@ const en: typeof da = {
     askat: (pct: number) => `A-tax (${pct}%)`,
     tilUdbetaling: "Paid out",
   },
-};
+}
 
-export const translations: Record<Locale, typeof da> = { da, en };
+export const translations: Record<Locale, typeof da> = { da, en }
