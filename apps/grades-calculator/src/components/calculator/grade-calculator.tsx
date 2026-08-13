@@ -93,7 +93,7 @@ export function GradeCalculator({ initialRows }: GradeCalculatorProps) {
                 className="h-10 bg-muted/60 sm:h-12"
                 value={row.fag}
                 onChange={(e) => updateRow(index, "fag", e.target.value)}
-                placeholder="fx Matematik A"
+                placeholder="fx Mikroøkonomi"
               />
               <Select
                 value={row.karakter}
