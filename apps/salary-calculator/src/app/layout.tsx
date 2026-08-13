@@ -1,27 +1,28 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
-import "./globals.css";
-import { cn } from "@/src/lib/utils";
-import { LanguageProvider } from "@/src/lib/i18n/language-context";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import type { Metadata } from "next"
+import { Geist, Geist_Mono, Inter } from "next/font/google"
+import "./globals.css"
+import { cn } from "@/src/lib/utils"
+import { LanguageProvider } from "@/src/lib/i18n/language-context"
+import { GoogleAnalytics } from "@next/third-parties/google"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-});
+})
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-});
+})
 
-const SITE_URL = "https://www.hvadfårjegudbetalt.dk";
-const SITE_NAME = "Hvad får jeg udbetalt";
-const TITLE = "Hvad får jeg udbetalt – Beregn din skat og nettoløn 2026";
+const SITE_URL = "https://www.hvadfårjegudbetalt.dk"
+const SITE_NAME = "Hvad får jeg udbetalt"
+const TITLE =
+  "Hvad får jeg udbetalt efter skat? – Beregn din skat og nettoløn 2026"
 const DESCRIPTION =
-  "Beregn din nettoløn efter AM-bidrag, bund-, mellem-, top- og kommuneskat med de gældende 2026-satser.";
+  "Se hvad du får udbetalt efter skat. Vores lønberegner tager højde for AM-bidrag, bund-, mellem-, top- og kommuneskat — altid med de gældende 2026-satser."
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -73,7 +74,7 @@ export const metadata: Metadata = {
     shortcut: "/hfu-icon-filled.svg",
     apple: "/hfu-icon-filled.svg",
   },
-};
+}
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
@@ -86,13 +87,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         geistSans.variable,
         geistMono.variable,
         "font-sans",
-        inter.variable,
+        inter.variable
       )}
     >
-      <body className="min-h-full flex flex-col bg-muted">
+      <body className="flex min-h-full flex-col bg-muted">
         <LanguageProvider>{children}</LanguageProvider>
       </body>
       <GoogleAnalytics gaId="G-959QHL6L4N" />
     </html>
-  );
+  )
 }
