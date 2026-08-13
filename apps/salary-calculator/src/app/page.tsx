@@ -1,13 +1,12 @@
-import { SalaryCalculator } from "@/src/components/calculator/salary-calculator";
-import { Faq } from "@/src/components/site/faq";
-import { Glossary } from "@/src/components/site/glossary";
-import { Hero } from "@/src/components/site/hero";
-import { HowItWorks } from "@/src/components/site/how-it-works";
-import { NavBar } from "@/src/components/site/nav-bar";
-import { SiteFooter } from "@/src/components/site/site-footer";
-import { translations } from "@/src/lib/i18n/translations";
+import { SalaryCalculator } from "@/src/components/calculator/salary-calculator"
+import { Faq } from "@/src/components/site/faq"
+import { Hero } from "@/src/components/site/hero"
+import { HowItWorks } from "@/src/components/site/how-it-works"
+import { NavBar } from "@/src/components/site/nav-bar"
+import { SiteFooter } from "@/src/components/site/site-footer"
+import { translations } from "@/src/lib/i18n/translations"
 
-const SITE_URL = "https://www.hvadfårjegudbetalt.dk";
+const SITE_URL = "https://www.hvadfårjegudbetalt.dk"
 
 const webApplicationJsonLd = {
   "@context": "https://schema.org",
@@ -23,7 +22,7 @@ const webApplicationJsonLd = {
   },
   description:
     "Beregn din nettoløn efter AM-bidrag, bund-, mellem-, top- og kommuneskat med de gældende 2026-satser.",
-};
+}
 
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -36,10 +35,10 @@ const faqJsonLd = {
       text: item.a,
     },
   })),
-};
+}
 
 function jsonLdScript(data: unknown) {
-  return JSON.stringify(data).replace(/</g, "\\u003c");
+  return JSON.stringify(data).replace(/</g, "\\u003c")
 }
 
 export default function Home() {
@@ -55,15 +54,14 @@ export default function Home() {
       />
       <NavBar />
       <main className="mx-auto w-full max-w-5xl px-4">
-        <div className="flex flex-col bg-background p-4 py-8 sm:p-8 lg:p-12 rounded-xl mt-10 border border-border">
+        <div className="mt-10 flex flex-col rounded-xl border border-border bg-background p-4 py-8 sm:p-8 lg:p-12">
           <Hero />
           <SalaryCalculator />
         </div>
         <HowItWorks />
-        <Glossary />
         <Faq />
       </main>
       <SiteFooter />
     </>
-  );
+  )
 }

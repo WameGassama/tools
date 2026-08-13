@@ -90,37 +90,6 @@ const da = {
       },
     ],
   },
-  glossary: {
-    title: "Ordliste",
-    subtitle:
-      "Kort forklaring af de vigtigste begreber, du støder på, når du regner din løn ud.",
-    terms: [
-      {
-        term: "Bruttoløn",
-        definition: "Din løn, før skat og andre fradrag er trukket fra.",
-      },
-      {
-        term: "Nettoløn",
-        definition:
-          "Det beløb, du reelt får udbetalt, efter AM-bidrag, skat og eventuel pension er trukket fra bruttolønnen.",
-      },
-      {
-        term: "Trækprocent",
-        definition:
-          "Den procentsats, din arbejdsgiver bruger til at trække skat fra din løn ved hver udbetaling, baseret på dit skattekort.",
-      },
-      {
-        term: "Skattekort",
-        definition:
-          "Dit hovedkort bruges hos din primære arbejdsgiver og giver dig fradrag. Bikortet bruges ved sideindkomster og har normalt intet fradrag.",
-      },
-      {
-        term: "Fradrag",
-        definition:
-          "Beløb, der trækkes fra din indkomst, før skatten beregnes — fx personfradrag, pension eller beskæftigelsesfradrag — og som derfor sænker din skat.",
-      },
-    ],
-  },
   footer: {
     badge: "Ingen data gemmes – alt beregnes lokalt i din browser",
     disclaimer:
@@ -299,37 +268,6 @@ const en: typeof da = {
       {
         q: "How much can I earn before I have to pay tax?",
         a: "The first 54,100 kr. you earn per year is tax-free thanks to the personal allowance. Everything above that is taxed at the standard rates.",
-      },
-    ],
-  },
-  glossary: {
-    title: "Glossary",
-    subtitle:
-      "A quick explanation of the key terms you'll come across when working out your salary.",
-    terms: [
-      {
-        term: "Gross salary (bruttoløn)",
-        definition: "Your salary before tax and other deductions.",
-      },
-      {
-        term: "Net salary (nettoløn)",
-        definition:
-          "The amount you actually receive after labour-market contribution, tax, and any pension are deducted from your gross salary.",
-      },
-      {
-        term: "Withholding percentage (trækprocent)",
-        definition:
-          "The percentage your employer uses to deduct tax from your pay each period, based on your tax card.",
-      },
-      {
-        term: "Tax card (skattekort)",
-        definition:
-          "Your primary card is used at your main employer and gives you a deduction. The secondary card is used for side income and usually has no deduction.",
-      },
-      {
-        term: "Deduction (fradrag)",
-        definition:
-          "An amount subtracted from your income before tax is calculated — such as the personal allowance, pension, or employment allowance — which lowers your tax.",
       },
     ],
   },
