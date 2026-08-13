@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
+import { GoogleAnalytics } from "@next/third-parties/google"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`h-full font-sans antialiased ${inter.variable}`}
     >
       <body className="flex min-h-full flex-col bg-muted">{children}</body>
+      <GoogleAnalytics gaId="G-K8N5E2CG1H" />
     </html>
   )
 }
