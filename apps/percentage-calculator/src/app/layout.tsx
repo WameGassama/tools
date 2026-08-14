@@ -1,0 +1,61 @@
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import "./globals.css"
+import { GoogleAnalytics } from "@next/third-parties/google"
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
+
+const SITE_URL = "https://www.procentafettal.dk"
+const SITE_NAME = "Procentregner.dk"
+const TITLE = "Procentregner – Beregn procent nemt og hurtigt"
+const DESCRIPTION =
+  "Gratis procentregner. Beregn procent af et tal, procentvis stigning eller fald, hvor mange procent ét tal udgør af et andet, og find totalen ud fra en procentdel — direkte i browseren."
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
+  keywords: [
+    "procentregner",
+    "beregn procent",
+    "procent af tal",
+    "procentvis stigning",
+    "procent beregner",
+    "find procent",
+    "procentvis fald",
+    "regn procent ud",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    locale: "da_DK",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
+
+export default function RootLayout({ children }: LayoutProps<"/">) {
+  return (
+    <html
+      lang="da"
+      className={`h-full font-sans antialiased ${inter.variable}`}
+    >
+      <body className="flex min-h-full flex-col bg-muted">{children}</body>
+      {/* TODO: replace with the real GA4 measurement ID once created for procentafettal.dk */}
+      <GoogleAnalytics gaId="G-XXXXXXXXXX" />
+    </html>
+  )
+}
