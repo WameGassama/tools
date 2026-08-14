@@ -54,8 +54,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`h-full font-sans antialiased ${inter.variable}`}
     >
       <body className="flex min-h-full flex-col bg-muted">{children}</body>
-      {/* TODO: replace with the real GA4 measurement ID once created for procentafettal.dk */}
-      <GoogleAnalytics gaId="G-XXXXXXXXXX" />
+      <GoogleAnalytics gaId="G-V6D588GNK5" />
     </html>
   )
 }
