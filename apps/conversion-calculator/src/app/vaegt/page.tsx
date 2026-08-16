@@ -4,22 +4,13 @@ import Link from "next/link"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "Vægt Omregner – Konverter Pund og Kg Online"
+const TITLE = "Vægt Omregner – Konverter Pund, Kg og Gram Online"
 const DESCRIPTION =
-  "Gratis vægt omregner. Konverter nemt mellem pund (lbs) og kg online."
+  "Gratis vægt omregner. Konverter nemt mellem pund (lbs), kg og gram online."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "vægt omregner",
-    "konverter vægt",
-    "pund til kg",
-    "kg til pund",
-    "lbs til kg",
-    "kg til lbs",
-    "omregn vægt",
-  ],
   alternates: {
     canonical: "/vaegt",
   },
@@ -37,6 +28,43 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
   },
 }
+
+const UNITS = [
+  {
+    title: "Kilogram (kg)",
+    description:
+      "SI-systemets grundenhed for masse, og den mest udbredte af alle vægtenheder i Danmark og resten af Europa. 1 kg = 1.000 gram.",
+  },
+  {
+    title: "Gram (g)",
+    description:
+      "Bruges til at veje mindre mængder, fx i madopskrifter. 1.000 gram = 1 kg.",
+    href: "/vaegt/kg-til-gram",
+    linkLabel: "Omregn kg til gram",
+  },
+  {
+    title: "Pund / lbs",
+    description:
+      "Den mest udbredte vægtenhed i USA og Storbritannien. 1 lbs ≈ 0,4536 kg.",
+    href: "/vaegt/pund-til-kg",
+    linkLabel: "Omregn pund til kg",
+  },
+  {
+    title: "Ton (t)",
+    description:
+      "Bruges til at veje meget tunge ting, fx biler og gods. 1 ton = 1.000 kg.",
+  },
+  {
+    title: "Ounce (oz)",
+    description:
+      "En mindre amerikansk/britisk vægtenhed, ofte brugt til mad og drikkevarer. 1 oz ≈ 28,35 gram.",
+  },
+  {
+    title: "Stone (st)",
+    description:
+      "En britisk vægtenhed, der typisk bruges til at angive kropsvægt. 1 stone ≈ 6,35 kg.",
+  },
+]
 
 export default function VaegtPage() {
   return (
@@ -63,12 +91,12 @@ export default function VaegtPage() {
           />
 
           <div className="relative max-w-xl">
-            <h1 className="mb-2.5 text-balance break-words text-[32px] leading-[1.1] font-extrabold sm:text-[44px]">
+            <h1 className="mb-2.5 text-[32px] leading-[1.1] font-extrabold text-balance break-words sm:text-[44px]">
               Vægt Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-              Med vores vægt omregner konverterer du nemt mellem pund (lbs)
-              og kg.
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+              Med vores vægt omregner konverterer du nemt mellem pund (lbs), kg
+              og gram.
             </p>
           </div>
         </div>
@@ -81,7 +109,7 @@ export default function VaegtPage() {
               </Link>
             </h2>
             <p className="text-sm text-muted-foreground">
-              Omregn pund (lbs) til kg med det samme.
+              Omregn pund (lbs) til kg hurtigt og nemt.
             </p>
           </div>
           <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
@@ -91,8 +119,57 @@ export default function VaegtPage() {
               </Link>
             </h2>
             <p className="text-sm text-muted-foreground">
-              Omregn kg til pund (lbs) med det samme.
+              Omregn kg til pund (lbs) hurtigt og nemt.
             </p>
+          </div>
+          <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
+            <h2 className="mb-1 text-lg font-bold">
+              <Link href="/vaegt/kg-til-gram" className="hover:text-primary">
+                Kg til gram
+              </Link>
+            </h2>
+            <p className="text-sm text-muted-foreground">
+              Omregn kg til gram hurtigt og nemt.
+            </p>
+          </div>
+          <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
+            <h2 className="mb-1 text-lg font-bold">
+              <Link href="/vaegt/gram-til-kg" className="hover:text-primary">
+                Gram til kg
+              </Link>
+            </h2>
+            <p className="text-sm text-muted-foreground">
+              Omregn gram til kg hurtigt og nemt.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-8 rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
+          <h2 className="mb-1 text-lg font-bold">Vægtenheder forklaret</h2>
+          <p className="mb-6 text-sm text-muted-foreground">
+            Der findes mange forskellige vægtenheder rundt om i verden. Herunder
+            kan du se de mest almindelige vægtenheder, og hvad de bruges til.
+          </p>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {UNITS.map((unit) => (
+              <div
+                key={unit.title}
+                className="rounded-2xl border bg-background p-5 shadow-sm"
+              >
+                <h3 className="mb-1.5 font-semibold">{unit.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {unit.description}
+                </p>
+                {unit.href && (
+                  <Link
+                    href={unit.href}
+                    className="mt-3 inline-block text-sm font-medium text-primary hover:underline"
+                  >
+                    {unit.linkLabel} →
+                  </Link>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>

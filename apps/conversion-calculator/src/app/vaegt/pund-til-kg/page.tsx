@@ -6,53 +6,11 @@ import { SiteFooter } from "@/src/components/site/site-footer"
 
 const TITLE = "Pund til Kg – Omregn Pund (lbs) til Kg Online"
 const DESCRIPTION =
-  "Omregn pund til kg online med det samme. Se en pund til kg tabel, eller indtast din egen værdi."
+  "Omregn pund til kg online hurtigt og nemt. Se en pund til kg tabel, eller indtast din egen værdi."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "pund til kg",
-    "pund til kilo",
-    "omregn pund til kg",
-    "omregning pund til kg",
-    "lbs to kg",
-    "pounds to kg",
-    "pound to kg",
-    "lb to kg",
-    "lbs til kg",
-    "pounds to kilo",
-    "lbs to kilo",
-    "lbs til kilo",
-    "omregn lbs til kg",
-    "omregning lbs til kg",
-    "omregn lb til kg",
-    "lbs til kg omregner",
-    "vægt omregner lbs til kg",
-    "hvad er et pund",
-    "hvad er lbs",
-    "hvad er lbs i kg",
-    "hvad betyder lbs",
-    "hvad står lbs for",
-    "hvad er lb i kg",
-    "pund forkortelse",
-    "forkortelse for pund",
-    "hvor meget er 1 pund",
-    "hvor meget er 1 pound",
-    "hvor meget er et pund i kg",
-    "hvor mange gram er der i et pund",
-    "engelsk vægtenhed",
-    "engelsk pund vægt",
-    "dansk pund",
-    "amerikansk pund",
-    "amerikansk pund til kg",
-    "et pund i kg",
-    "vægt i pund",
-    "vægt i lbs",
-    "vægt lbs",
-    "lbs to kg converter",
-    "fra lbs til kg",
-  ],
   alternates: {
     canonical: "/vaegt/pund-til-kg",
   },
@@ -73,21 +31,21 @@ export const metadata: Metadata = {
 
 const KG_PER_LB = 0.45359237
 const COMMON_LBS_VALUES = [
-  1, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10, 12, 14, 15, 16, 20, 22, 25, 45, 50, 55,
-  60, 65, 70, 80, 95, 100, 160, 168, 240, 250, 280, 295, 300, 335, 365, 400,
-  700, 800, 803, 1000,
+  1, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10, 12, 14, 15, 16, 20, 22, 25, 45, 50, 55, 60,
+  65, 70, 80, 95, 100, 160, 168, 240, 250, 280, 295, 300, 335, 365, 400, 700,
+  800, 803, 1000,
 ]
 
 const FAQ_ITEMS = [
   {
     question: "Hvad er et pund (lbs)?",
     answer:
-      "Pund (lbs eller lb, engelsk \"pound\") er en engelsk/amerikansk vægtenhed. Et pund svarer til 0,45359237 kg, altså 453,6 gram.",
+      'Pund (lbs eller lb, engelsk "pound") er en engelsk/amerikansk vægtenhed. Et pund svarer til 0,45359237 kg, altså 453,6 gram.',
   },
   {
     question: "Hvad er forkortelsen for pund?",
     answer:
-      "Pund forkortes lb eller lbs (flertal). \"Lbs\" kommer fra det latinske \"libra\".",
+      'Pund forkortes lb eller lbs (flertal). "Lbs" kommer fra det latinske "libra".',
   },
   {
     question: "Hvordan regner man pund til kg?",
@@ -97,7 +55,7 @@ const FAQ_ITEMS = [
   {
     question: "Er dansk pund det samme som engelsk pund?",
     answer:
-      "Nej. Det gamle danske pund (brugt før overgangen til det metriske system) var præcis 500 gram og bruges stadig uformelt, fx \"et pund smør\". Det engelske/amerikanske pund (lbs), som denne omregner bruger, er derimod 453,6 gram.",
+      'Nej. Det gamle danske pund (brugt før overgangen til det metriske system) var præcis 500 gram og bruges stadig uformelt, fx "et pund smør". Det engelske/amerikanske pund (lbs), som denne omregner bruger, er derimod 453,6 gram.',
   },
 ]
 
@@ -132,12 +90,14 @@ export default function PundTilKgPage() {
           />
 
           <div className="relative max-w-xl">
-            <h1 className="mb-2.5 text-balance break-words text-[32px] leading-[1.1] font-extrabold sm:text-[44px]">
-              Pund til Kg
+            <h1 className="mb-2.5 text-[32px] leading-[1.1] font-extrabold text-balance break-words sm:text-[44px]">
+              Omregn Pund til Kg
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-              Omregn pund til kg online — indtast en værdi herunder for at
-              omregne med det samme.
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+              Brug vores pund til kg omregner til hurtigt og nemt at omregne
+              pund (lbs) til kilogram. Indtast det antal pund, du vil omregne,
+              og få resultatet med det samme, eller brug vores tabel til hurtigt
+              at finde den ønskede omregning.
             </p>
           </div>
         </div>

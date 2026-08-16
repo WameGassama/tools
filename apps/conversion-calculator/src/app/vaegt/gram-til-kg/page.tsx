@@ -1,23 +1,24 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 
-import { LbsKgConverter } from "@/src/components/site/lbs-kg-converter"
+import { GramKgConverter } from "@/src/components/site/gram-kg-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "Kg til Lbs Omregner – Omregn Kg til Pund Online"
+const TITLE = "Gram til Kg – Omregn Gram til Kilogram Online"
 const DESCRIPTION =
-  "Omregn kg til lbs (pund) online hurtigt og nemt. Se en kg til lbs tabel, eller indtast din egen værdi."
+  "Omregn gram til kg online hurtigt og nemt. Se en gram til kg tabel, eller indtast din egen værdi."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: {
-    canonical: "/vaegt/kg-til-lbs",
+    canonical: "/vaegt/gram-til-kg",
   },
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
-    url: "/vaegt/kg-til-lbs",
+    url: "/vaegt/gram-til-kg",
     siteName: "omregning.dk",
     locale: "da_DK",
     type: "website",
@@ -29,28 +30,28 @@ export const metadata: Metadata = {
   },
 }
 
-const LBS_PER_KG = 1 / 0.45359237
-const COMMON_KG_VALUES = [1, 5, 10, 20, 50, 82, 100]
+const KG_PER_GRAM = 1 / 1000
+const COMMON_GRAM_VALUES = [100, 250, 500, 750, 1000, 2000, 5000, 10000]
 
 const FAQ_ITEMS = [
   {
-    question: "Hvordan regner man kg til lbs?",
-    answer:
-      "Formlen er lbs = kg × 2,20462. Fx bliver 82 kg til lbs: 82 × 2,20462 ≈ 180,78 lbs.",
+    question: "Hvor mange gram er der på et kilo?",
+    answer: "Der går 1.000 gram på hvert kilo (kg).",
   },
   {
-    question: "Hvor meget er 1 kg i pund?",
-    answer: "1 kg svarer til ca. 2,2 lbs (mere præcist 2,20462 lbs).",
+    question: "Hvordan regner man gram om til kg?",
+    answer:
+      "Formlen er kg = gram ÷ 1.000. Fx bliver 100 gram til kg: 100 ÷ 1.000 = 0,1 kg.",
   },
 ]
 
-function formatLbs(kg: number) {
-  return (kg * LBS_PER_KG).toLocaleString("da-DK", {
-    maximumFractionDigits: 2,
+function formatKg(gram: number) {
+  return (gram * KG_PER_GRAM).toLocaleString("da-DK", {
+    maximumFractionDigits: 3,
   })
 }
 
-export default function KgTilLbsPage() {
+export default function GramTilKgPage() {
   return (
     <div className="flex flex-1 flex-col bg-muted">
       <NavBar />
@@ -76,32 +77,32 @@ export default function KgTilLbsPage() {
 
           <div className="relative max-w-xl">
             <h1 className="mb-2.5 text-[32px] leading-[1.1] font-extrabold text-balance break-words sm:text-[44px]">
-              Kg til Lbs Omregner
+              Gram til Kg
             </h1>
             <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
-              Brug vores kg til lbs omregner til hurtigt og nemt at omregne
-              kilogram til pund (lbs). Indtast det antal kilogram, du vil
-              omregne, og få resultatet med det samme, eller brug vores tabel
-              til hurtigt at finde den ønskede omregning.
+              Brug vores gram til kg omregner til hurtigt og nemt at omregne fra
+              gram til kg. Indtast det antal gram, du vil omregne, og få
+              resultatet med det samme, eller brug vores tabel til hurtigt at
+              finde den ønskede omregning.
             </p>
           </div>
         </div>
 
         <div className="mt-8">
-          <LbsKgConverter title="Kg til lbs" reversed />
+          <GramKgConverter title="Gram til kg" />
         </div>
 
         <div className="mt-8 rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
-          <h2 className="mb-4 text-lg font-bold">Kg til lbs tabel</h2>
+          <h2 className="mb-4 text-lg font-bold">Gram til kg tabel</h2>
           <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
-            {COMMON_KG_VALUES.map((kg) => (
+            {COMMON_GRAM_VALUES.map((gram) => (
               <li
-                key={kg}
+                key={gram}
                 className="flex items-baseline justify-between border-b pb-3 text-sm"
               >
-                <h3 className="font-semibold">{kg} kg til lbs</h3>
+                <h3 className="font-semibold">{gram} gram til kg</h3>
                 <span className="text-muted-foreground">
-                  {kg} kg = {formatLbs(kg)} lbs
+                  {gram} g = {formatKg(gram)} kg
                 </span>
               </li>
             ))}
@@ -110,7 +111,7 @@ export default function KgTilLbsPage() {
 
         <div className="mt-8 rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
           <h2 className="mb-4 text-lg font-bold">
-            Ofte stillede spørgsmål om kg og lbs
+            Ofte stillede spørgsmål om gram og kg
           </h2>
           <div className="flex flex-col gap-6">
             {FAQ_ITEMS.map((item) => (
@@ -123,6 +124,13 @@ export default function KgTilLbsPage() {
             ))}
           </div>
         </div>
+
+        <p className="mt-8 text-center text-sm text-muted-foreground">
+          Vil du regne den anden vej?{" "}
+          <Link href="/vaegt/kg-til-gram" className="text-primary underline">
+            Omregn kg til gram
+          </Link>
+        </p>
       </section>
       <SiteFooter />
     </div>
