@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import { GoogleAnalytics } from "@next/third-parties/google"
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -16,15 +16,6 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "gennemsnitsberegner",
-    "karaktergennemsnit",
-    "beregn gennemsnit",
-    "karakterberegner",
-    "7-trinsskala",
-    "ECTS beregner",
-    "vægtet gennemsnit",
-  ],
   alternates: {
     canonical: "/",
   },
@@ -53,8 +44,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="da"
       className={`h-full font-sans antialiased ${inter.variable}`}
     >
+      <GoogleTagManager gtmId="GTM-P3W287ZX" />
       <body className="flex min-h-full flex-col bg-muted">{children}</body>
-      <GoogleAnalytics gaId="G-K8N5E2CG1H" />
     </html>
   )
 }
