@@ -1,15 +1,29 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 
 import { CATEGORIES, type Category } from "@/src/lib/converters"
+import { openCookiePreferences } from "@/src/components/site/cookie-consent"
 
 const ABOUT_LINKS: Category[] = [
   { slug: "forside", title: "Forside", href: "/" },
   { slug: "om-os", title: "Om os", href: "/om-os" },
 ]
 
-const FIRST_HALF = CATEGORIES.slice(0, 7)
-const SECOND_HALF = CATEGORIES.slice(7)
+const LEGAL_LINKS: Category[] = [
+  {
+    slug: "privatlivspolitik",
+    title: "Privatlivspolitik",
+    href: "/privatlivspolitik",
+  },
+  { slug: "vilkaar", title: "Vilkår for brug", href: "/vilkaar" },
+  {
+    slug: "ansvarsfraskrivelse",
+    title: "Ansvarsfraskrivelse",
+    href: "/ansvarsfraskrivelse",
+  },
+]
 
 export function SiteFooter() {
   return (
@@ -26,12 +40,22 @@ export function SiteFooter() {
               />
             </Link>
             <p className="mt-3 max-w-[220px] text-sm leading-relaxed text-slate-400">
-              Danmarks samlede omregner — alle dine omregnere ét sted.
+              Danmarks samlede omregner. Alle dine omregnere ét sted.
             </p>
           </div>
 
-          <FooterColumn title="Omregnere" items={FIRST_HALF} />
-          <FooterColumn title="Flere omregnere" items={SECOND_HALF} />
+          <FooterColumn title="Omregnere" items={CATEGORIES} />
+          <FooterColumn title="Legal" items={LEGAL_LINKS}>
+            <li>
+              <button
+                type="button"
+                onClick={openCookiePreferences}
+                className="cursor-pointer text-sm text-blue-400 transition-colors hover:text-blue-300"
+              >
+                Cookie
+              </button>
+            </li>
+          </FooterColumn>
           <FooterColumn title="Om" items={ABOUT_LINKS} />
         </div>
 
@@ -43,7 +67,15 @@ export function SiteFooter() {
   )
 }
 
-function FooterColumn({ title, items }: { title: string; items: Category[] }) {
+function FooterColumn({
+  title,
+  items,
+  children,
+}: {
+  title: string
+  items: Category[]
+  children?: React.ReactNode
+}) {
   return (
     <div>
       <h3 className="mb-3 text-xs font-semibold tracking-wide text-slate-500 uppercase">
@@ -64,6 +96,7 @@ function FooterColumn({ title, items }: { title: string; items: Category[] }) {
             )}
           </li>
         ))}
+        {children}
       </ul>
     </div>
   )

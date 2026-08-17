@@ -1,7 +1,10 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
+import Script from "next/script"
 import "./globals.css"
-import { GoogleAnalytics } from "@next/third-parties/google"
+import { GoogleTagManager } from "@next/third-parties/google"
+
+import { CookieConsent } from "@/src/components/site/cookie-consent"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -43,8 +46,24 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="da"
       className={`h-full font-sans antialiased ${inter.variable}`}
     >
-      <body className="flex min-h-full flex-col bg-muted">{children}</body>
-      <GoogleAnalytics gaId="G-XXXXXXX" />
+      <GoogleTagManager gtmId="GTM-PNZ4DX88" />
+      <body className="flex min-h-full flex-col bg-muted">
+        {children}
+        <CookieConsent />
+        <Script id="consent-default" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              'ad_storage': 'denied',
+              'ad_user_data': 'denied',
+              'ad_personalization': 'denied',
+              'analytics_storage': 'denied',
+              'wait_for_update': 500
+            });
+          `}
+        </Script>
+      </body>
     </html>
   )
 }
