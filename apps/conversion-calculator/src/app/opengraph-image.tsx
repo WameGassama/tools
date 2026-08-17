@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og"
 
-export const alt = "Gennemsnitsberegner.dk – Beregn dit karaktergennemsnit"
+export const alt = "omregning.dk – Danmarks samlede omregner"
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
@@ -24,14 +24,14 @@ export default function Image() {
             fontSize: 64,
             fontWeight: 800,
             fontStyle: "italic",
-            color: "#625fff",
+            color: "#2563eb",
             marginBottom: 24,
           }}
         >
-          Gennemsnitsberegner.dk
+          omregning.dk
         </div>
         <div style={{ fontSize: 32, color: "#3f3f46", textAlign: "center" }}>
-          Beregn dit karaktergennemsnit — gratis og på få sekunder
+          Danmarks samlede omregner — gratis og på få sekunder
         </div>
       </div>
     ),
