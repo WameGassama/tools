@@ -15,15 +15,6 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "stigning i procent",
-    "procentvis stigning",
-    "procentstigning",
-    "beregn stigning i procent",
-    "procent stigning formel",
-    "prisstigning i procent",
-    "hvordan regner man procent stigning",
-  ],
   alternates: {
     canonical: "/stigning-i-procent",
   },

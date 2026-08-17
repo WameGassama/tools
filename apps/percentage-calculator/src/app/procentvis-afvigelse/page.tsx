@@ -15,13 +15,6 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "procentvis afvigelse",
-    "afvigelse i procent",
-    "procent afvigelse",
-    "beregn afvigelse i procent",
-    "procentvis afvigelse formel",
-  ],
   alternates: {
     canonical: "/procentvis-afvigelse",
   },

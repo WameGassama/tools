@@ -20,18 +20,6 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "procent",
-    "procent af et tal",
-    "udregn procent",
-    "procentregner",
-    "hvordan finder man procent af et tal",
-    "hvordan lægger man procent til et tal",
-    "hvordan finder man 1 % af et tal",
-    "hvordan finder man 15 % af et tal",
-    "hvordan finder man 20 % af et tal",
-    "hvor mange procent udgør et tal af et andet",
-  ],
   alternates: {
     canonical: "/",
   },
