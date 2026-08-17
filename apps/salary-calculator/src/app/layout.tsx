@@ -1,9 +1,12 @@
 import type { Metadata } from "next"
 import { Geist, Geist_Mono, Inter } from "next/font/google"
+import Script from "next/script"
 import "./globals.css"
 import { cn } from "@/src/lib/utils"
 import { LanguageProvider } from "@/src/lib/i18n/language-context"
-import { GoogleAnalytics } from "@next/third-parties/google"
+import { GoogleTagManager } from "@next/third-parties/google"
+
+import { CookieConsent } from "@/src/components/site/cookie-consent"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -28,27 +31,6 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "hvad får jeg udbetalt",
-    "lønberegner",
-    "skatteberegner",
-    "nettoløn",
-    "bruttoløn",
-    "AM-bidrag",
-    "bundskat",
-    "mellemskat",
-    "topskat",
-    "kommuneskat",
-    "trækprocent",
-    "dansk skat 2026",
-    "løn efter skat",
-    "beregn løn efter skat",
-    "hvor meget får jeg udbetalt",
-    "beregn nettoløn",
-    "brutto og netto løn",
-    "hvor meget skal jeg betale i skat",
-    "gratis lønberegner",
-  ],
   alternates: {
     canonical: "/",
   },
@@ -90,10 +72,30 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         inter.variable
       )}
     >
+      <GoogleTagManager gtmId="GTM-5BTB8LX5" />
       <body className="flex min-h-full flex-col bg-muted">
         <LanguageProvider>{children}</LanguageProvider>
+        <CookieConsent />
+        <Script id="consent-default" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            var storedConsent = null;
+            var match = document.cookie.match(/(?:^|; )hvadfarjegudbetalt-cookie-consent=([^;]*)/);
+            if (match) {
+              storedConsent = decodeURIComponent(match[1]);
+            }
+            var initialState = storedConsent === 'accepted' ? 'granted' : 'denied';
+            gtag('consent', 'default', {
+              'ad_storage': initialState,
+              'ad_user_data': initialState,
+              'ad_personalization': initialState,
+              'analytics_storage': initialState,
+              'wait_for_update': 500
+            });
+          `}
+        </Script>
       </body>
-      <GoogleAnalytics gaId="G-959QHL6L4N" />
     </html>
   )
 }
