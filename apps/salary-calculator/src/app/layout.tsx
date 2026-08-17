@@ -80,17 +80,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
-            var storedConsent = null;
-            var match = document.cookie.match(/(?:^|; )hvadfarjegudbetalt-cookie-consent=([^;]*)/);
-            if (match) {
-              storedConsent = decodeURIComponent(match[1]);
-            }
-            var initialState = storedConsent === 'accepted' ? 'granted' : 'denied';
             gtag('consent', 'default', {
-              'ad_storage': initialState,
-              'ad_user_data': initialState,
-              'ad_personalization': initialState,
-              'analytics_storage': initialState,
+              'ad_storage': 'denied',
+              'ad_user_data': 'denied',
+              'ad_personalization': 'denied',
+              'analytics_storage': 'denied',
               'wait_for_update': 500
             });
           `}

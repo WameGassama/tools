@@ -1,14 +1,7 @@
 "use client"
 
-import { Cookie } from "lucide-react"
-import { useEffect, useState } from "react"
-
-import { Button } from "@workspace/ui/components/button"
-
-const CONSENT_KEY = "hvadfarjegudbetalt-cookie-consent"
-const CONSENT_MAX_AGE_SECONDS = 60 * 60 * 24 * 180
-
-type Consent = "accepted" | "rejected"
+import { useEffect } from "react"
+import * as CC from "vanilla-cookieconsent"
 
 declare global {
   interface Window {
@@ -16,77 +9,91 @@ declare global {
   }
 }
 
-function getConsentCookie(): string | null {
-  const match = document.cookie
-    .split("; ")
-    .find((row) => row.startsWith(`${CONSENT_KEY}=`))
-  return match ? decodeURIComponent(match.split("=")[1]!) : null
-}
-
-function setConsentCookie(choice: Consent) {
-  document.cookie = `${CONSENT_KEY}=${choice}; max-age=${CONSENT_MAX_AGE_SECONDS}; path=/; SameSite=Lax`
-}
-
-function updateConsent(choice: Consent) {
-  const granted = choice === "accepted" ? "granted" : "denied"
+function updateGtagConsent() {
+  const granted = CC.acceptedCategory("analytics") ? "granted" : "denied"
   window.gtag?.("consent", "update", {
-    ad_storage: granted,
-    ad_user_data: granted,
-    ad_personalization: granted,
     analytics_storage: granted,
   })
 }
 
-export function CookieConsent() {
-  const [showBanner, setShowBanner] = useState(false)
+function syncDarkMode() {
+  document.documentElement.classList.toggle(
+    "cc--darkmode",
+    document.documentElement.classList.contains("dark")
+  )
+}
 
+export function CookieConsent() {
   useEffect(() => {
-    const stored = getConsentCookie()
-    if (stored === "accepted" || stored === "rejected") {
-      updateConsent(stored)
-    } else {
-      setShowBanner(true)
-    }
+    syncDarkMode()
+
+    const observer = new MutationObserver(syncDarkMode)
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    })
+
+    CC.run({
+      categories: {
+        necessary: {
+          enabled: true,
+          readOnly: true,
+        },
+        analytics: {},
+      },
+      guiOptions: {
+        consentModal: {
+          layout: "box",
+          position: "bottom right",
+          equalWeightButtons: true,
+        },
+        preferencesModal: {
+          layout: "box",
+          equalWeightButtons: true,
+        },
+      },
+      language: {
+        default: "da",
+        translations: {
+          da: {
+            consentModal: {
+              title: "Cookies",
+              description:
+                "Vi bruger cookies på vores hjemmeside til at forbedre din brugeroplevelse, tilbyde personligt tilpasset indhold og analysere vores trafik.",
+              acceptAllBtn: "Accepter alle",
+              acceptNecessaryBtn: "Afvis ikke-nødvendige",
+              showPreferencesBtn: "Administrer indstillinger",
+            },
+            preferencesModal: {
+              title: "Administrer cookie-indstillinger",
+              acceptAllBtn: "Accepter alle",
+              acceptNecessaryBtn: "Afvis ikke-nødvendige",
+              savePreferencesBtn: "Gem indstillinger",
+              sections: [
+                {
+                  title: "Nødvendige",
+                  description:
+                    "Disse cookies er nødvendige for, at hjemmesiden kan fungere, og kan ikke fravælges.",
+                  linkedCategory: "necessary",
+                },
+                {
+                  title: "Analyse",
+                  description:
+                    "Hjælper os med at forstå, hvordan hjemmesiden bliver brugt, via Google Analytics.",
+                  linkedCategory: "analytics",
+                },
+              ],
+            },
+          },
+        },
+      },
+      onFirstConsent: () => updateGtagConsent(),
+      onConsent: () => updateGtagConsent(),
+      onChange: () => updateGtagConsent(),
+    })
+
+    return () => observer.disconnect()
   }, [])
 
-  function handleChoice(choice: Consent) {
-    setConsentCookie(choice)
-    updateConsent(choice)
-
-    if (choice === "accepted") {
-      window.dataLayer = window.dataLayer ?? []
-      window.dataLayer.push({ event: "consent_granted" })
-    }
-
-    setShowBanner(false)
-  }
-
-  if (!showBanner) return null
-
-  return (
-    <div className="fixed bottom-4 right-4 z-50 max-w-md rounded-2xl border bg-background p-6 shadow-2xl sm:bottom-6 sm:right-6">
-      <div className="mb-3 flex items-center gap-2">
-        <Cookie className="h-5 w-5 text-primary" aria-hidden="true" />
-        <span className="text-sm font-semibold text-muted-foreground">
-          Cookies
-        </span>
-      </div>
-      <p className="mb-5 text-sm leading-relaxed text-foreground">
-        Vi bruger cookies på vores hjemmeside til at forbedre din
-        brugeroplevelse, tilbyde personligt tilpasset indhold og analysere
-        vores trafik.
-      </p>
-      <div className="flex flex-wrap gap-2">
-        <Button onClick={() => handleChoice("accepted")}>
-          Accepter alle
-        </Button>
-        <Button
-          variant="secondary"
-          onClick={() => handleChoice("rejected")}
-        >
-          Afvis ikke-nødvendige
-        </Button>
-      </div>
-    </div>
-  )
+  return null
 }
