@@ -4,22 +4,13 @@ import { TommerMmConverter } from "@/src/components/site/tommer-mm-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "Mm til Tommer – Omregn Millimeter til Inch Online"
+const TITLE = "Mm til Tommer Omregner – Omregn Millimeter til Inch Online"
 const DESCRIPTION =
-  "Omregn mm til tommer (inch) online med det samme. Se en mm til tommer tabel, eller indtast din egen værdi."
+  "Omregn mm til tommer (inch) online hurtigt og nemt. Se en mm til tommer tabel, eller indtast din egen værdi."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "mm til tommer",
-    "millimeter til tommer",
-    "mm til tomme",
-    "mm til tommer rør",
-    "omregner mm til tommer",
-    "omregn mm til tommer",
-    "millimeter til tomme",
-  ],
   alternates: {
     canonical: "/laengde/mm-til-tommer",
   },
@@ -85,11 +76,13 @@ export default function MmTilTommerPage() {
 
           <div className="relative max-w-xl">
             <h1 className="mb-2.5 text-[32px] leading-[1.1] font-extrabold text-balance break-words sm:text-[44px]">
-              Mm til Tommer
+              Mm til Tommer Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-              Omregn mm til tommer online — indtast en værdi herunder for at
-              omregne med det samme.
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+              Brug vores mm til tommer omregner til hurtigt og nemt at omregne
+              millimeter til inch. Indtast det antal millimeter, du vil
+              omregne, og få resultatet med det samme, eller brug vores tabel
+              til hurtigt at finde den ønskede omregning.
             </p>
           </div>
         </div>

@@ -4,20 +4,13 @@ import { KnotKmhConverter } from "@/src/components/site/knot-kmh-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "Km/t til Knob – Omregn Km/t til Knob Online"
+const TITLE = "Km/t til Knob Omregner – Omregn Km/t til Knob Online"
 const DESCRIPTION =
-  "Omregn km/t til knob online med det samme. Se en km/t til knob tabel, eller indtast din egen værdi."
+  "Omregn km/t til knob online hurtigt og nemt. Se en km/t til knob tabel, eller indtast din egen værdi."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "km til knob",
-    "km/t til knob",
-    "km t til knob",
-    "omregn km/t til knob",
-    "omregning km/t til knob",
-  ],
   alternates: {
     canonical: "/hastighed/km-t-til-knob",
   },
@@ -83,11 +76,13 @@ export default function KmTTilKnobPage() {
 
           <div className="relative max-w-xl">
             <h1 className="mb-2.5 text-balance break-words text-[32px] leading-[1.1] font-extrabold sm:text-[44px]">
-              Km/t til Knob
+              Km/t til Knob Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-              Omregn km/t til knob online — indtast en værdi herunder for at
-              omregne med det samme.
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+              Brug vores km/t til knob omregner til hurtigt og nemt at omregne
+              km/t til knob. Indtast det antal km/t, du vil omregne, og få
+              resultatet med det samme, eller brug vores tabel til hurtigt at
+              finde den ønskede omregning.
             </p>
           </div>
         </div>

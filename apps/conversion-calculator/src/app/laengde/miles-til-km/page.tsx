@@ -4,52 +4,13 @@ import { MileKmConverter } from "@/src/components/site/mile-km-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "Miles til Km – Omregn Mile til Kilometer Online"
+const TITLE = "Miles til Km Omregner – Omregn Mile til Kilometer Online"
 const DESCRIPTION =
-  "Omregn miles til km online med det samme. Se en miles til km tabel, eller indtast din egen værdi."
+  "Omregn miles til km online hurtigt og nemt. Se en miles til km tabel, eller indtast din egen værdi."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "miles to km",
-    "mile to km",
-    "miles til km",
-    "mil til km",
-    "1 mile to km",
-    "1 mile in km",
-    "one mile in km",
-    "100 miles in km",
-    "hvor meget er en mile",
-    "hvor meget er en mil",
-    "hvad er en mile",
-    "hvad er en mil",
-    "hvor lang er en mile",
-    "hvor lang er en mil",
-    "hvor langt er en mile",
-    "hvor langt er en mil",
-    "engelsk mil",
-    "engelsk mile",
-    "amerikansk mil",
-    "en mil",
-    "en mile",
-    "en engelsk mil",
-    "mil",
-    "mile",
-    "miles",
-    "omregn miles til km",
-    "omregner miles til km",
-    "omregning miles til km",
-    "fra miles til km",
-    "fra mil til km",
-    "miles til kilometer",
-    "mil til kilometer",
-    "miles omregner",
-    "hvor mange km er en mile",
-    "hvor mange km er en mil",
-    "hvor mange kilometer er en mile",
-    "hvor mange kilometer er en mil",
-  ],
   alternates: {
     canonical: "/laengde/miles-til-km",
   },
@@ -129,11 +90,13 @@ export default function MilesTilKmPage() {
 
           <div className="relative max-w-xl">
             <h1 className="mb-2.5 text-[32px] leading-[1.1] font-extrabold text-balance break-words sm:text-[44px]">
-              Miles til Km
+              Miles til Km Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-              Omregn miles til km online — indtast en værdi herunder for at
-              omregne med det samme.
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+              Brug vores miles til km omregner til hurtigt og nemt at omregne
+              mile til kilometer. Indtast det antal mile, du vil omregne, og få
+              resultatet med det samme, eller brug vores tabel til hurtigt at
+              finde den ønskede omregning.
             </p>
           </div>
         </div>

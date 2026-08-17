@@ -4,7 +4,7 @@ import { LbsKgConverter } from "@/src/components/site/lbs-kg-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "Pund til Kg – Omregn Pund (lbs) til Kg Online"
+const TITLE = "Pund til Kg Omregner – Omregn Pund (lbs) til Kg Online"
 const DESCRIPTION =
   "Omregn pund til kg online hurtigt og nemt. Se en pund til kg tabel, eller indtast din egen værdi."
 
@@ -91,7 +91,7 @@ export default function PundTilKgPage() {
 
           <div className="relative max-w-xl">
             <h1 className="mb-2.5 text-[32px] leading-[1.1] font-extrabold text-balance break-words sm:text-[44px]">
-              Omregn Pund til Kg
+              Pund til Kg Omregner
             </h1>
             <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
               Brug vores pund til kg omregner til hurtigt og nemt at omregne

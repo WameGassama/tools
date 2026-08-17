@@ -3,6 +3,14 @@ import Link from "next/link"
 
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@workspace/ui/components/table"
 
 const TITLE = "Temperatur Omregner – Konverter Fahrenheit og Celsius Online"
 const DESCRIPTION =
@@ -11,13 +19,6 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "temperatur omregner",
-    "konverter temperatur",
-    "fahrenheit til celsius",
-    "celsius til fahrenheit",
-    "omregn temperatur",
-  ],
   alternates: {
     canonical: "/temperatur",
   },
@@ -35,6 +36,57 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
   },
 }
+
+const SCALES = [
+  {
+    title: "Celsius (°C)",
+    description:
+      "Den mest brugte temperatur skala i Danmark og de fleste andre lande. 0 °C er vands frysepunkt, og 100 °C er vands kogepunkt ved havoverfladen.",
+  },
+  {
+    title: "Fahrenheit (°F)",
+    description:
+      "Bruges primært i USA. Skalaen har et andet nulpunkt og andre intervaller end celsius, så 32 °F svarer til vands frysepunkt.",
+  },
+  {
+    title: "Kelvin (K)",
+    description:
+      "Den videnskabelige temperatur skala, hvor 0 K er absolut nulpunkt — det koldest mulige. Kelvin bruger ikke gradtegn.",
+  },
+]
+
+const REFERENCE_POINTS = [
+  {
+    label: "Absolut nulpunkt",
+    celsius: "−273,15",
+    fahrenheit: "−459,67",
+    kelvin: "0",
+  },
+  {
+    label: "Vands frysepunkt",
+    celsius: "0",
+    fahrenheit: "32",
+    kelvin: "273,15",
+  },
+  {
+    label: "Stuetemperatur",
+    celsius: "20",
+    fahrenheit: "68",
+    kelvin: "293,15",
+  },
+  {
+    label: "Normal kropstemperatur",
+    celsius: "37",
+    fahrenheit: "98,6",
+    kelvin: "310,15",
+  },
+  {
+    label: "Vands kogepunkt",
+    celsius: "100",
+    fahrenheit: "212",
+    kelvin: "373,15",
+  },
+]
 
 export default function TemperaturPage() {
   return (
@@ -64,7 +116,7 @@ export default function TemperaturPage() {
             <h1 className="mb-2.5 text-balance break-words text-[32px] leading-[1.1] font-extrabold sm:text-[44px]">
               Temperatur Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
               Med vores temperatur omregner konverterer du nemt mellem
               fahrenheit og celsius.
             </p>
@@ -82,7 +134,7 @@ export default function TemperaturPage() {
               </Link>
             </h2>
             <p className="text-sm text-muted-foreground">
-              Omregn fahrenheit til celsius med det samme.
+              Omregn fahrenheit til celsius hurtigt og nemt.
             </p>
           </div>
           <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
@@ -95,9 +147,54 @@ export default function TemperaturPage() {
               </Link>
             </h2>
             <p className="text-sm text-muted-foreground">
-              Omregn celsius til fahrenheit med det samme.
+              Omregn celsius til fahrenheit hurtigt og nemt.
             </p>
           </div>
+        </div>
+
+        <div className="mt-8 rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
+          <h2 className="mb-1 text-lg font-bold">
+            Temperaturskalaer forklaret
+          </h2>
+          <p className="mb-6 text-sm text-muted-foreground">
+            Der findes flere forskellige temperatur skalaer i verden. Herunder
+            kan du se, hvad de tre mest almindelige skalaer betyder, og
+            hvordan de svarer til hinanden ved centrale referencepunkter.
+          </p>
+
+          <div className="mb-8 grid gap-4 sm:grid-cols-3">
+            {SCALES.map((scale) => (
+              <div key={scale.title}>
+                <h3 className="mb-1.5 font-semibold">{scale.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {scale.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Referencepunkt</TableHead>
+                <TableHead>Celsius</TableHead>
+                <TableHead>Fahrenheit</TableHead>
+                <TableHead>Kelvin</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {REFERENCE_POINTS.map((point) => (
+                <TableRow key={point.label}>
+                  <TableCell className="font-medium">
+                    {point.label}
+                  </TableCell>
+                  <TableCell>{point.celsius} °C</TableCell>
+                  <TableCell>{point.fahrenheit} °F</TableCell>
+                  <TableCell>{point.kelvin} K</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
         </div>
       </section>
       <SiteFooter />

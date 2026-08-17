@@ -4,25 +4,13 @@ import { HektarKm2Converter } from "@/src/components/site/hektar-km2-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "Hektar til km² – Omregn Hektar til Kvadratkilometer Online"
+const TITLE = "Hektar til km² Omregner – Omregn Hektar til Kvadratkilometer Online"
 const DESCRIPTION =
-  "Omregn hektar til km² online med det samme. Se en hektar til km² tabel, eller indtast din egen værdi."
+  "Omregn hektar til km² online hurtigt og nemt. Se en hektar til km² tabel, eller indtast din egen værdi."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "hektar til km2",
-    "hektar til km²",
-    "1 hektar i km2",
-    "hektar in km2",
-    "hvad er 1 hektar i km2",
-    "km2 til hektar",
-    "km2 til ha",
-    "hvor mange hektar er 1 km2",
-    "en hektar i km2",
-    "hvor meget er en hektar i km2",
-  ],
   alternates: {
     canonical: "/areal/hektar-til-km2",
   },
@@ -89,11 +77,13 @@ export default function HektarTilKm2Page() {
 
           <div className="relative max-w-xl">
             <h1 className="mb-2.5 text-balance break-words text-[32px] leading-[1.1] font-extrabold sm:text-[44px]">
-              Hektar til km²
+              Hektar til km² Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-              Omregn hektar til kvadratkilometer online — indtast en værdi
-              herunder for at omregne med det samme.
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+              Brug vores hektar til kvadratkilometer omregner til hurtigt og
+              nemt at omregne hektar til kvadratkilometer. Indtast det antal
+              hektar, du vil omregne, og få resultatet med det samme, eller
+              brug vores tabel til hurtigt at finde den ønskede omregning.
             </p>
           </div>
         </div>

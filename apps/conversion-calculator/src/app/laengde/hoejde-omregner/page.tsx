@@ -4,34 +4,13 @@ import { HeightConverter } from "@/src/components/site/height-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "Højde Omregner – Fod og Tommer til Cm Online"
+const TITLE = "Højde Omregner – Fod og Tommer til Cm (Feet to Cm) Online"
 const DESCRIPTION =
-  "Omregn højde fra fod og tommer til centimeter online med det samme. Se en tabel med gængse højder, eller indtast din egen."
+  "Omregn højde fra fod og tommer til centimeter online hurtigt og nemt (feet to cm). Se en tabel med gængse højder, eller indtast din egen."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "højde omregner",
-    "højde i fod",
-    "højde i feet",
-    "hvor høj er jeg i feet",
-    "fod og tommer til cm",
-    "feet og inches til cm",
-    "5 fod 10 tommer",
-    "6 fod 3 tommer",
-    "5 fod 10 tommer i cm",
-    "6 fod 3 tommer i cm",
-    "fod tommer omregner",
-    "omregn højde",
-    "5 fod 9 tommer",
-    "6 fod 6 tommer",
-    "amerikansk højde til cm",
-    "amerikanske mål til cm",
-    "højde i inches",
-    "højde i tommer",
-    "højde cm til fod",
-  ],
   alternates: {
     canonical: "/laengde/hoejde-omregner",
   },
@@ -54,10 +33,16 @@ const CM_PER_FOOT = 30.48
 const CM_PER_INCH = 2.54
 
 const COMMON_HEIGHTS = [
+  { feet: 4, inches: 8 },
+  { feet: 4, inches: 9 },
+  { feet: 4, inches: 10 },
+  { feet: 4, inches: 11 },
   { feet: 5, inches: 1 },
   { feet: 5, inches: 2 },
+  { feet: 5, inches: 3 },
   { feet: 5, inches: 4 },
   { feet: 5, inches: 5 },
+  { feet: 5, inches: 6 },
   { feet: 5, inches: 7 },
   { feet: 5, inches: 8 },
   { feet: 5, inches: 9 },
@@ -66,8 +51,32 @@ const COMMON_HEIGHTS = [
   { feet: 6, inches: 1 },
   { feet: 6, inches: 2 },
   { feet: 6, inches: 3 },
+  { feet: 6, inches: 4 },
+  { feet: 6, inches: 5 },
   { feet: 6, inches: 6 },
+  { feet: 6, inches: 7 },
+  { feet: 6, inches: 8 },
+  { feet: 6, inches: 9 },
+  { feet: 6, inches: 10 },
+  { feet: 6, inches: 11 },
+  { feet: 7, inches: 1 },
+  { feet: 7, inches: 2 },
+  { feet: 7, inches: 4 },
+  { feet: 7, inches: 6 },
+  { feet: 7, inches: 7 },
+  { feet: 8, inches: 11 },
 ]
+
+const WHOLE_FEET_VALUES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+const COMMON_CM_VALUES = [150, 160, 170, 180, 190, 200, 204, 210]
+
+function formatFeetInches(cm: number) {
+  const totalInches = cm / CM_PER_INCH
+  const wholeFeet = Math.floor(totalInches / 12)
+  const remainingInches = Math.round(totalInches - wholeFeet * 12)
+  return `${wholeFeet}'${remainingInches}"`
+}
 
 const FAQ_ITEMS = [
   {
@@ -84,6 +93,20 @@ const FAQ_ITEMS = [
     question: "Hvad er en tommer?",
     answer:
       'En tommer (på engelsk "inch") er en længdeenhed fra det amerikanske/britiske målesystem, hvor 12 tommer udgør 1 fod. 1 tommer svarer til præcis 2,54 cm.',
+  },
+  {
+    question: "Hvor meget er en fod i cm?",
+    answer: "1 fod (foot) svarer til præcis 30,48 cm.",
+  },
+  {
+    question: "Hvordan omregner jeg cm til feet og inches?",
+    answer:
+      "Del cm-tallet med 2,54 for at få det samlede antal tommer. Del så det tal med 12 for at få hele fod (feet) — resten er de tommer (inches), der er tilbage. Fx bliver 200 cm til ca. 6'7\".",
+  },
+  {
+    question: "Hvad betyder et højdemål som 6'2 eller 6'2\"?",
+    answer:
+      "Notationen angiver fod og tommer: 6'2\" betyder 6 fod og 2 tommer, hvilket bruges i det amerikanske/britiske målesystem til at angive højde.",
   },
 ]
 
@@ -121,9 +144,11 @@ export default function HoejdeOmregnerPage() {
             <h1 className="mb-2.5 text-[32px] leading-[1.1] font-extrabold text-balance break-words sm:text-[44px]">
               Højde Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-              Omregn højde fra fod og tommer til centimeter online — indtast en
-              værdi herunder for at omregne med det samme.
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+              Brug vores højde omregner til hurtigt og nemt at omregne højde fra
+              fod og tommer til centimeter. Indtast det antal fod og tommer, du
+              vil omregne, og få resultatet med det samme, eller brug vores
+              tabel til hurtigt at finde den ønskede omregning.
             </p>
           </div>
         </div>
@@ -147,6 +172,42 @@ export default function HoejdeOmregnerPage() {
                 </h3>
                 <span className="text-muted-foreground">
                   = {formatCm(feet, inches)} cm
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-8 rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
+          <h2 className="mb-4 text-lg font-bold">Fod til cm tabel</h2>
+          <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
+            {WHOLE_FEET_VALUES.map((feet) => (
+              <li
+                key={feet}
+                className="flex items-baseline justify-between border-b pb-3 text-sm"
+              >
+                <h3 className="font-semibold">{feet} fod til cm</h3>
+                <span className="text-muted-foreground">
+                  = {formatCm(feet, 0)} cm
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-8 rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
+          <h2 className="mb-4 text-lg font-bold">
+            Cm til feet og inches tabel
+          </h2>
+          <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
+            {COMMON_CM_VALUES.map((cm) => (
+              <li
+                key={cm}
+                className="flex items-baseline justify-between border-b pb-3 text-sm"
+              >
+                <h3 className="font-semibold">{cm} cm til feet</h3>
+                <span className="text-muted-foreground">
+                  = {formatFeetInches(cm)}
                 </span>
               </li>
             ))}

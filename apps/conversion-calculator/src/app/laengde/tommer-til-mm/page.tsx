@@ -4,35 +4,13 @@ import { TommerMmConverter } from "@/src/components/site/tommer-mm-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "Tommer til Mm – Omregn Inch til Millimeter Online"
+const TITLE = "Tommer til Mm Omregner – Omregn Inch til Millimeter Online"
 const DESCRIPTION =
-  "Omregn tommer (inch) til mm online med det samme. Se en tommer til mm tabel, inkl. rørdimensioner, eller indtast din egen værdi."
+  "Omregn tommer (inch) til mm online hurtigt og nemt. Se en tommer til mm tabel, inkl. rørdimensioner, eller indtast din egen værdi."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "tommer til mm",
-    "tommer til mm tabel",
-    "tommer til mm rør",
-    "mm til tommer rør",
-    "omregn tommer til mm",
-    "omregning tommer til mm",
-    "1 tommer til mm",
-    "1 tomme i mm",
-    "2 tommer i mm",
-    "halv tomme i mm",
-    "1/8 tomme til mm",
-    "tomme til mm",
-    "tommer i mm",
-    "en tommer i mm",
-    "tomme rør i mm",
-    "rør tabel tommer",
-    "1 tomme rør i mm",
-    "2 tommer rør i mm",
-    "3 tommer rør i mm",
-    "4 tommer rør i mm",
-  ],
   alternates: {
     canonical: "/laengde/tommer-til-mm",
   },
@@ -57,6 +35,7 @@ const COMMON_TOMMER_VALUES = [1, 2, 3, 4, 5, 6, 8, 10, 12]
 const PIPE_SIZES = [
   { label: "1/8", value: 0.125 },
   { label: "1/4", value: 0.25 },
+  { label: "5/16", value: 0.3125 },
   { label: "3/8", value: 0.375 },
   { label: "1/2", value: 0.5 },
   { label: "5/8", value: 0.625 },
@@ -64,8 +43,11 @@ const PIPE_SIZES = [
   { label: "1", value: 1 },
   { label: "1 1/4", value: 1.25 },
   { label: "1 1/2", value: 1.5 },
+  { label: "1 3/4", value: 1.75 },
   { label: "2", value: 2 },
   { label: "2 1/2", value: 2.5 },
+  { label: "3", value: 3 },
+  { label: "4", value: 4 },
 ]
 
 const FAQ_ITEMS = [
@@ -82,6 +64,11 @@ const FAQ_ITEMS = [
     question: "Hvorfor bruges tommer til rørdimensioner?",
     answer:
       'Rør og fittings måles traditionelt i tommer (fx 1/2", 3/4", 1"), en standard der stammer fra det amerikanske/britiske målesystem. Tabellen ovenfor viser de mest almindelige rørstørrelser omregnet til mm.',
+  },
+  {
+    question: 'Hvad betyder fx 1/2" eller 3/4" rørgevind i mm?',
+    answer:
+      'Gevindmålet på rør, fx 1/2" eller 3/4", angiver den nominelle rørstørrelse (ikke nødvendigvis den præcise udvendige diameter, som afhænger af rørtype). Som tommelfingerregel svarer 1/2" til ca. 12,7 mm og 3/4" til ca. 19 mm — brug tabellen ovenfor til hurtig omregning.',
   },
 ]
 
@@ -117,11 +104,13 @@ export default function TommerTilMmPage() {
 
           <div className="relative max-w-xl">
             <h1 className="mb-2.5 text-[32px] leading-[1.1] font-extrabold text-balance break-words sm:text-[44px]">
-              Tommer til Mm
+              Tommer til Mm Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-              Omregn tommer til mm online — indtast en værdi herunder for at
-              omregne med det samme.
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+              Brug vores tommer til mm omregner til hurtigt og nemt at omregne
+              inch til millimeter. Indtast det antal inch, du vil omregne, og
+              få resultatet med det samme, eller brug vores tabel til hurtigt
+              at finde den ønskede omregning.
             </p>
           </div>
         </div>

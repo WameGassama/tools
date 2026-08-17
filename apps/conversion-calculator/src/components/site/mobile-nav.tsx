@@ -11,6 +11,10 @@ import {
   SheetTrigger,
 } from "@workspace/ui/components/sheet"
 
+import {
+  CATEGORY_ICONS,
+  DefaultCategoryIcon,
+} from "@/src/components/site/category-icons"
 import type { Category } from "@/src/lib/converters"
 
 export function MobileNav({ categories }: { categories: Category[] }) {
@@ -55,25 +59,29 @@ export function MobileNav({ categories }: { categories: Category[] }) {
             Kategorier
           </p>
           <div className="flex flex-col gap-1">
-            {categories.map((category) =>
-              category.href ? (
+            {categories.map((category) => {
+              const Icon = CATEGORY_ICONS[category.slug] ?? DefaultCategoryIcon
+
+              return category.href ? (
                 <SheetClose
                   key={category.slug}
                   render={<Link href={category.href} />}
                   nativeButton={false}
-                  className="rounded-lg p-2 text-sm hover:bg-muted"
+                  className="flex items-center gap-2 rounded-lg p-2 text-sm hover:bg-muted"
                 >
+                  <Icon className="h-4 w-4 text-primary" aria-hidden="true" />
                   {category.title}
                 </SheetClose>
               ) : (
                 <span
                   key={category.slug}
-                  className="rounded-lg p-2 text-sm text-muted-foreground/40"
+                  className="flex items-center gap-2 rounded-lg p-2 text-sm text-muted-foreground/40"
                 >
+                  <Icon className="h-4 w-4" aria-hidden="true" />
                   {category.title}
                 </span>
-              ),
-            )}
+              )
+            })}
           </div>
         </div>
       </SheetContent>

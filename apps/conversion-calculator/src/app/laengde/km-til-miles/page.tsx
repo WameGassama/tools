@@ -4,22 +4,13 @@ import { MileKmConverter } from "@/src/components/site/mile-km-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "Km til Miles – Omregn Kilometer til Mile Online"
+const TITLE = "Km til Miles Omregner – Omregn Kilometer til Mile Online"
 const DESCRIPTION =
-  "Omregn km til miles online med det samme. Se en km til miles tabel, eller indtast din egen værdi."
+  "Omregn km til miles online hurtigt og nemt. Se en km til miles tabel, eller indtast din egen værdi."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "km til miles",
-    "kilometer til miles",
-    "km til miles omregner",
-    "omregn km til miles",
-    "omregning km til miles",
-    "km til mile",
-    "kilometers to miles",
-  ],
   alternates: {
     canonical: "/laengde/km-til-miles",
   },
@@ -85,11 +76,13 @@ export default function KmTilMilesPage() {
 
           <div className="relative max-w-xl">
             <h1 className="mb-2.5 text-[32px] leading-[1.1] font-extrabold text-balance break-words sm:text-[44px]">
-              Km til Miles
+              Km til Miles Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-              Omregn km til miles online — indtast en værdi herunder for at
-              omregne med det samme.
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+              Brug vores km til miles omregner til hurtigt og nemt at omregne
+              kilometer til mile. Indtast det antal kilometer, du vil omregne,
+              og få resultatet med det samme, eller brug vores tabel til hurtigt
+              at finde den ønskede omregning.
             </p>
           </div>
         </div>

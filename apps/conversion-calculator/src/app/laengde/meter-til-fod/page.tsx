@@ -4,24 +4,13 @@ import { FootMeterConverter } from "@/src/components/site/foot-meter-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "Meter til Fod – Omregn Meter til Fod Online"
+const TITLE = "Meter til Fod Omregner – Omregn Meter til Fod Online"
 const DESCRIPTION =
-  "Omregn meter til fod online med det samme. Se en meter til fod tabel, eller indtast din egen værdi."
+  "Omregn meter til fod online hurtigt og nemt. Se en meter til fod tabel, eller indtast din egen værdi."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "meter til fod",
-    "omregn meter til fod",
-    "omregning meter til fod",
-    "fra meter til fod",
-    "meter omregnet til fod",
-    "meter til fod tabel",
-    "m til fod",
-    "hvor mange fod er en meter",
-    "meter i fod",
-  ],
   alternates: {
     canonical: "/laengde/meter-til-fod",
   },
@@ -85,12 +74,14 @@ export default function MeterTilFodPage() {
           />
 
           <div className="relative max-w-xl">
-            <h1 className="mb-2.5 text-balance break-words text-[32px] leading-[1.1] font-extrabold sm:text-[44px]">
-              Meter til Fod
+            <h1 className="mb-2.5 text-[32px] leading-[1.1] font-extrabold text-balance break-words sm:text-[44px]">
+              Meter til Fod Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-              Omregn meter til fod online — indtast en værdi herunder for at
-              omregne med det samme.
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+              Brug vores meter til fod omregner til hurtigt og nemt at omregne
+              meter til fod. Indtast det antal meter, du vil omregne, og få
+              resultatet med det samme, eller brug vores tabel til hurtigt at
+              finde den ønskede omregning.
             </p>
           </div>
         </div>

@@ -4,26 +4,13 @@ import { HektarM2Converter } from "@/src/components/site/hektar-m2-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "m² til Hektar – Omregn Kvadratmeter til Hektar Online"
+const TITLE = "m² til Hektar Omregner – Omregn Kvadratmeter til Hektar Online"
 const DESCRIPTION =
-  "Omregn m² til hektar online med det samme. Se en m² til hektar tabel, eller indtast din egen værdi."
+  "Omregn m² til hektar online hurtigt og nemt. Se en m² til hektar tabel, eller indtast din egen værdi."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "m2 til hektar",
-    "m2 til ha",
-    "kvm til hektar",
-    "kvadratmeter til hektar",
-    "km2 til ha",
-    "km2 til hektar",
-    "kvadratkilometer til hektar",
-    "hvor mange hektar er 1 km2",
-    "tønder til hektar",
-    "tønder land til hektar",
-    "m²",
-  ],
   alternates: {
     canonical: "/areal/m2-til-hektar",
   },
@@ -94,11 +81,14 @@ export default function M2TilHektarPage() {
 
           <div className="relative max-w-xl">
             <h1 className="mb-2.5 text-balance break-words text-[32px] leading-[1.1] font-extrabold sm:text-[44px]">
-              m² til Hektar
+              m² til Hektar Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-              Omregn kvadratmeter til hektar online — indtast en værdi
-              herunder for at omregne med det samme.
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+              Brug vores kvadratmeter til hektar omregner til hurtigt og nemt
+              at omregne kvadratmeter til hektar. Indtast det antal
+              kvadratmeter, du vil omregne, og få resultatet med det samme,
+              eller brug vores tabel til hurtigt at finde den ønskede
+              omregning.
             </p>
           </div>
         </div>

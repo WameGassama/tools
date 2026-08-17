@@ -1,25 +1,28 @@
 import Link from "next/link"
 
 import { Badge } from "@workspace/ui/components/badge"
-import { ArrowHorizontalSwap, ArrowVerticalSwap } from "@workspace/ui/icons"
 
+import {
+  CATEGORY_ICONS,
+  DefaultCategoryIcon,
+} from "@/src/components/site/category-icons"
 import type { Category } from "@/src/lib/converters"
 
 export function CategorySection({ categories }: { categories: Category[] }) {
   return (
     <div className="mb-10">
       <h2 className="mb-4 text-lg font-bold">Kategorier</h2>
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-5">
-        {categories.map((category, index) => (
-          <CategoryTile key={category.slug} category={category} index={index} />
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        {categories.map((category) => (
+          <CategoryTile key={category.slug} category={category} />
         ))}
       </div>
     </div>
   )
 }
 
-function CategoryTile({ category, index }: { category: Category; index: number }) {
-  const Icon = index % 2 === 0 ? ArrowHorizontalSwap : ArrowVerticalSwap
+function CategoryTile({ category }: { category: Category }) {
+  const Icon = CATEGORY_ICONS[category.slug] ?? DefaultCategoryIcon
 
   const inner = (
     <>

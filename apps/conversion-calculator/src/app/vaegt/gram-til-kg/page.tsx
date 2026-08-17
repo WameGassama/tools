@@ -5,7 +5,7 @@ import { GramKgConverter } from "@/src/components/site/gram-kg-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "Gram til Kg – Omregn Gram til Kilogram Online"
+const TITLE = "Gram til Kg Omregner – Omregn Gram til Kilogram Online"
 const DESCRIPTION =
   "Omregn gram til kg online hurtigt og nemt. Se en gram til kg tabel, eller indtast din egen værdi."
 
@@ -77,7 +77,7 @@ export default function GramTilKgPage() {
 
           <div className="relative max-w-xl">
             <h1 className="mb-2.5 text-[32px] leading-[1.1] font-extrabold text-balance break-words sm:text-[44px]">
-              Gram til Kg
+              Gram til Kg Omregner
             </h1>
             <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
               Brug vores gram til kg omregner til hurtigt og nemt at omregne fra

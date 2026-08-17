@@ -5,26 +5,16 @@ import { GoogleAnalytics } from "@next/third-parties/google"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
-const SITE_URL = "https://www.gennemsnitsberegner.dk"
-const SITE_NAME = "Gennemsnitsberegner.dk"
-const TITLE =
-  "Gennemsnitsberegner – Beregn dit karaktergennemsnit nemt og hurtigt"
+const SITE_URL = "https://www.omregning.dk"
+const SITE_NAME = "omregning.dk"
+const TITLE = "Omregner – Gratis Online Omregner til Længde, Vægt, Volumen og Mere"
 const DESCRIPTION =
-  "Gratis gennemsnitsberegner til den danske 7-trinsskala. Beregn dit vægtede karaktergennemsnit ud fra ECTS-point på få sekunder (ingen data gemmes)."
+  "Gratis omregner til alle dine omregninger. Omregn nemt mellem længde, vægt, temperatur, areal, hastighed, volumen og tryk – direkte i browseren, uden login."
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "gennemsnitsberegner",
-    "karaktergennemsnit",
-    "beregn gennemsnit",
-    "karakterberegner",
-    "7-trinsskala",
-    "ECTS beregner",
-    "vægtet gennemsnit",
-  ],
   alternates: {
     canonical: "/",
   },

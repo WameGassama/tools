@@ -4,39 +4,13 @@ import { HektarM2Converter } from "@/src/components/site/hektar-m2-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "Hektar til m² – Omregn Hektar til Kvadratmeter Online"
+const TITLE = "Hektar til m² Omregner – Omregn Hektar til Kvadratmeter Online"
 const DESCRIPTION =
-  "Omregn hektar til m² online med det samme. Se en hektar til m² tabel, eller indtast din egen værdi."
+  "Omregn hektar til m² online hurtigt og nemt. Se en hektar til m² tabel, eller indtast din egen værdi."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "hektar",
-    "hvor meget er en hektar",
-    "hektar til m2",
-    "hvad er en hektar",
-    "hvor mange kvadratmeter er en hektar",
-    "hvor mange m2 er en hektar",
-    "hvor stor er en hektar",
-    "hvor meget er 1 hektar",
-    "hvad svarer en hektar til",
-    "en hektar svarer til",
-    "hektar til km2",
-    "ha til m2",
-    "hektar in m2",
-    "hektar i m2",
-    "hektar til tønder",
-    "fodboldbane",
-    "hvor stor er en fodboldbane",
-    "hvor mange hektar er en fodboldbane",
-    "hvor mange fodboldbaner er en hektar",
-    "hvor stor er en fodboldbane i hektar",
-    "fodboldbane hektar",
-    "hvor mange kvm er en hektar",
-    "hvad er en hektar i kvm",
-    "hvad er en hektar i m2",
-  ],
   alternates: {
     canonical: "/areal/hektar-til-m2",
   },
@@ -112,11 +86,13 @@ export default function HektarTilM2Page() {
 
           <div className="relative max-w-xl">
             <h1 className="mb-2.5 text-balance break-words text-[32px] leading-[1.1] font-extrabold sm:text-[44px]">
-              Hektar til m²
+              Hektar til m² Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-              Omregn hektar til kvadratmeter online — indtast en værdi
-              herunder for at omregne med det samme.
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+              Brug vores hektar til kvadratmeter omregner til hurtigt og nemt
+              at omregne hektar til kvadratmeter. Indtast det antal hektar, du
+              vil omregne, og få resultatet med det samme, eller brug vores
+              tabel til hurtigt at finde den ønskede omregning.
             </p>
           </div>
         </div>

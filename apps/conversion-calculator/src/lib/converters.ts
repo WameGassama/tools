@@ -6,18 +6,11 @@ export type Category = {
 }
 
 export const CATEGORIES: Category[] = [
-  { slug: "lommeregner", title: "Lommeregner" },
-  { slug: "valuta", title: "Valuta", href: "/valuta" },
-  { slug: "procent", title: "Procent" },
-  { slug: "data", title: "Data" },
   { slug: "vaegt", title: "Vægt", href: "/vaegt" },
   { slug: "temperatur", title: "Temperatur", href: "/temperatur" },
   { slug: "laengde", title: "Længde", href: "/laengde" },
   { slug: "areal", title: "Areal", href: "/areal" },
-  { slug: "tid", title: "Tid" },
   { slug: "hastighed", title: "Hastighed", href: "/hastighed" },
-  { slug: "volumen", title: "Volumen" },
-  { slug: "tryk", title: "Tryk" },
-  { slug: "misc", title: "Misc" },
-  { slug: "artikler", title: "Artikler" },
+  { slug: "volumen", title: "Volumen", href: "/volumen" },
+  { slug: "tryk", title: "Tryk", href: "/tryk" },
 ]

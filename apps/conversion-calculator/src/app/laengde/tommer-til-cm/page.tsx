@@ -4,41 +4,13 @@ import { InchCmConverter } from "@/src/components/site/inch-cm-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "Tommer til Cm – Omregn Inch til Centimeter Online"
+const TITLE = "Tommer til Cm Omregner – Omregn Inch til Centimeter Online"
 const DESCRIPTION =
-  "Omregn tommer (inch) til cm online med det samme. Se en tommer til cm tabel, eller indtast din egen værdi."
+  "Omregn tommer (inch) til cm online hurtigt og nemt. Se en tommer til cm tabel, eller indtast din egen værdi."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "tommer til cm",
-    "inches to cm",
-    "inch to cm",
-    "tommer i cm",
-    "1 tommer til cm",
-    "1 tommer i cm",
-    "1 inch to cm",
-    "1 inch in cm",
-    "hvor mange cm er en tomme",
-    "hvad er en tomme i cm",
-    "hvor lang er en tomme i cm",
-    "hvor lang er en tomme",
-    "hvor meget er en tomme i cm",
-    "hvor meget er en tomme",
-    "tomme til cm",
-    "en tomme i cm",
-    "engelsk tomme til cm",
-    "amerikansk tommer til cm",
-    "inch til cm",
-    "omregn tommer til cm",
-    "tommer til cm tabel",
-    "tommer til centimeter",
-    "inch cm omregner",
-    "hvad er en tomme",
-    "hvad er en inch",
-    "tommer omregner",
-  ],
   alternates: {
     canonical: "/laengde/tommer-til-cm",
   },
@@ -60,8 +32,8 @@ export const metadata: Metadata = {
 const CM_PER_INCH = 2.54
 const COMMON_TOMMER_VALUES = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
-  24, 26, 27, 28, 30, 32, 34, 36, 38, 40, 42, 43, 45, 46, 47, 48, 49, 50, 52,
-  55, 58, 60, 65, 70, 75, 80, 85, 100,
+  24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 36, 37, 38, 40, 42, 43, 45, 46,
+  47, 48, 49, 50, 52, 55, 58, 60, 65, 70, 75, 80, 85, 100,
 ]
 
 const FAQ_ITEMS = [
@@ -83,6 +55,16 @@ const FAQ_ITEMS = [
     question: "Hvorfor måles tv og skærme i tommer?",
     answer:
       "Skærmstørrelser, fx en 55 tommer tv, angives traditionelt i tommer, fordi det er den oprindelige amerikanske standard for skærmmål. Tommer-målet er skærmens diagonale længde.",
+  },
+  {
+    question: "Er tommer og inch det samme?",
+    answer:
+      'Ja, "tommer" er det danske ord for det engelske "inch". De er samme længdeenhed og svarer begge til 2,54 cm.',
+  },
+  {
+    question: 'Hvad betyder et højdemål som 5\'7" i cm?',
+    answer:
+      'Højder angivet i det amerikanske format, fx 5\'7" (5 fod og 7 tommer), skal omregnes i to trin: fod til cm og tommer til cm lægges sammen. 5\'7" = (5 × 30,48 cm) + (7 × 2,54 cm) ≈ 170,2 cm.',
   },
 ]
 
@@ -118,11 +100,13 @@ export default function TommerTilCmPage() {
 
           <div className="relative max-w-xl">
             <h1 className="mb-2.5 text-[32px] leading-[1.1] font-extrabold text-balance break-words sm:text-[44px]">
-              Tommer til Cm
+              Tommer til Cm Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-              Omregn tommer til cm online — indtast en værdi herunder for at
-              omregne med det samme.
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+              Brug vores tommer til cm omregner til hurtigt og nemt at omregne
+              inch til centimeter. Indtast det antal inch, du vil omregne, og
+              få resultatet med det samme, eller brug vores tabel til hurtigt
+              at finde den ønskede omregning.
             </p>
           </div>
         </div>

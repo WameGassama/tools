@@ -4,20 +4,13 @@ import { MphKmtConverter } from "@/src/components/site/mph-kmt-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "Km/t til Mph – Omregn Km i Timen til Miles i Timen Online"
+const TITLE = "Km/t til Mph Omregner – Omregn Km i Timen til Miles i Timen Online"
 const DESCRIPTION =
-  "Omregn km/t til mph online med det samme. Se en km/t til mph tabel, eller indtast din egen værdi."
+  "Omregn km/t til mph online hurtigt og nemt. Se en km/t til mph tabel, eller indtast din egen værdi."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "km/t til mph",
-    "km/t til mph omregner",
-    "omregn km/t til mph",
-    "kilometer i timen til mph",
-    "kmh to mph",
-  ],
   alternates: {
     canonical: "/hastighed/km-t-til-mph",
   },
@@ -85,11 +78,13 @@ export default function KmTTilMphPage() {
 
           <div className="relative max-w-xl">
             <h1 className="mb-2.5 text-[32px] leading-[1.1] font-extrabold text-balance break-words sm:text-[44px]">
-              Km/t til Mph
+              Km/t til Mph Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-              Omregn km/t til mph online — indtast en værdi herunder for at
-              omregne med det samme.
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+              Brug vores km/t til mph omregner til hurtigt og nemt at omregne
+              km i timen til miles i timen. Indtast det antal km i timen, du
+              vil omregne, og få resultatet med det samme, eller brug vores
+              tabel til hurtigt at finde den ønskede omregning.
             </p>
           </div>
         </div>

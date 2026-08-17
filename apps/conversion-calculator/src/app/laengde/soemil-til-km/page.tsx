@@ -4,25 +4,13 @@ import { SoemilKmConverter } from "@/src/components/site/soemil-km-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "Sømil til Km – Omregn Nautisk Mil til Kilometer Online"
+const TITLE = "Sømil til Km Omregner – Omregn Nautisk Mil til Kilometer Online"
 const DESCRIPTION =
-  "Omregn sømil til km online med det samme. Se en sømil til km tabel, eller indtast din egen værdi."
+  "Omregn sømil til km online hurtigt og nemt. Se en sømil til km tabel, eller indtast din egen værdi."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "sømil til km",
-    "hvor lang er en sømil",
-    "1 sømil i meter",
-    "hvad er en sømil",
-    "sømil km",
-    "nautisk mil til km",
-    "omregn sømil til km",
-    "km til sømil",
-    "sømil i km",
-    "sømil omregner",
-  ],
   alternates: {
     canonical: "/laengde/soemil-til-km",
   },
@@ -94,11 +82,13 @@ export default function SoemilTilKmPage() {
 
           <div className="relative max-w-xl">
             <h1 className="mb-2.5 text-[32px] leading-[1.1] font-extrabold text-balance break-words sm:text-[44px]">
-              Sømil til Km
+              Sømil til Km Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-              Omregn sømil til km online — indtast en værdi herunder for at
-              omregne med det samme.
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+              Brug vores sømil til km omregner til hurtigt og nemt at omregne
+              nautisk mil til kilometer. Indtast det antal nautisk mil, du vil
+              omregne, og få resultatet med det samme, eller brug vores tabel
+              til hurtigt at finde den ønskede omregning.
             </p>
           </div>
         </div>

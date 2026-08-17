@@ -4,37 +4,13 @@ import { KnotKmhConverter } from "@/src/components/site/knot-kmh-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "Knob til Km/t – Omregn Knob til Km/t Online"
+const TITLE = "Knob til Km/t Omregner – Omregn Knob til Km/t Online"
 const DESCRIPTION =
-  "Omregn knob til km/t online med det samme. Se en knob til km/t tabel, eller indtast din egen værdi."
+  "Omregn knob til km/t online hurtigt og nemt. Se en knob til km/t tabel, eller indtast din egen værdi."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "knob til km",
-    "knob til km/t",
-    "knob i km",
-    "knob i km/t",
-    "knob til km t",
-    "kts til km",
-    "knob hastighed",
-    "knob forkortelse",
-    "knob til sømil",
-    "knop til km",
-    "knop til kmt",
-    "hvor meget er en knob",
-    "hvor meget er en knob i km",
-    "hvor meget er et knob",
-    "hvor meget er 1 knob",
-    "hvad er kn",
-    "hvad er en knop",
-    "hvad er 1 knob",
-    "hvad er en knob i km",
-    "en knob",
-    "en knob i km",
-    "1 kn",
-  ],
   alternates: {
     canonical: "/hastighed/knob-til-km-t",
   },
@@ -108,11 +84,13 @@ export default function KnobTilKmTPage() {
 
           <div className="relative max-w-xl">
             <h1 className="mb-2.5 text-balance break-words text-[32px] leading-[1.1] font-extrabold sm:text-[44px]">
-              Knob til Km/t
+              Knob til Km/t Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-              Omregn knob til km/t online — indtast en værdi herunder for at
-              omregne med det samme.
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+              Brug vores knob til km/t omregner til hurtigt og nemt at omregne
+              knob til km/t. Indtast det antal knob, du vil omregne, og få
+              resultatet med det samme, eller brug vores tabel til hurtigt at
+              finde den ønskede omregning.
             </p>
           </div>
         </div>

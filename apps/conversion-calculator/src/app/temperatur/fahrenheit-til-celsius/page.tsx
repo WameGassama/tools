@@ -4,42 +4,13 @@ import { FahrenheitCelsiusConverter } from "@/src/components/site/fahrenheit-cel
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "Fahrenheit til Celsius – Omregn F til C Online"
+const TITLE = "Fahrenheit til Celsius Omregner – Omregn F til C Online"
 const DESCRIPTION =
-  "Omregn fahrenheit til celsius online med det samme. Se en fahrenheit til celsius tabel, formel og svar på hvad fahrenheit er, eller indtast din egen værdi."
+  "Omregn fahrenheit til celsius online hurtigt og nemt. Se en fahrenheit til celsius tabel, formel og svar på hvad fahrenheit er, eller indtast din egen værdi."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "fahrenheit to celsius",
-    "fahrenheit til celsius",
-    "f to c",
-    "f til c",
-    "fahrenheit til celsius tabel",
-    "fahrenheit til celsius formel",
-    "fahrenheit to celsius formula",
-    "fahrenheit to celsius calculator",
-    "fahrenheit to celsius converter",
-    "fahrenheit to celsius chart",
-    "fahrenheit celsius table",
-    "omregn fahrenheit til celsius",
-    "omregning fahrenheit til celsius",
-    "f til c omregner",
-    "hvordan regner man fahrenheit til celsius",
-    "hvad er fahrenheit",
-    "fahrenheit til grader",
-    "fahrenheit to degrees",
-    "fahrenheit skala",
-    "temperatur fahrenheit",
-    "fahrenheit omregner",
-    "farenheit",
-    "fahrenheit",
-    "grader fahrenheit",
-    "fahrenheit to celcius",
-    "farenheit to celcius",
-    "temperature conversion",
-  ],
   alternates: {
     canonical: "/temperatur/fahrenheit-til-celsius",
   },
@@ -119,11 +90,13 @@ export default function FahrenheitTilCelsiusPage() {
 
           <div className="relative max-w-xl">
             <h1 className="mb-2.5 text-[32px] leading-[1.1] font-extrabold text-balance break-words sm:text-[44px]">
-              Fahrenheit til Celsius
+              Fahrenheit til Celsius Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-              Omregn fahrenheit til celsius online — indtast en værdi herunder
-              for at omregne med det samme.
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+              Brug vores fahrenheit til celsius omregner til hurtigt og nemt at
+              omregne fahrenheit til celsius. Indtast det antal fahrenheit, du
+              vil omregne, og få resultatet med det samme, eller brug vores
+              tabel til hurtigt at finde den ønskede omregning.
             </p>
           </div>
         </div>

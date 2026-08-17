@@ -4,45 +4,13 @@ import { FootMeterConverter } from "@/src/components/site/foot-meter-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "Fod til Meter – Omregn Fod til Meter Online"
+const TITLE = "Fod til Meter Omregner – Omregn Fod til Meter Online"
 const DESCRIPTION =
-  "Omregn fod til meter online med det samme. Se en fod til meter tabel med de mest søgte omregninger, eller indtast din egen værdi."
+  "Omregn fod til meter online hurtigt og nemt. Se en fod til meter tabel med de mest søgte omregninger, eller indtast din egen værdi."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "fod til meter",
-    "omregn fod til meter",
-    "omregner fod til meter",
-    "omregning fod til meter",
-    "fra fod til meter",
-    "fod omregnet til meter",
-    "fod til meter tabel",
-    "fod i meter",
-    "feet til meter",
-    "omregn feet til meter",
-    "omregning feet til meter",
-    "fod til km",
-    "fod til m",
-    "ft til m",
-    "hvad er en fod",
-    "hvor lang er en fod",
-    "hvor meget er en fod",
-    "en fod",
-    "en fod i meter",
-    "hvor mange cm er en fod",
-    "amerikansk fod",
-    "fod vs meter",
-    "højde i fod",
-    "højde omregner",
-    "højde i feet",
-    "fod til cm",
-    "1 fod til cm",
-    "hvor lang er en fod i cm",
-    "fod meter",
-    "19 fod båd i meter",
-  ],
   alternates: {
     canonical: "/laengde/fod-til-meter",
   },
@@ -123,11 +91,13 @@ export default function FodTilMeterPage() {
 
           <div className="relative max-w-xl">
             <h1 className="mb-2.5 text-[32px] leading-[1.1] font-extrabold text-balance break-words sm:text-[44px]">
-              Fod til Meter
+              Fod til Meter Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-              Omregn fod til meter online — indtast en værdi herunder for at
-              omregne med det samme.
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+              Brug vores fod til meter omregner til hurtigt og nemt at omregne
+              fod til meter. Indtast det antal fod, du vil omregne, og få
+              resultatet med det samme, eller brug vores tabel til hurtigt at
+              finde den ønskede omregning.
             </p>
           </div>
         </div>

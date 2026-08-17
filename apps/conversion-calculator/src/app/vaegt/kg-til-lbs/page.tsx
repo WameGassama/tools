@@ -78,7 +78,7 @@ export default function KgTilLbsPage() {
             <h1 className="mb-2.5 text-[32px] leading-[1.1] font-extrabold text-balance break-words sm:text-[44px]">
               Kg til Lbs Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
               Brug vores kg til lbs omregner til hurtigt og nemt at omregne
               kilogram til pund (lbs). Indtast det antal kilogram, du vil
               omregne, og få resultatet med det samme, eller brug vores tabel

@@ -4,30 +4,13 @@ import { KmtMsConverter } from "@/src/components/site/kmt-ms-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "M/s til Km/t – Omregn Meter i Sekundet til Km i Timen Online"
+const TITLE = "M/s til Km/t Omregner – Omregn Meter i Sekundet til Km i Timen Online"
 const DESCRIPTION =
-  "Omregn m/s til km/t online med det samme. Se en m/s til km/t tabel, eller indtast din egen værdi."
+  "Omregn m/s til km/t online hurtigt og nemt. Se en m/s til km/t tabel, eller indtast din egen værdi."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "m/s til km/t",
-    "m/s til km/t formel",
-    "meter i sekundet til km/t",
-    "meter i sekundet til kilometer i timen",
-    "m/sek til km/t",
-    "ms til kmt",
-    "omregn m/s til km/t",
-    "fra m/s til km/t",
-    "5 m/s til km/t",
-    "25 m/s til km/t",
-    "10 m/s til km/t",
-    "1 m/s til km/t",
-    "5 meter i sekundet",
-    "7 meter i sekundet",
-    "8 meter i sekundet",
-  ],
   alternates: {
     canonical: "/hastighed/ms-til-km-t",
   },
@@ -94,11 +77,13 @@ export default function MsTilKmTPage() {
 
           <div className="relative max-w-xl">
             <h1 className="mb-2.5 text-[32px] leading-[1.1] font-extrabold text-balance break-words sm:text-[44px]">
-              M/s til Km/t
+              M/s til Km/t Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-              Omregn m/s til km/t online — indtast en værdi herunder for at
-              omregne med det samme.
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+              Brug vores m/s til km/t omregner til hurtigt og nemt at omregne
+              meter i sekundet til km i timen. Indtast det antal meter i
+              sekundet, du vil omregne, og få resultatet med det samme, eller
+              brug vores tabel til hurtigt at finde den ønskede omregning.
             </p>
           </div>
         </div>

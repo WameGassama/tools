@@ -4,48 +4,13 @@ import { KmtMsConverter } from "@/src/components/site/kmt-ms-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "Km/t til M/s – Omregn Km i Timen til Meter i Sekundet Online"
+const TITLE = "Km/t til M/s Omregner – Omregn Km i Timen til Meter i Sekundet Online"
 const DESCRIPTION =
-  "Omregn km/t til m/s online med det samme. Se en km/t til m/s tabel, eller indtast din egen værdi."
+  "Omregn km/t til m/s online hurtigt og nemt. Se en km/t til m/s tabel, eller indtast din egen værdi."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "km/t til m/s",
-    "km/h til m/s",
-    "km/t to m/s",
-    "km til m",
-    "km t til ms",
-    "kmt",
-    "kmt til ms",
-    "km i timen",
-    "km i timen omregner",
-    "km i timen til meter i sekundet",
-    "kilometer i timen til meter i sekundet",
-    "meter per sekund",
-    "meter pr sekund",
-    "meter i sekund",
-    "sekundmeter",
-    "sekundmeter til km/t",
-    "omregn km/t til m/s",
-    "fra km/t til m/s",
-    "hastigheds beregner",
-    "hastighed formel",
-    "vindstyrke km/t til m/s",
-    "hvordan regner man km/t til m/s",
-    "lydens hastighed i km/t",
-    "30 km/t til m/s",
-    "100 km/t til m/s",
-    "50 km/t til m/s",
-    "40 km/t til m/s",
-    "35 km/t til m/s",
-    "25 km/t til m/s",
-    "18 km/t til m/s",
-    "20 km/t til m/s",
-    "10 km/t til m/s",
-    "32 km/t til m/s",
-  ],
   alternates: {
     canonical: "/hastighed/km-t-til-ms",
   },
@@ -124,11 +89,13 @@ export default function KmTTilMsPage() {
 
           <div className="relative max-w-xl">
             <h1 className="mb-2.5 text-[32px] leading-[1.1] font-extrabold text-balance break-words sm:text-[44px]">
-              Km/t til M/s
+              Km/t til M/s Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-              Omregn km/t til m/s online — indtast en værdi herunder for at
-              omregne med det samme.
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+              Brug vores km/t til m/s omregner til hurtigt og nemt at omregne
+              km i timen til meter i sekundet. Indtast det antal km i timen,
+              du vil omregne, og få resultatet med det samme, eller brug vores
+              tabel til hurtigt at finde den ønskede omregning.
             </p>
           </div>
         </div>

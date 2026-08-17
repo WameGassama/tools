@@ -11,13 +11,6 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "hastighed omregner",
-    "konverter hastighed",
-    "knob til km/t",
-    "km/t til knob",
-    "omregn hastighed",
-  ],
   alternates: {
     canonical: "/hastighed",
   },
@@ -64,7 +57,7 @@ export default function HastighedPage() {
             <h1 className="mb-2.5 text-[32px] leading-[1.1] font-extrabold text-balance break-words sm:text-[44px]">
               Hastighed Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
               Med vores hastighed omregner konverterer du nemt mellem knob og
               km/t.
             </p>
@@ -82,7 +75,7 @@ export default function HastighedPage() {
               </Link>
             </h2>
             <p className="text-sm text-muted-foreground">
-              Omregn knob til km/t med det samme.
+              Omregn knob til km/t hurtigt og nemt.
             </p>
           </div>
           <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
@@ -95,7 +88,7 @@ export default function HastighedPage() {
               </Link>
             </h2>
             <p className="text-sm text-muted-foreground">
-              Omregn km/t til knob med det samme.
+              Omregn km/t til knob hurtigt og nemt.
             </p>
           </div>
           <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
@@ -108,7 +101,7 @@ export default function HastighedPage() {
               </Link>
             </h2>
             <p className="text-sm text-muted-foreground">
-              Omregn km/t til m/s med det samme.
+              Omregn km/t til m/s hurtigt og nemt.
             </p>
           </div>
           <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
@@ -121,7 +114,7 @@ export default function HastighedPage() {
               </Link>
             </h2>
             <p className="text-sm text-muted-foreground">
-              Omregn m/s til km/t med det samme.
+              Omregn m/s til km/t hurtigt og nemt.
             </p>
           </div>
           <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
@@ -134,7 +127,7 @@ export default function HastighedPage() {
               </Link>
             </h2>
             <p className="text-sm text-muted-foreground">
-              Omregn mph til km/t med det samme.
+              Omregn mph til km/t hurtigt og nemt.
             </p>
           </div>
           <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
@@ -147,7 +140,7 @@ export default function HastighedPage() {
               </Link>
             </h2>
             <p className="text-sm text-muted-foreground">
-              Omregn km/t til mph med det samme.
+              Omregn km/t til mph hurtigt og nemt.
             </p>
           </div>
         </div>

@@ -4,35 +4,13 @@ import { InchCmConverter } from "@/src/components/site/inch-cm-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "Cm til Tommer – Omregn Centimeter til Inch Online"
+const TITLE = "Cm til Tommer Omregner – Omregn Centimeter til Inch Online"
 const DESCRIPTION =
-  "Omregn cm til tommer (inch) online med det samme. Se en cm til tommer tabel, eller indtast din egen værdi."
+  "Omregn cm til tommer (inch) online hurtigt og nemt. Se en cm til tommer tabel, eller indtast din egen værdi."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "cm til tommer",
-    "cm til tomme",
-    "cm i tommer",
-    "cm to tommer",
-    "cm til inch",
-    "hvor mange tommer er en cm",
-    "omregn cm til tommer",
-    "omregning cm til tommer",
-    "cm til tommer omregner",
-    "cm til tommer tv",
-    "fra cm til tommer",
-    "omregner cm til tommer",
-    "140 cm i tommer",
-    "110 cm i tommer",
-    "100 cm i tommer",
-    "80 cm i tommer",
-    "70 cm i tommer",
-    "60 cm i tommer",
-    "40 cm i tommer",
-    "30 cm i tommer",
-  ],
   alternates: {
     canonical: "/laengde/cm-til-tommer",
   },
@@ -53,7 +31,8 @@ export const metadata: Metadata = {
 
 const INCH_PER_CM = 1 / 2.54
 const COMMON_CM_VALUES = [
-  1, 2, 5, 10, 20, 27, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 140,
+  1, 2, 5, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 25, 27, 30,
+  40, 50, 60, 70, 75, 76, 80, 84, 85, 90, 92, 95, 100, 110, 120, 140,
 ]
 
 const FAQ_ITEMS = [
@@ -65,6 +44,11 @@ const FAQ_ITEMS = [
     question: "Hvordan regner man cm om til tommer?",
     answer:
       "Formlen er tommer = cm ÷ 2,54. Fx bliver 100 cm til tommer: 100 ÷ 2,54 ≈ 39,37 tommer.",
+  },
+  {
+    question: "Hvordan omregner jeg min højde fra cm til inches?",
+    answer:
+      "Brug samme formel: inches = cm ÷ 2,54. Skal du omregne mellem cm og fod/tommer i formatet fx 5'7\", kan du i stedet bruge vores højde omregner under Længde.",
   },
 ]
 
@@ -100,11 +84,13 @@ export default function CmTilTommerPage() {
 
           <div className="relative max-w-xl">
             <h1 className="mb-2.5 text-[32px] leading-[1.1] font-extrabold text-balance break-words sm:text-[44px]">
-              Cm til Tommer
+              Cm til Tommer Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-              Omregn cm til tommer online — indtast en værdi herunder for at
-              omregne med det samme.
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+              Brug vores cm til tommer omregner til hurtigt og nemt at omregne
+              centimeter til inch. Indtast det antal centimeter, du vil omregne,
+              og få resultatet med det samme, eller brug vores tabel til hurtigt
+              at finde den ønskede omregning.
             </p>
           </div>
         </div>

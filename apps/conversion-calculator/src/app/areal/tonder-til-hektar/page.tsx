@@ -4,20 +4,13 @@ import { HektarTonderConverter } from "@/src/components/site/hektar-tonder-conve
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "Tønder Land til Hektar – Omregn Tønder til Hektar Online"
+const TITLE = "Tønder Land til Hektar Omregner – Omregn Tønder til Hektar Online"
 const DESCRIPTION =
-  "Omregn tønder land til hektar online med det samme. Se en tønder land til hektar tabel, eller indtast din egen værdi."
+  "Omregn tønder land til hektar online hurtigt og nemt. Se en tønder land til hektar tabel, eller indtast din egen værdi."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "tønder land til hektar",
-    "tønder til hektar",
-    "2 tønder land i hektar",
-    "omregn tønder land til hektar",
-    "hvad er tønder land",
-  ],
   alternates: {
     canonical: "/areal/tonder-til-hektar",
   },
@@ -84,11 +77,13 @@ export default function TonderTilHektarPage() {
 
           <div className="relative max-w-xl">
             <h1 className="mb-2.5 text-balance break-words text-[32px] leading-[1.1] font-extrabold sm:text-[44px]">
-              Tønder Land til Hektar
+              Tønder Land til Hektar Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-              Omregn tønder land til hektar online — indtast en værdi
-              herunder for at omregne med det samme.
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+              Brug vores tønder land til hektar omregner til hurtigt og nemt
+              at omregne tønder til hektar. Indtast det antal tønder, du vil
+              omregne, og få resultatet med det samme, eller brug vores tabel
+              til hurtigt at finde den ønskede omregning.
             </p>
           </div>
         </div>

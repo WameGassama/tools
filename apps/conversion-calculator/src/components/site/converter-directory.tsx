@@ -31,8 +31,8 @@ export function ConverterDirectory() {
             Danmarks samlede omregner
           </h1>
           <p className="mb-8 text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-            omregning.dk samler alle dine omregnere ét sted — længde,
-            valuta og meget mere på vej.
+            omregning.dk samler alle dine omregnere ét sted. Længde, vægt
+            og meget mere er på vej.
           </p>
 
           <div className="relative">
@@ -42,7 +42,7 @@ export function ConverterDirectory() {
             />
             <Input
               type="search"
-              placeholder="Søg efter en omregner, fx “valuta” eller “meter”…"
+              placeholder="Søg efter en omregner, fx “vægt” eller “meter”…"
               className="h-14 border-0 bg-background pl-11 text-base text-foreground shadow-xl ring-1 ring-black/5"
               aria-label="Søg efter omregner"
             />

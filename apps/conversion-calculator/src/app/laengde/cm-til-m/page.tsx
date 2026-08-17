@@ -4,20 +4,13 @@ import { MeterCmConverter } from "@/src/components/site/meter-cm-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 
-const TITLE = "Cm til M – Omregn Centimeter til Meter Online"
+const TITLE = "Cm til M Omregner – Omregn Centimeter til Meter Online"
 const DESCRIPTION =
-  "Omregn cm til meter online med det samme. Se en cm til meter tabel, eller indtast din egen værdi."
+  "Omregn cm til meter online hurtigt og nemt. Se en cm til meter tabel, eller indtast din egen værdi."
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "cm til m",
-    "cm til meter",
-    "centimeter til meter",
-    "omregn cm til meter",
-    "omregning cm til meter",
-  ],
   alternates: {
     canonical: "/laengde/cm-til-m",
   },
@@ -83,11 +76,13 @@ export default function CmTilMPage() {
 
           <div className="relative max-w-xl">
             <h1 className="mb-2.5 text-[32px] leading-[1.1] font-extrabold text-balance break-words sm:text-[44px]">
-              Cm til M
+              Cm til M Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-              Omregn cm til meter online — indtast en værdi herunder for at
-              omregne med det samme.
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
+              Brug vores cm til meter omregner til hurtigt og nemt at omregne
+              centimeter til meter. Indtast det antal centimeter, du vil
+              omregne, og få resultatet med det samme, eller brug vores tabel
+              til hurtigt at finde den ønskede omregning.
             </p>
           </div>
         </div>

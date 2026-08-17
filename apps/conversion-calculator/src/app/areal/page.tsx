@@ -11,13 +11,6 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: [
-    "areal omregner",
-    "konverter areal",
-    "hektar til m2",
-    "m2 til hektar",
-    "omregn areal",
-  ],
   alternates: {
     canonical: "/areal",
   },
@@ -64,7 +57,7 @@ export default function ArealPage() {
             <h1 className="mb-2.5 text-balance break-words text-[32px] leading-[1.1] font-extrabold sm:text-[44px]">
               Areal Omregner
             </h1>
-            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
+            <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
               Med vores areal omregner konverterer du nemt mellem hektar og
               kvadratmeter.
             </p>
@@ -82,7 +75,7 @@ export default function ArealPage() {
               </Link>
             </h2>
             <p className="text-sm text-muted-foreground">
-              Omregn hektar til kvadratmeter med det samme.
+              Omregn hektar til kvadratmeter hurtigt og nemt.
             </p>
           </div>
           <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
@@ -95,7 +88,7 @@ export default function ArealPage() {
               </Link>
             </h2>
             <p className="text-sm text-muted-foreground">
-              Omregn kvadratmeter til hektar med det samme.
+              Omregn kvadratmeter til hektar hurtigt og nemt.
             </p>
           </div>
           <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
@@ -108,7 +101,7 @@ export default function ArealPage() {
               </Link>
             </h2>
             <p className="text-sm text-muted-foreground">
-              Omregn hektar til kvadratkilometer med det samme.
+              Omregn hektar til kvadratkilometer hurtigt og nemt.
             </p>
           </div>
           <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
@@ -121,7 +114,7 @@ export default function ArealPage() {
               </Link>
             </h2>
             <p className="text-sm text-muted-foreground">
-              Omregn hektar til tønder land med det samme.
+              Omregn hektar til tønder land hurtigt og nemt.
             </p>
           </div>
           <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
@@ -134,7 +127,7 @@ export default function ArealPage() {
               </Link>
             </h2>
             <p className="text-sm text-muted-foreground">
-              Omregn kvadratkilometer til hektar med det samme.
+              Omregn kvadratkilometer til hektar hurtigt og nemt.
             </p>
           </div>
           <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
@@ -147,7 +140,7 @@ export default function ArealPage() {
               </Link>
             </h2>
             <p className="text-sm text-muted-foreground">
-              Omregn tønder land til hektar med det samme.
+              Omregn tønder land til hektar hurtigt og nemt.
             </p>
           </div>
         </div>
