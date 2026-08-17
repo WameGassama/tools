@@ -1,7 +1,10 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
+import Script from "next/script"
 import "./globals.css"
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google"
+import { GoogleTagManager } from "@next/third-parties/google"
+
+import { CookieConsent } from "@/src/components/site/cookie-consent"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -45,7 +48,29 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`h-full font-sans antialiased ${inter.variable}`}
     >
       <GoogleTagManager gtmId="GTM-P3W287ZX" />
-      <body className="flex min-h-full flex-col bg-muted">{children}</body>
+      <body className="flex min-h-full flex-col bg-muted">
+        {children}
+        <CookieConsent />
+        <Script id="consent-default" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            var storedConsent = null;
+            var match = document.cookie.match(/(?:^|; )gennemsnitsberegner-cookie-consent=([^;]*)/);
+            if (match) {
+              storedConsent = decodeURIComponent(match[1]);
+            }
+            var initialState = storedConsent === 'accepted' ? 'granted' : 'denied';
+            gtag('consent', 'default', {
+              'ad_storage': initialState,
+              'ad_user_data': initialState,
+              'ad_personalization': initialState,
+              'analytics_storage': initialState,
+              'wait_for_update': 500
+            });
+          `}
+        </Script>
+      </body>
     </html>
   )
 }
