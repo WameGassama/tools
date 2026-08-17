@@ -1,7 +1,5 @@
-import { Input } from "@workspace/ui/components/input"
-import { Search } from "@workspace/ui/icons"
-
 import { CategorySection } from "@/src/components/site/category-section"
+import { ConverterSearchBox } from "@/src/components/site/converter-search-box"
 import { CATEGORIES } from "@/src/lib/converters"
 
 export function ConverterDirectory() {
@@ -35,18 +33,7 @@ export function ConverterDirectory() {
             og meget mere er på vej.
           </p>
 
-          <div className="relative">
-            <Search
-              className="pointer-events-none absolute top-1/2 left-3.5 h-5 w-5 -translate-y-1/2 text-muted-foreground"
-              aria-hidden="true"
-            />
-            <Input
-              type="search"
-              placeholder="Søg efter en omregner, fx “vægt” eller “meter”…"
-              className="h-14 border-0 bg-background pl-11 text-base text-foreground shadow-xl ring-1 ring-black/5"
-              aria-label="Søg efter omregner"
-            />
-          </div>
+          <ConverterSearchBox />
         </div>
       </div>
 
