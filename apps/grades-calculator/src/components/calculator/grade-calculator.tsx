@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { Trash2 } from "lucide-react"
 
 import { Button } from "@workspace/ui/components/button"
 import { Card, CardContent } from "@workspace/ui/components/card"
@@ -21,7 +20,7 @@ import {
   calculateWeightedAverage,
   type GradeRow,
 } from "@/src/lib/grades"
-import { Add, RotateRight, Trash } from "@workspace/ui/icons"
+import { Add, DocumentCopy, RotateRight, Trash } from "@workspace/ui/icons"
 
 const EMPTY_ROW: GradeRow = { fag: "", karakter: "7", ects: "" }
 
@@ -38,6 +37,9 @@ export function GradeCalculator({ initialRows }: GradeCalculatorProps) {
     initialRows && initialRows.length > 0 ? initialRows : [EMPTY_ROW]
   )
   const [calculated, setCalculated] = useState(false)
+  const [karakterMode, setKarakterMode] = useState<"dropdown" | "text">(
+    "dropdown"
+  )
 
   function updateRow<K extends keyof GradeRow>(
     index: number,
@@ -71,49 +73,89 @@ export function GradeCalculator({ initialRows }: GradeCalculatorProps) {
     setCalculated(false)
   }
 
+  function duplicateRow(index: number) {
+    setRows((prev) => {
+      const next = [...prev]
+      next.splice(index + 1, 0, { ...prev[index] })
+      persistRows(next)
+      return next
+    })
+    setCalculated(false)
+  }
+
   const { average, fagCount, ectsSum } = calculateWeightedAverage(rows)
 
   return (
     <>
       <Card className="p-4 sm:p-6">
         <CardContent className="p-0">
-          <div className="mb-2.5 grid grid-cols-[1fr_58px_46px_36px] gap-1.5 text-xs font-semibold tracking-wide text-muted-foreground uppercase sm:grid-cols-[1fr_104px_88px_40px] sm:gap-2.5">
+          <div className="mb-2.5 grid grid-cols-[1fr_90px_46px_36px_36px] items-center gap-1.5 text-xs font-semibold tracking-wide text-muted-foreground uppercase sm:grid-cols-[1fr_112px_88px_40px_40px] sm:gap-2.5">
             <span>Fag</span>
-            <span>Karakter</span>
+            <Select
+              value={karakterMode}
+              onValueChange={(value) => {
+                if (value) setKarakterMode(value as "dropdown" | "text")
+              }}
+            >
+              <SelectTrigger
+                size="sm"
+                className="w-fit gap-0.5 border-none bg-transparent p-0 text-xs font-semibold tracking-wide text-muted-foreground uppercase hover:text-foreground [&_svg]:size-3"
+              >
+                <SelectValue>{() => "Karakter"}</SelectValue>
+              </SelectTrigger>
+              <SelectContent align="start">
+                <SelectGroup>
+                  <SelectItem value="dropdown">Dropdown</SelectItem>
+                  <SelectItem value="text">Fritekst</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
             <span>ECTS</span>
+            <span />
             <span />
           </div>
 
           {rows.map((row, index) => (
             <div
               key={index}
-              className="mb-2.5 grid grid-cols-[1fr_58px_46px_36px] items-center gap-1.5 sm:grid-cols-[1fr_104px_88px_40px] sm:gap-2.5"
+              className="mb-2.5 grid grid-cols-[1fr_90px_46px_36px_36px] items-center gap-1.5 sm:grid-cols-[1fr_112px_88px_40px_40px] sm:gap-2.5"
             >
               <Input
                 className="h-10 bg-muted/60 sm:h-12"
                 value={row.fag}
                 onChange={(e) => updateRow(index, "fag", e.target.value)}
-                placeholder="Kursus"
+                placeholder="fx. Mikroøkonomi"
               />
-              <Select
-                value={row.karakter}
-                onValueChange={(value) => {
-                  if (value) updateRow(index, "karakter", value)
-                }}
-              >
-                <SelectTrigger className="h-10 w-full bg-muted/60 sm:h-12">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    {GRADE_OPTIONS.map((grade) => (
-                      <SelectItem key={grade} value={grade}>
-                        {grade}
-                      </SelectItem>
-                    ))}
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
+              {karakterMode === "dropdown" ? (
+                <Select
+                  value={row.karakter}
+                  onValueChange={(value) => {
+                    if (value) updateRow(index, "karakter", value)
+                  }}
+                >
+                  <SelectTrigger className="h-10 w-full bg-muted/60 sm:h-12">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectGroup>
+                      {GRADE_OPTIONS.map((grade) => (
+                        <SelectItem key={grade} value={grade}>
+                          {grade}
+                        </SelectItem>
+                      ))}
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+              ) : (
+                <Input
+                  className="h-10 bg-muted/60 text-center sm:h-12"
+                  type="number"
+                  step="any"
+                  value={row.karakter}
+                  onChange={(e) => updateRow(index, "karakter", e.target.value)}
+                  placeholder="7"
+                />
+              )}
               <Input
                 className="h-10 bg-muted/60 sm:h-12"
                 type="number"
@@ -124,6 +166,15 @@ export function GradeCalculator({ initialRows }: GradeCalculatorProps) {
               />
               <Button
                 variant="ghost"
+                size="icon-lg"
+                aria-label="Kopiér fag"
+                onClick={() => duplicateRow(index)}
+              >
+                <DocumentCopy />
+              </Button>
+              <Button
+                variant="ghost"
+                className={"hover:bg-destructive/10 hover:text-destructive"}
                 size="icon-lg"
                 aria-label="Fjern fag"
                 disabled={rows.length <= 1}

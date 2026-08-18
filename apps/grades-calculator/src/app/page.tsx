@@ -1,26 +1,15 @@
 import { cookies } from "next/headers"
 
 import { GradeCalculator } from "@/src/components/calculator/grade-calculator"
-import { Faq, FAQ_ITEMS } from "@/src/components/site/faq"
+import { EctsForklaretSection } from "@/src/components/site/ects-forklaret-section"
+import { GennemsnitUddannelserSection } from "@/src/components/site/gennemsnit-uddannelser-section"
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
 import { TopBanner } from "@/src/components/site/top-banner"
+import { VaegtetGennemsnitHowTo } from "@/src/components/site/vaegtet-gennemsnit-howto"
 import { GRADES_COOKIE_NAME, type GradeRow } from "@/src/lib/grades"
 
 const SITE_URL = "https://www.gennemsnitsberegner.dk"
-
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: FAQ_ITEMS.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
-  })),
-}
 
 const appJsonLd = {
   "@context": "https://schema.org",
@@ -59,10 +48,6 @@ export default async function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(appJsonLd) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
 
       <NavBar />
       {/* <TopBanner /> */}
@@ -83,7 +68,9 @@ export default async function Home() {
         <GradeCalculator initialRows={initialRows} />
       </section>
 
-      <Faq />
+      <VaegtetGennemsnitHowTo />
+      <EctsForklaretSection />
+      <GennemsnitUddannelserSection />
       <SiteFooter />
     </div>
   )

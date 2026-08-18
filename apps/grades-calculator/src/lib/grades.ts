@@ -18,13 +18,20 @@ export const GRADE_NUMERIC_VALUES: Record<string, number> = {
   "12": 12,
 }
 
+function parseGradeValue(karakter: string): number | undefined {
+  const trimmed = karakter.trim()
+  if (trimmed in GRADE_NUMERIC_VALUES) return GRADE_NUMERIC_VALUES[trimmed]
+  const parsed = parseFloat(trimmed)
+  return Number.isNaN(parsed) ? undefined : parsed
+}
+
 export function calculateWeightedAverage(rows: GradeRow[]) {
   let ectsSum = 0
   let weighted = 0
 
   for (const row of rows) {
     const ects = parseFloat(row.ects) || 0
-    const grade = GRADE_NUMERIC_VALUES[row.karakter]
+    const grade = parseGradeValue(row.karakter)
     if (ects > 0 && grade !== undefined) {
       ectsSum += ects
       weighted += ects * grade
