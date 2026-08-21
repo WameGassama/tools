@@ -31,7 +31,7 @@ export default function Image() {
           Gennemsnitsberegner.dk
         </div>
         <div style={{ fontSize: 32, color: "#3f3f46", textAlign: "center" }}>
-          Beregn dit karaktergennemsnit — gratis og på få sekunder
+          Beregn dit karaktergennemsnit gratis og på få sekunder
         </div>
       </div>
     ),
