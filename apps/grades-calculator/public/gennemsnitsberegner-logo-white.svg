@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="337" height="30" viewBox="0 0 337 30">
+  <g id="gennemsnitsberegner-logo-5b-white" transform="translate(-18 -11)">
+    <g id="Group_25" data-name="Group 25" transform="translate(13 14)">
+      <circle id="Ellipse_14" data-name="Ellipse 14" cx="9" cy="9" r="9" transform="translate(5 9)" fill="#615fff" opacity="0.35"/>
+      <circle id="Ellipse_15" data-name="Ellipse 15" cx="9" cy="9" r="9" transform="translate(17 -3)" fill="#615fff" opacity="0.6"/>
+      <circle id="Ellipse_16" data-name="Ellipse 16" cx="9" cy="9" r="9" transform="translate(29 9)" fill="#615fff" opacity="0.35"/>
+      <circle id="Ellipse_17" data-name="Ellipse 17" cx="4" cy="4" r="4" transform="translate(22 10)" fill="#615fff"/>
+    </g>
+    <text id="gennemsnitsberegner.dk" transform="translate(70 32)" fill="#111827" font-size="24" font-family="Helvetica-Bold, Helvetica" font-weight="700"><tspan x="0" y="0">gennemsnitsberegner</tspan><tspan y="0" fill="#615fff">.dk</tspan></text>
+  </g>
+</svg>
