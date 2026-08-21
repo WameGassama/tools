@@ -1,15 +1,19 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, useRef, useState } from "react"
 import { X } from "lucide-react"
 
 import { Button } from "@workspace/ui/components/button"
+
+const SIZE_MESSAGE_TYPE = "gennemsnitsberegner:embed-size"
 
 interface EmbedFullscreenPreviewProps {
   open: boolean
   onOpenChange: (open: boolean) => void
   src: string
   title: string
+  attributionHref: string
+  initialHeight: number
 }
 
 export function EmbedFullscreenPreview({
@@ -17,7 +21,12 @@ export function EmbedFullscreenPreview({
   onOpenChange,
   src,
   title,
+  attributionHref,
+  initialHeight,
 }: EmbedFullscreenPreviewProps) {
+  const iframeRef = useRef<HTMLIFrameElement>(null)
+  const [height, setHeight] = useState(initialHeight)
+
   useEffect(() => {
     if (!open) return
 
@@ -27,6 +36,20 @@ export function EmbedFullscreenPreview({
     window.addEventListener("keydown", handleKeydown)
     return () => window.removeEventListener("keydown", handleKeydown)
   }, [open, onOpenChange])
+
+  useEffect(() => {
+    if (!open) return
+    setHeight(initialHeight)
+
+    function handleMessage(event: MessageEvent) {
+      if (!event.data || event.data.type !== SIZE_MESSAGE_TYPE) return
+      if (event.source !== iframeRef.current?.contentWindow) return
+      const nextHeight = Number(event.data.height)
+      if (nextHeight > 0) setHeight(nextHeight)
+    }
+    window.addEventListener("message", handleMessage)
+    return () => window.removeEventListener("message", handleMessage)
+  }, [open, initialHeight, src])
 
   if (!open) return null
 
@@ -46,7 +69,7 @@ export function EmbedFullscreenPreview({
       </div>
 
       <div className="flex-1 overflow-auto px-4 pb-6 sm:px-6">
-        <div className="mx-auto flex h-full max-w-3xl flex-col overflow-hidden rounded-2xl bg-background shadow-2xl ring-1 ring-black/5">
+        <div className="mx-auto flex max-h-full max-w-3xl flex-col overflow-hidden rounded-2xl bg-background shadow-2xl ring-1 ring-black/5">
           <div className="flex items-center gap-3 border-b bg-muted/60 px-3 py-2">
             <div className="flex gap-1.5" aria-hidden="true">
               <span className="size-2 rounded-full bg-muted-foreground/25" />
@@ -58,10 +81,23 @@ export function EmbedFullscreenPreview({
             </div>
           </div>
           <iframe
+            ref={iframeRef}
             src={src}
             title={`${title} – fuldskærmsforhåndsvisning`}
-            className="flex-1 border-0"
+            className="w-full border-0"
+            style={{ height }}
           />
+          <div className="bg-muted px-4 py-2.5 text-center text-xs text-muted-foreground">
+            Beregner leveret af{" "}
+            <a
+              href={attributionHref}
+              target="_blank"
+              rel="noopener"
+              className="underline underline-offset-2 hover:text-foreground"
+            >
+              Gennemsnitsberegner.dk
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 
 import { Button } from "@workspace/ui/components/button"
 import { Card, CardContent } from "@workspace/ui/components/card"
@@ -12,6 +12,7 @@ import { EMBED_CALCULATORS } from "@/src/lib/embed-calculators"
 
 const SITE_URL = "https://www.gennemsnitsberegner.dk"
 const DEFAULT_COLOR = "625fff"
+const SIZE_MESSAGE_TYPE = "gennemsnitsberegner:embed-size"
 
 const PRESET_COLORS = [
   "eab308",
@@ -62,7 +63,7 @@ function buildEmbedCode(
   // Denne linje ligger UDENFOR iframen, dvs. direkte i værtssidens egen HTML –
   // det er derfor et rigtigt, crawlbart link (ikke bare noget der vises inde i
   // vores egen iframe), som giver et reelt backlink til gennemsnitsberegner.dk.
-  const attribution = `<div style="margin-top:6px;font:12px/1.4 -apple-system,sans-serif;color:#71717a;text-align:center;">Beregner leveret af <a href="${SITE_URL}${pageHref}" target="_blank" rel="noopener">Gennemsnitsberegner.dk</a></div>`
+  const attribution = `<div style="background:#f5f5f5;border-radius:0 0 12px 12px;padding:10px 16px;font:12px/1.4 -apple-system,sans-serif;color:#71717a;text-align:center;">Beregner leveret af <a href="${SITE_URL}${pageHref}" target="_blank" rel="noopener">Gennemsnitsberegner.dk</a></div>`
   return `${iframe}\n${script}\n${attribution}`
 }
 
@@ -76,11 +77,27 @@ export function CalculatorEmbedPicker() {
   const [hexText, setHexText] = useState(DEFAULT_COLOR)
   const [debouncedColor, setDebouncedColor] = useState(DEFAULT_COLOR)
   const [fullscreenOpen, setFullscreenOpen] = useState(false)
+  const previewIframeRef = useRef<HTMLIFrameElement>(null)
+  const [previewHeight, setPreviewHeight] = useState(EMBED_CALCULATORS[0]!.initialHeight)
 
   useEffect(() => {
     const timer = setTimeout(() => setDebouncedColor(colorInput), 250)
     return () => clearTimeout(timer)
   }, [colorInput])
+
+  // Lytter på samme postMessage som det rigtige embed-script bruger, så
+  // forhåndsvisningen har den rigtige indholdshøjde – ikke en fast, for høj
+  // iframe med tomt fyld under beregneren.
+  useEffect(() => {
+    function handleMessage(event: MessageEvent) {
+      if (!event.data || event.data.type !== SIZE_MESSAGE_TYPE) return
+      if (event.source !== previewIframeRef.current?.contentWindow) return
+      const height = Number(event.data.height)
+      if (height > 0) setPreviewHeight(height)
+    }
+    window.addEventListener("message", handleMessage)
+    return () => window.removeEventListener("message", handleMessage)
+  }, [])
 
   function setColor(value: string) {
     setColorInput(value)
@@ -119,7 +136,10 @@ export function CalculatorEmbedPicker() {
         {EMBED_CALCULATORS.map((c) => (
           <button
             key={c.slug}
-            onClick={() => setSlug(c.slug)}
+            onClick={() => {
+              setSlug(c.slug)
+              setPreviewHeight(c.initialHeight)
+            }}
             className={`rounded-full border px-3.5 py-1.5 text-sm font-medium transition-colors ${
               c.slug === slug
                 ? "border-primary bg-primary text-primary-foreground"
@@ -219,30 +239,40 @@ export function CalculatorEmbedPicker() {
               </Button>
             </div>
             <div className="flex-1 bg-muted/20 p-3">
-              <iframe
-                key={slug}
-                src={previewSrc}
-                title={`${calculator.title} – forhåndsvisning`}
-                className="h-[600px] w-full rounded-lg border bg-background"
-                loading="lazy"
-              />
+              <div className="overflow-hidden rounded-lg border bg-background">
+                <iframe
+                  ref={previewIframeRef}
+                  key={slug}
+                  src={previewSrc}
+                  title={`${calculator.title} – forhåndsvisning`}
+                  className="block w-full border-0 bg-background"
+                  style={{ height: previewHeight }}
+                  loading="lazy"
+                />
+                <div className="bg-muted px-4 py-2.5 text-center text-xs text-muted-foreground">
+                  Beregner leveret af{" "}
+                  <a
+                    href={`${SITE_URL}${calculator.pageHref}`}
+                    target="_blank"
+                    rel="noopener"
+                    className="underline underline-offset-2 hover:text-foreground"
+                  >
+                    Gennemsnitsberegner.dk
+                  </a>
+                </div>
+              </div>
             </div>
           </CardContent>
         </Card>
       </div>
-
-      <p className="mt-3 text-sm text-muted-foreground">
-        Indsæt koden hvor du vil have beregneren på din side. På WordPress:
-        brug en <strong className="text-foreground">Custom HTML</strong>
-        -blok. På Webflow: et <strong className="text-foreground">Embed</strong>
-        -element.
-      </p>
 
       <EmbedFullscreenPreview
         open={fullscreenOpen}
         onOpenChange={setFullscreenOpen}
         src={previewSrc}
         title={calculator.title}
+        attributionHref={`${SITE_URL}${calculator.pageHref}`}
+        initialHeight={calculator.initialHeight}
       />
     </div>
   )
