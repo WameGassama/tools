@@ -10,14 +10,14 @@ export function EctsForklaretSection() {
       <div className="mt-8 rounded-xl border bg-background p-6 sm:p-8">
         <p className="leading-relaxed text-foreground">
           Hvert fag på en videregående uddannelse har et ECTS-tal, der viser,
-          hvor meget arbejde faget fylder i din uddannelse – typisk mellem 5
+          hvor meget arbejde faget fylder i din uddannelse, typisk mellem 5
           og 30 ECTS-point. Et helt studieår svarer normalt til{" "}
           <strong>60 ECTS</strong>.
         </p>
         <p className="mt-4 leading-relaxed text-foreground">
           Når du beregner dit gennemsnit, bruges ECTS-point som{" "}
           <strong>vægt</strong>: et fag på 15 ECTS tæller tre gange så meget
-          som et fag på 5 ECTS. Resultatet – dit ECTS gennemsnit – bliver
+          som et fag på 5 ECTS. Resultatet (dit ECTS gennemsnit) bliver
           dermed mere retvisende end et simpelt gennemsnit, hvor du blot
           lægger karaktererne sammen og dividerer med antal fag.
         </p>

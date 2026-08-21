@@ -1,18 +1,22 @@
+import Link from "next/link"
+
 const EDUCATION_LEVELS = [
   {
     name: "Folkeskolen",
     description:
-      "Standpunkts- og afgangskarakterer gives på 7-trinsskalaen, men gennemsnittet vægtes ikke efter ECTS-point.",
+      "Afgangseksamenens 9 lovbundne prøver tæller lige meget – gennemsnittet er et simpelt gennemsnit rundet ned til nærmeste hele tal. Brug vores dedikerede folkeskole-beregner for det helt rigtige gennemsnit.",
   },
   {
-    name: "Gymnasiet (stx, hf, htx, hhx)",
+    name: "Gymnasiet (stx, hhx, htx, hf)",
     description:
-      "Dit eksamensgennemsnit tæller med i din adgangskvotient, men beregnes som et simpelt gennemsnit af dine karakterer – ikke et ECTS-vægtet gennemsnit.",
+      "Dit eksamensgennemsnit vægtes efter fagets niveau (A, B eller C), og har du mange fag på A-niveau, kan du få en bonus oveni.",
+    href: "/gennemsnit-gymnasium",
+    linkLabel: "Se vores oversigt over gennemsnit i gymnasiet",
   },
   {
     name: "Erhvervsuddannelser og eux",
     description:
-      "Karaktererne følger samme 7-trinsskala som gymnasiet og folkeskolen.",
+      "EUX's gymnasiale fag følger samme niveauvægtning og bonus-A-regel som gymnasiet. Brug vores dedikerede EUX-beregner for det helt rigtige gennemsnit.",
   },
   {
     name: "Universitet og andre videregående uddannelser",
@@ -39,17 +43,22 @@ export function GennemsnitUddannelserSection() {
             <div className="font-semibold">{level.name}</div>
             <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
               {level.description}
+              {level.href ? (
+                <>
+                  {" "}
+                  <Link
+                    href={level.href}
+                    className="underline underline-offset-2 hover:text-foreground"
+                  >
+                    {level.linkLabel}
+                  </Link>
+                  .
+                </>
+              ) : null}
             </p>
           </div>
         ))}
       </div>
-
-      <p className="mt-6 leading-relaxed text-muted-foreground">
-        Går du i gymnasiet eller folkeskolen og vil have et simpelt (uvægtet)
-        gennemsnit, kan du stadig bruge beregneren: skriv blot det samme
-        ECTS-tal – fx 1 – ud for hvert fag. Så vejer alle fag lige meget, og
-        du får dit almindelige gennemsnit.
-      </p>
     </section>
   )
 }

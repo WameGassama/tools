@@ -18,7 +18,8 @@ export const GRADE_NUMERIC_VALUES: Record<string, number> = {
   "12": 12,
 }
 
-function parseGradeValue(karakter: string): number | undefined {
+export function parseGradeValue(karakter: string | undefined): number | undefined {
+  if (typeof karakter !== "string") return undefined
   const trimmed = karakter.trim()
   if (trimmed in GRADE_NUMERIC_VALUES) return GRADE_NUMERIC_VALUES[trimmed]
   const parsed = parseFloat(trimmed)

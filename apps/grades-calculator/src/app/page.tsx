@@ -4,6 +4,7 @@ import { GradeCalculator } from "@/src/components/calculator/grade-calculator"
 import { EctsForklaretSection } from "@/src/components/site/ects-forklaret-section"
 import { GennemsnitUddannelserSection } from "@/src/components/site/gennemsnit-uddannelser-section"
 import { NavBar } from "@/src/components/site/nav-bar"
+import { RelatedCalculatorsSection } from "@/src/components/site/related-calculators-section"
 import { SiteFooter } from "@/src/components/site/site-footer"
 import { TopBanner } from "@/src/components/site/top-banner"
 import { VaegtetGennemsnitHowTo } from "@/src/components/site/vaegtet-gennemsnit-howto"
@@ -71,6 +72,7 @@ export default async function Home() {
       <VaegtetGennemsnitHowTo />
       <EctsForklaretSection />
       <GennemsnitUddannelserSection />
+      <RelatedCalculatorsSection currentSlug="ects" />
       <SiteFooter />
     </div>
   )
