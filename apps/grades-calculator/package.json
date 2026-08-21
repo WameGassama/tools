@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
+    "@next/env": "16.3.0",
     "@next/third-parties": "^16.3.0",
     "@svgr/webpack": "^8.1.0",
     "@workspace/ui": "workspace:*",
@@ -18,7 +19,9 @@
     "next": "16.3.0",
     "react": "19.2.8",
     "react-dom": "19.2.8",
-    "vanilla-cookieconsent": "^3.1.0"
+    "resend": "^6.21.0",
+    "vanilla-cookieconsent": "^3.1.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
