@@ -32,15 +32,15 @@ export default function PrivatlivspolitikPage() {
       <NavBar />
 
       <section className="mx-auto w-full max-w-3xl px-4 pt-10 pb-16 sm:px-6 sm:pt-16">
-        <h1 className="mb-2 text-balance text-[26px] leading-[1.15] font-extrabold sm:text-[38px]">
+        <h1 className="mb-2 text-balance break-words text-[21px] leading-[1.15] font-extrabold sm:text-[38px]">
           Privatlivspolitik
         </h1>
         <p className="mb-8 text-sm text-muted-foreground">Sidst opdateret 20. august 2026</p>
 
-        <div className="flex flex-col gap-8 rounded-xl border bg-background p-6 sm:p-8">
+        <div className="flex flex-col gap-8 rounded-xl border bg-background p-4 sm:p-8">
           <div>
             <h2 className="mb-2 text-lg font-bold">Kort fortalt</h2>
-            <p className="leading-relaxed text-muted-foreground">
+            <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
               Gennemsnitsberegner.dk kræver ingen oprettelse af bruger, og du skal ikke oplyse
               navn, e-mail eller andre personoplysninger for at bruge beregnerne. De fag og
               karakterer, du taster ind, gemmes kun lokalt i din browser, så du slipper for at
@@ -50,10 +50,10 @@ export default function PrivatlivspolitikPage() {
 
           <div>
             <h2 className="mb-2 text-lg font-bold">Cookies</h2>
-            <p className="leading-relaxed text-muted-foreground">
+            <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
               Vi bruger to typer cookies:
             </p>
-            <ul className="mt-3 flex flex-col gap-2 leading-relaxed text-muted-foreground">
+            <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <li>
                 <strong className="text-foreground">Nødvendige cookies</strong> husker de fag og
                 karakterer, du har indtastet, så de ikke forsvinder, hvis du lukker browseren.
@@ -70,7 +70,7 @@ export default function PrivatlivspolitikPage() {
 
           <div>
             <h2 className="mb-2 text-lg font-bold">Indlejrede beregnere</h2>
-            <p className="leading-relaxed text-muted-foreground">
+            <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
               Hvis du møder en af vores beregnere indlejret på en anden hjemmeside (via{" "}
               <Link href="/del-beregner" className="underline underline-offset-2 hover:text-foreground">
                 vores indlejringsfunktion
@@ -82,7 +82,7 @@ export default function PrivatlivspolitikPage() {
 
           <div>
             <h2 className="mb-2 text-lg font-bold">Dine rettigheder</h2>
-            <p className="leading-relaxed text-muted-foreground">
+            <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
               Da vi ikke indsamler eller opbevarer personoplysninger om dig, har vi som
               udgangspunkt ingen data at give indsigt i, rette eller slette. Har du alligevel
               spørgsmål til databehandlingen, eller mener du, at vi behandler oplysninger om dig
@@ -96,7 +96,7 @@ export default function PrivatlivspolitikPage() {
 
           <div>
             <h2 className="mb-2 text-lg font-bold">Ændringer</h2>
-            <p className="leading-relaxed text-muted-foreground">
+            <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
               Vi kan opdatere denne privatlivspolitik, hvis vi ændrer på, hvordan siden fungerer.
               Væsentlige ændringer vil fremgå af datoen øverst på siden.
             </p>

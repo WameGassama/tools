@@ -27,11 +27,11 @@ const EDUCATION_LEVELS = [
 
 export function GennemsnitUddannelserSection() {
   return (
-    <section className="mx-auto w-full max-w-3xl px-6 pt-8 pb-12 sm:pb-16">
-      <h2 className="text-[26px] font-extrabold">
+    <section className="mx-auto w-full max-w-3xl px-4 pt-8 pb-12 sm:px-6 sm:pb-16">
+      <h2 className="text-[22px] font-extrabold sm:text-[26px]">
         Karaktergennemsnit i folkeskolen, gymnasiet og på universitetet
       </h2>
-      <p className="mt-2 text-muted-foreground">
+      <p className="mt-2 text-sm text-muted-foreground sm:text-base">
         Uanset om du søger en karakter beregner til folkeskolen, gymnasiet
         eller universitetet, bruges den danske 7-trinsskala overalt – men
         gennemsnittet beregnes lidt forskelligt.
@@ -39,7 +39,7 @@ export function GennemsnitUddannelserSection() {
 
       <div className="mt-8 divide-y rounded-xl border bg-background">
         {EDUCATION_LEVELS.map((level) => (
-          <div key={level.name} className="p-6 sm:p-8">
+          <div key={level.name} className="p-4 sm:p-8">
             <div className="font-semibold">{level.name}</div>
             <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
               {level.description}

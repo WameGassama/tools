@@ -29,10 +29,12 @@ export function RelatedCalculatorsSection({ currentSlug }: { currentSlug: string
   const others = EMBED_CALCULATORS.filter((calculator) => calculator.slug !== currentSlug)
 
   return (
-    <section className="bg-indigo-950 px-6 py-12 sm:py-16">
+    <section className="bg-indigo-950 px-4 py-12 sm:px-6 sm:py-16">
       <div className="mx-auto w-full max-w-5xl">
-        <h2 className="text-[26px] font-extrabold text-white">Andre gennemsnitsberegnere</h2>
-        <p className="mt-2 text-indigo-200/70">
+        <h2 className="text-[22px] font-extrabold text-white sm:text-[26px]">
+          Andre gennemsnitsberegnere
+        </h2>
+        <p className="mt-2 text-sm text-indigo-200/70 sm:text-base">
           Skal du bruge en beregner til en anden uddannelse? Vi har dedikerede beregnere til
           alle niveauer.
         </p>

@@ -89,7 +89,29 @@ export function GradeCalculator({ initialRows }: GradeCalculatorProps) {
     <>
       <Card className="p-4 sm:p-6">
         <CardContent className="p-0">
-          <div className="mb-2.5 grid grid-cols-[1fr_90px_46px_36px_36px] items-center gap-1.5 text-xs font-semibold tracking-wide text-muted-foreground uppercase sm:grid-cols-[1fr_112px_88px_40px_40px] sm:gap-2.5">
+          <div className="mb-2.5 flex items-center justify-end sm:hidden">
+            <Select
+              value={karakterMode}
+              onValueChange={(value) => {
+                if (value) setKarakterMode(value as "dropdown" | "text")
+              }}
+            >
+              <SelectTrigger
+                size="sm"
+                className="w-fit gap-0.5 border-none bg-transparent p-0 text-xs font-semibold tracking-wide text-muted-foreground uppercase hover:text-foreground [&_svg]:size-3"
+              >
+                <SelectValue>{() => "Karakter"}</SelectValue>
+              </SelectTrigger>
+              <SelectContent align="end">
+                <SelectGroup>
+                  <SelectItem value="dropdown">Dropdown</SelectItem>
+                  <SelectItem value="text">Fritekst</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div className="hidden items-center gap-2.5 text-xs font-semibold tracking-wide text-muted-foreground uppercase sm:mb-2.5 sm:grid sm:grid-cols-[1fr_112px_88px_40px_40px]">
             <span>Fag</span>
             <Select
               value={karakterMode}
@@ -118,70 +140,88 @@ export function GradeCalculator({ initialRows }: GradeCalculatorProps) {
           {rows.map((row, index) => (
             <div
               key={index}
-              className="mb-2.5 grid grid-cols-[1fr_90px_46px_36px_36px] items-center gap-1.5 sm:grid-cols-[1fr_112px_88px_40px_40px] sm:gap-2.5"
+              className="mb-2.5 rounded-xl bg-muted/40 p-3 sm:grid sm:grid-cols-[1fr_112px_88px_40px_40px] sm:items-center sm:gap-2.5 sm:rounded-none sm:bg-transparent sm:p-0"
             >
               <Input
-                className="h-10 bg-muted/60 sm:h-12"
+                className="h-10 bg-background sm:h-12 sm:bg-muted/60"
                 value={row.fag}
                 onChange={(e) => updateRow(index, "fag", e.target.value)}
                 placeholder="fx. Mikroøkonomi"
               />
-              {karakterMode === "dropdown" ? (
-                <Select
-                  value={row.karakter}
-                  onValueChange={(value) => {
-                    if (value) updateRow(index, "karakter", value)
-                  }}
-                >
-                  <SelectTrigger className="h-10 w-full bg-muted/60 sm:h-12">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      {GRADE_OPTIONS.map((grade) => (
-                        <SelectItem key={grade} value={grade}>
-                          {grade}
-                        </SelectItem>
-                      ))}
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-              ) : (
-                <Input
-                  className="h-10 bg-muted/60 text-center sm:h-12"
-                  type="number"
-                  step="any"
-                  value={row.karakter}
-                  onChange={(e) => updateRow(index, "karakter", e.target.value)}
-                  placeholder="7"
-                />
-              )}
-              <Input
-                className="h-10 bg-muted/60 sm:h-12"
-                type="number"
-                min={0}
-                value={row.ects}
-                onChange={(e) => updateRow(index, "ects", e.target.value)}
-                placeholder="10"
-              />
-              <Button
-                variant="ghost"
-                size="icon-lg"
-                aria-label="Kopiér fag"
-                onClick={() => duplicateRow(index)}
-              >
-                <DocumentCopy />
-              </Button>
-              <Button
-                variant="ghost"
-                className={"hover:bg-destructive/10 hover:text-destructive"}
-                size="icon-lg"
-                aria-label="Fjern fag"
-                disabled={rows.length <= 1}
-                onClick={() => removeRow(index)}
-              >
-                <Trash />
-              </Button>
+
+              <div className="mt-2 grid grid-cols-[1fr_1fr_auto] items-end gap-2 sm:contents">
+                <div className="flex flex-col gap-1 sm:contents">
+                  <span className="text-[10px] font-semibold tracking-wide text-muted-foreground uppercase sm:hidden">
+                    Karakter
+                  </span>
+                  {karakterMode === "dropdown" ? (
+                    <Select
+                      value={row.karakter}
+                      onValueChange={(value) => {
+                        if (value) updateRow(index, "karakter", value)
+                      }}
+                    >
+                      <SelectTrigger className="w-full bg-background data-[size=default]:h-10 sm:bg-muted/60 sm:data-[size=default]:h-12">
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectGroup>
+                          {GRADE_OPTIONS.map((grade) => (
+                            <SelectItem key={grade} value={grade}>
+                              {grade}
+                            </SelectItem>
+                          ))}
+                        </SelectGroup>
+                      </SelectContent>
+                    </Select>
+                  ) : (
+                    <Input
+                      className="h-10 bg-background text-center sm:h-12 sm:bg-muted/60"
+                      type="number"
+                      step="any"
+                      value={row.karakter}
+                      onChange={(e) =>
+                        updateRow(index, "karakter", e.target.value)
+                      }
+                      placeholder="7"
+                    />
+                  )}
+                </div>
+                <div className="flex flex-col gap-1 sm:contents">
+                  <span className="text-[10px] font-semibold tracking-wide text-muted-foreground uppercase sm:hidden">
+                    ECTS
+                  </span>
+                  <Input
+                    className="h-10 bg-background sm:h-12 sm:bg-muted/60"
+                    type="number"
+                    min={0}
+                    value={row.ects}
+                    onChange={(e) => updateRow(index, "ects", e.target.value)}
+                    placeholder="10"
+                  />
+                </div>
+
+                <div className="flex items-center gap-1 sm:contents">
+                  <Button
+                    variant="ghost"
+                    size="icon-lg"
+                    aria-label="Kopiér fag"
+                    onClick={() => duplicateRow(index)}
+                  >
+                    <DocumentCopy />
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    className={"hover:bg-destructive/10 hover:text-destructive"}
+                    size="icon-lg"
+                    aria-label="Fjern fag"
+                    disabled={rows.length <= 1}
+                    onClick={() => removeRow(index)}
+                  >
+                    <Trash />
+                  </Button>
+                </div>
+              </div>
             </div>
           ))}
 

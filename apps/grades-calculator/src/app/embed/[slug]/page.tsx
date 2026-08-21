@@ -26,8 +26,6 @@ import {
 import { DEFAULT_HTX_ROWS, HTX_ROWS_COOKIE_NAME, HTX_SUBJECT_LABELS, HTX_SUBJECT_OPTIONS } from "@/src/lib/htx"
 import { DEFAULT_STX_ROWS, STX_ROWS_COOKIE_NAME, STX_SUBJECT_LABELS, STX_SUBJECT_OPTIONS } from "@/src/lib/stx"
 
-const SITE_URL = "https://www.gennemsnitsberegner.dk"
-
 export function generateStaticParams() {
   return EMBED_CALCULATORS.map((calculator) => ({ slug: calculator.slug }))
 }
@@ -149,17 +147,6 @@ export default async function EmbedPage({
   return (
     <EmbedFrame color={safeColor}>
       {content}
-      <div className="mt-3 text-center text-xs text-muted-foreground">
-        Drevet af{" "}
-        <a
-          href={SITE_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline underline-offset-2 hover:text-foreground"
-        >
-          gennemsnitsberegner.dk
-        </a>
-      </div>
     </EmbedFrame>
   )
 }

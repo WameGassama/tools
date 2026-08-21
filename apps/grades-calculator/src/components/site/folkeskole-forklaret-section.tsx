@@ -14,17 +14,17 @@ const PROEVE_ROWS = [
 
 export function FolkeskoleForklaretSection() {
   return (
-    <section className="mx-auto w-full max-w-3xl px-6 pt-8 pb-12 sm:pb-16">
-      <h2 className="text-[26px] font-extrabold">
+    <section className="mx-auto w-full max-w-3xl px-4 pt-8 pb-12 sm:px-6 sm:pb-16">
+      <h2 className="text-[22px] font-extrabold sm:text-[26px]">
         Sådan beregnes dit folkeskole karaktergennemsnit
       </h2>
-      <p className="mt-2 text-muted-foreground">
+      <p className="mt-2 text-sm text-muted-foreground sm:text-base">
         I modsætning til de gymnasiale uddannelser har folkeskolens
         afgangseksamen (FP9) hverken niveauer, vægte eller bonus-A. Dit
         gennemsnit er et simpelt gennemsnit af dine 9 lovbundne prøver.
       </p>
 
-      <div className="mt-8 rounded-xl border bg-background p-6 sm:p-8">
+      <div className="mt-8 rounded-xl border bg-background p-4 sm:p-8">
         <div className="text-sm font-semibold">De 9 lovbundne prøver</div>
         <div className="mt-3 divide-y rounded-lg border">
           {PROEVE_ROWS.map((row) => (
@@ -49,7 +49,7 @@ export function FolkeskoleForklaretSection() {
           </p>
 
           <div className="mt-4 text-sm font-semibold">Eksempel</div>
-          <p className="mt-2 leading-relaxed text-muted-foreground">
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
             Har du fx karaktererne 7, 4 og 10 i tre prøver, giver det
             (7 + 4 + 10) ÷ 3 = 7,0 i gennemsnit, hvilket rundes ned til{" "}
             <strong className="text-foreground">7</strong>. Havde

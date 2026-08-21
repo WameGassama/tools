@@ -1,20 +1,20 @@
 export function EctsForklaretSection() {
   return (
-    <section className="mx-auto w-full max-w-3xl px-6 pt-8 pb-12 sm:pb-16">
-      <h2 className="text-[26px] font-extrabold">Hvad er ECTS-point?</h2>
-      <p className="mt-2 text-muted-foreground">
+    <section className="mx-auto w-full max-w-3xl px-4 pt-8 pb-12 sm:px-6 sm:pb-16">
+      <h2 className="text-[22px] font-extrabold sm:text-[26px]">Hvad er ECTS-point?</h2>
+      <p className="mt-2 text-sm text-muted-foreground sm:text-base">
         ECTS står for European Credit Transfer System og er det, en ECTS
         beregner bruger til at vægte dine karakterer.
       </p>
 
-      <div className="mt-8 rounded-xl border bg-background p-6 sm:p-8">
-        <p className="leading-relaxed text-foreground">
+      <div className="mt-8 rounded-xl border bg-background p-4 sm:p-8">
+        <p className="text-sm leading-relaxed text-foreground sm:text-base">
           Hvert fag på en videregående uddannelse har et ECTS-tal, der viser,
           hvor meget arbejde faget fylder i din uddannelse, typisk mellem 5
           og 30 ECTS-point. Et helt studieår svarer normalt til{" "}
           <strong>60 ECTS</strong>.
         </p>
-        <p className="mt-4 leading-relaxed text-foreground">
+        <p className="mt-4 text-sm leading-relaxed text-foreground sm:text-base">
           Når du beregner dit gennemsnit, bruges ECTS-point som{" "}
           <strong>vægt</strong>: et fag på 15 ECTS tæller tre gange så meget
           som et fag på 5 ECTS. Resultatet (dit ECTS gennemsnit) bliver

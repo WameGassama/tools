@@ -20,17 +20,17 @@ const BONUS_ROWS = [
 
 export function Hf2AarigtVaegtningForklaretSection() {
   return (
-    <section className="mx-auto w-full max-w-3xl px-6 pt-8 pb-12 sm:pb-16">
-      <h2 className="text-[26px] font-extrabold">
+    <section className="mx-auto w-full max-w-3xl px-4 pt-8 pb-12 sm:px-6 sm:pb-16">
+      <h2 className="text-[22px] font-extrabold sm:text-[26px]">
         Sådan beregnes dit HF gennemsnit
       </h2>
-      <p className="mt-2 text-muted-foreground">
+      <p className="mt-2 text-sm text-muted-foreground sm:text-base">
         På 2-årigt HF er Dansk A dit eneste obligatoriske A-niveau-fag, så
         bonussen for A-niveau-fag udløses tidligere end på STX, HHX og HTX,
         allerede ved dit 2. A-fag.
       </p>
 
-      <div className="mt-8 rounded-xl border bg-background p-6 sm:p-8">
+      <div className="mt-8 rounded-xl border bg-background p-4 sm:p-8">
         <div className="text-sm font-semibold">Vægt per niveau</div>
         <div className="mt-3 divide-y rounded-lg border">
           {NIVEAU_ROWS.map((row) => (
@@ -106,7 +106,7 @@ export function Hf2AarigtVaegtningForklaretSection() {
           </p>
 
           <div className="mt-4 text-sm font-semibold">Eksempel</div>
-          <p className="mt-2 leading-relaxed text-muted-foreground">
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
             Dansk A (karakter 7), Engelsk B (karakter 4) og Matematik C
             (karakter 10) giver
             (7 × 2 + 4 × 1,5 + 10 × 1) ÷ (2 + 1,5 + 1) ={" "}

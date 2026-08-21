@@ -43,7 +43,7 @@ export function NavBar() {
           src={"/gennemsnitsberegner-logo-white.svg"}
           width={333}
           height={30}
-          className="h-6 w-auto sm:h-7"
+          className="h-5 w-auto sm:h-7"
           alt="Gennemsnitsberegner.dk"
         />
       </Link>

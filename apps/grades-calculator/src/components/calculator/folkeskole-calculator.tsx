@@ -130,7 +130,7 @@ export function FolkeskoleCalculator({
           {rows.map((row, index) => (
             <div
               key={row.key}
-              className="mb-2.5 flex items-center gap-2 rounded-xl border bg-muted/40 p-3 sm:p-4"
+              className="mb-2.5 flex flex-col gap-2 rounded-xl border bg-muted/40 p-3 sm:flex-row sm:items-center sm:p-4"
             >
               <div className="flex-1">
                 {row.custom ? (
@@ -149,48 +149,50 @@ export function FolkeskoleCalculator({
                   </>
                 )}
               </div>
-              {karakterMode === "dropdown" ? (
-                <Select
-                  value={row.grade}
-                  onValueChange={(value) => {
-                    if (value !== null) updateGrade(index, value)
-                  }}
+              <div className="flex items-center gap-2">
+                {karakterMode === "dropdown" ? (
+                  <Select
+                    value={row.grade}
+                    onValueChange={(value) => {
+                      if (value !== null) updateGrade(index, value)
+                    }}
+                  >
+                    <SelectTrigger className="w-24 bg-background data-[size=default]:h-10 sm:data-[size=default]:h-11">
+                      <SelectValue>
+                        {(value: string | null) => value || "–"}
+                      </SelectValue>
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        {KARAKTER_SELECT_VALUES.map((grade) => (
+                          <SelectItem key={grade || "empty"} value={grade}>
+                            {grade || "–"}
+                          </SelectItem>
+                        ))}
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+                ) : (
+                  <Input
+                    className="h-10 w-24 bg-background text-center sm:h-11"
+                    type="number"
+                    step="any"
+                    value={row.grade}
+                    onChange={(e) => updateGrade(index, e.target.value)}
+                    placeholder="–"
+                  />
+                )}
+                <Button
+                  variant="ghost"
+                  className="hover:bg-destructive/10 hover:text-destructive"
+                  size="icon-lg"
+                  aria-label="Fjern fag"
+                  disabled={rows.length <= 1}
+                  onClick={() => removeRow(index)}
                 >
-                  <SelectTrigger className="h-10 w-24 bg-background sm:h-11">
-                    <SelectValue>
-                      {(value: string | null) => value || "–"}
-                    </SelectValue>
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      {KARAKTER_SELECT_VALUES.map((grade) => (
-                        <SelectItem key={grade || "empty"} value={grade}>
-                          {grade || "–"}
-                        </SelectItem>
-                      ))}
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-              ) : (
-                <Input
-                  className="h-10 w-24 bg-background text-center sm:h-11"
-                  type="number"
-                  step="any"
-                  value={row.grade}
-                  onChange={(e) => updateGrade(index, e.target.value)}
-                  placeholder="–"
-                />
-              )}
-              <Button
-                variant="ghost"
-                className="hover:bg-destructive/10 hover:text-destructive"
-                size="icon-lg"
-                aria-label="Fjern fag"
-                disabled={rows.length <= 1}
-                onClick={() => removeRow(index)}
-              >
-                <Trash />
-              </Button>
+                  <Trash />
+                </Button>
+              </div>
             </div>
           ))}
 

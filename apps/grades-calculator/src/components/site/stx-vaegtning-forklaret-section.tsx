@@ -18,17 +18,17 @@ const BONUS_ROWS = [
 
 export function StxVaegtningForklaretSection() {
   return (
-    <section className="mx-auto w-full max-w-3xl px-6 pt-8 pb-12 sm:pb-16">
-      <h2 className="text-[26px] font-extrabold">
+    <section className="mx-auto w-full max-w-3xl px-4 pt-8 pb-12 sm:px-6 sm:pb-16">
+      <h2 className="text-[22px] font-extrabold sm:text-[26px]">
         Sådan beregnes dit STX snit
       </h2>
-      <p className="mt-2 text-muted-foreground">
+      <p className="mt-2 text-sm text-muted-foreground sm:text-base">
         I modsætning til et simpelt gennemsnit vægtes dine karakterer på
         STX&apos;s eksamensbevis efter fagets niveau. Har du mange fag på
         A-niveau, kan du få et tillæg til dit STX snit.
       </p>
 
-      <div className="mt-8 rounded-xl border bg-background p-6 sm:p-8">
+      <div className="mt-8 rounded-xl border bg-background p-4 sm:p-8">
         <div className="text-sm font-semibold">Vægt per niveau</div>
         <div className="mt-3 divide-y rounded-lg border">
           {NIVEAU_ROWS.map((row) => (
@@ -101,7 +101,7 @@ export function StxVaegtningForklaretSection() {
           </p>
 
           <div className="mt-4 text-sm font-semibold">Eksempel</div>
-          <p className="mt-2 leading-relaxed text-muted-foreground">
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
             Dansk A (karakter 7), Matematik A (karakter 10) og Engelsk B
             (karakter 4) giver
             (7 × 2 + 10 × 2 + 4 × 1,5) ÷ (2 + 2 + 1,5) ={" "}

@@ -180,7 +180,7 @@ export function CalculatorEmbedPicker() {
       <div className="grid gap-6 lg:grid-cols-2">
         <Card className="overflow-hidden p-0">
           <CardContent className="p-0">
-            <div className="flex items-center justify-between border-b bg-muted/40 px-4 py-3">
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b bg-muted/40 px-4 py-3">
               <div className="flex items-center gap-3">
                 <div className="flex gap-1.5" aria-hidden="true">
                   <span className="size-2 rounded-full bg-muted-foreground/25" />

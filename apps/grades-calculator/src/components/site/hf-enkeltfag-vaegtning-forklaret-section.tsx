@@ -15,11 +15,11 @@ const FIXED_WEIGHT_ROWS = [
 
 export function HfEnkeltfagVaegtningForklaretSection() {
   return (
-    <section className="mx-auto w-full max-w-3xl px-6 pt-8 pb-12 sm:pb-16">
-      <h2 className="text-[26px] font-extrabold">
+    <section className="mx-auto w-full max-w-3xl px-4 pt-8 pb-12 sm:px-6 sm:pb-16">
+      <h2 className="text-[22px] font-extrabold sm:text-[26px]">
         Sådan beregnes dit HF enkeltfag gennemsnit
       </h2>
-      <p className="mt-2 text-muted-foreground">
+      <p className="mt-2 text-sm text-muted-foreground sm:text-base">
         Når du tager HF som enkeltfag, får du ikke en løbende
         standpunktskarakter som på en fuld ungdomsuddannelse – hvert fag er
         en selvstændig eksamen, og kun den opnåede eksamenskarakter (mundtlig
@@ -28,7 +28,7 @@ export function HfEnkeltfagVaegtningForklaretSection() {
         ingen bonus-A-ordning for HF taget som enkeltfag.
       </p>
 
-      <div className="mt-8 rounded-xl border bg-background p-6 sm:p-8">
+      <div className="mt-8 rounded-xl border bg-background p-4 sm:p-8">
         <div className="text-sm font-semibold">Vægt per niveau</div>
         <div className="mt-3 divide-y rounded-lg border">
           {NIVEAU_ROWS.map((row) => (
@@ -85,7 +85,7 @@ export function HfEnkeltfagVaegtningForklaretSection() {
           </p>
 
           <div className="mt-4 text-sm font-semibold">Eksempel</div>
-          <p className="mt-2 leading-relaxed text-muted-foreground">
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
             Dansk A (karakter 7), Eksamensprojekt (karakter 10, fast vægt
             1,5) og Historie B (karakter 4) giver
             (7 × 2 + 10 × 1,5 + 4 × 1,5) ÷ (2 + 1,5 + 1,5) ={" "}

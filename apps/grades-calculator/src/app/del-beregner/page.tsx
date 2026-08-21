@@ -203,11 +203,11 @@ export default function DelBeregnerPage() {
             <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium text-white/80">
               Gratis · uden tilmelding · responsiv
             </div>
-            <h1 className="mb-3 max-w-2xl text-balance text-[32px] leading-[1.1] font-extrabold text-white sm:text-[44px]">
+            <h1 className="mb-3 max-w-2xl text-balance break-words text-[24px] leading-[1.15] font-extrabold text-white sm:text-[44px]">
               Del en gennemsnitsberegner.{" "}
               <span className="text-indigo-200">På 30 sekunder.</span>
             </h1>
-            <p className="max-w-2xl text-base leading-relaxed text-indigo-100/90">
+            <p className="max-w-2xl text-sm leading-relaxed text-indigo-100/90 sm:text-base">
               Vælg en beregner, kopiér kodestumpen, og sæt den ind på din side.
               Den tilpasser højden selv, virker på mobil og desktop, og er
               altid gratis.
@@ -233,7 +233,7 @@ export default function DelBeregnerPage() {
       </section>
 
       <section id="calc" className="mx-auto w-full max-w-5xl px-4 pb-14 sm:px-6">
-        <h2 className="mb-1 text-[22px] font-extrabold">Prøv det med en rigtig beregner</h2>
+        <h2 className="mb-1 text-[19px] font-extrabold sm:text-[22px]">Prøv det med en rigtig beregner</h2>
         <p className="mb-6 text-sm text-muted-foreground">
           Vælg en beregner herunder. Du ser nøjagtigt den kode, du skal
           kopiere, og hvordan den ser ud, når den er indlejret.
@@ -242,7 +242,7 @@ export default function DelBeregnerPage() {
       </section>
 
       <section className="mx-auto w-full max-w-5xl px-4 pb-14 sm:px-6">
-        <h2 className="mb-6 text-[22px] font-extrabold">
+        <h2 className="mb-6 text-[19px] font-extrabold sm:text-[22px]">
           Virker på alle platforme
         </h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -271,7 +271,7 @@ export default function DelBeregnerPage() {
       </section>
 
       <section className="mx-auto w-full max-w-5xl px-4 pb-14 sm:px-6">
-        <h2 className="mb-6 text-[22px] font-extrabold">
+        <h2 className="mb-6 text-[19px] font-extrabold sm:text-[22px]">
           Hvorfor indlejre vores beregnere?
         </h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -290,7 +290,7 @@ export default function DelBeregnerPage() {
       </section>
 
       <section className="mx-auto w-full max-w-5xl px-4 pb-14 sm:px-6">
-        <h2 className="mb-1 text-[22px] font-extrabold">Ofte stillede spørgsmål</h2>
+        <h2 className="mb-1 text-[19px] font-extrabold sm:text-[22px]">Ofte stillede spørgsmål</h2>
         <p className="mb-6 text-sm text-muted-foreground">
           Det korte svar på det, folk spørger mest om.
         </p>
@@ -302,7 +302,7 @@ export default function DelBeregnerPage() {
                   <AccordionTrigger className="rounded-none px-5 py-4 text-[15px] font-semibold hover:bg-muted/40 sm:px-6">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="px-5 pb-5 text-muted-foreground sm:px-6">
+                  <AccordionContent className="px-5 pb-5 text-sm text-muted-foreground sm:px-6 sm:text-base">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>

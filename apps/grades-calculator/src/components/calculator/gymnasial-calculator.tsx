@@ -203,7 +203,7 @@ export function GymnasialCalculator({
                       if (value) selectFag(index, value)
                     }}
                   >
-                    <SelectTrigger className="h-10 w-full bg-background sm:h-11">
+                    <SelectTrigger className="w-full bg-background data-[size=default]:h-10 sm:data-[size=default]:h-11">
                       <SelectValue>
                         {(value: string | null) =>
                           value ? subjectLabels[value] : "Vælg fag"
@@ -303,7 +303,7 @@ export function GymnasialCalculator({
                             updateRow(index, field.key, value)
                         }}
                       >
-                        <SelectTrigger className="h-9 w-full bg-background">
+                        <SelectTrigger className="w-full bg-background data-[size=default]:h-9">
                           <SelectValue>
                             {(value: string | null) => value || "–"}
                           </SelectValue>

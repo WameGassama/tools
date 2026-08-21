@@ -135,10 +135,10 @@ export default async function HhxPage() {
         id="calc"
         className="mx-auto w-full max-w-3xl px-4 pt-10 pb-10 sm:px-6 sm:pt-22 sm:pb-18"
       >
-        <h1 className="mb-2.5 text-balance break-words text-[26px] leading-[1.15] font-extrabold sm:text-[38px]">
+        <h1 className="mb-2.5 text-balance break-words text-[21px] leading-[1.15] font-extrabold sm:text-[38px]">
           Beregn dit HHX gennemsnit
         </h1>
-        <p className="mb-8 text-base leading-relaxed text-muted-foreground">
+        <p className="mb-8 text-sm leading-relaxed text-muted-foreground sm:text-base">
           Gratis beregner til dit HHX-eksamensbevis, forudfyldt med de
           obligatoriske fag. Tilføj dine studieretningsfag, indtast dine
           standpunkts- og eksamenskarakterer, og få dit niveauvægtede
@@ -164,13 +164,13 @@ export default async function HhxPage() {
 
       <HhxVaegtningForklaretSection />
 
-      <section className="mx-auto w-full max-w-3xl px-6 pb-12 sm:pb-16">
-        <h2 className="text-[26px] font-extrabold">
+      <section className="mx-auto w-full max-w-3xl px-4 pb-12 sm:px-6 sm:pb-16">
+        <h2 className="text-[22px] font-extrabold sm:text-[26px]">
           Ofte stillede spørgsmål om HHX gennemsnit
         </h2>
         <div className="mt-8 divide-y rounded-xl border bg-background">
           {HHX_FAQ_ITEMS.map((item) => (
-            <div key={item.question} className="p-6 sm:p-8">
+            <div key={item.question} className="p-4 sm:p-8">
               <div className="font-semibold">{item.question}</div>
               <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                 {item.answer}

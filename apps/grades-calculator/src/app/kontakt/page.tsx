@@ -36,7 +36,7 @@ export default function KontaktPage() {
 
       <section className="bg-indigo-950 px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto w-full max-w-lg text-center">
-          <h1 className="mb-2 text-balance text-[26px] leading-[1.15] font-extrabold text-white sm:text-[32px]">
+          <h1 className="mb-2 text-balance break-words text-[21px] leading-[1.15] font-extrabold text-white sm:text-[32px]">
             Kontakt os
           </h1>
           <p className="mb-8 text-sm leading-relaxed text-indigo-200/70">

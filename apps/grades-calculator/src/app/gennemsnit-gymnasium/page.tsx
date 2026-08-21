@@ -174,10 +174,10 @@ export default function GennemsnitGymnasiumPage() {
       <NavBar />
 
       <section className="mx-auto w-full max-w-3xl px-4 pt-10 pb-10 sm:px-6 sm:pt-22 sm:pb-14">
-        <h1 className="mb-2.5 text-[26px] leading-[1.15] font-extrabold text-balance break-words sm:text-[38px]">
+        <h1 className="mb-2.5 text-[21px] leading-[1.15] font-extrabold text-balance break-words sm:text-[38px]">
           Gennemsnit gymnasium
         </h1>
-        <p className="text-base leading-relaxed text-muted-foreground">
+        <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
           Gymnasiet dækker over STX, HHX, HTX og HF, samt EUX&apos;s gymnasiale
           fag. Dit gymnasiale karaktergennemsnit (ofte bare kaldet dit snit)
           beregnes efter samme princip på tværs af uddannelserne:
@@ -188,8 +188,8 @@ export default function GennemsnitGymnasiumPage() {
         </p>
       </section>
 
-      <section className="mx-auto w-full max-w-3xl px-6 pb-12 sm:pb-16">
-        <h2 className="text-[26px] font-extrabold">Vælg din gymnasiale uddannelse</h2>
+      <section className="mx-auto w-full max-w-3xl px-4 pb-12 sm:px-6 sm:pb-16">
+        <h2 className="text-[22px] font-extrabold sm:text-[26px]">Vælg din gymnasiale uddannelse</h2>
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {GYMNASIUM_CALCULATORS.map((calculator) => {
             const Icon = GYMNASIUM_ICONS[calculator.slug] ?? Glass
@@ -212,17 +212,17 @@ export default function GennemsnitGymnasiumPage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-3xl px-6 pb-12 sm:pb-16">
-        <h2 className="text-[26px] font-extrabold">
+      <section className="mx-auto w-full max-w-3xl px-4 pb-12 sm:px-6 sm:pb-16">
+        <h2 className="text-[22px] font-extrabold sm:text-[26px]">
           Sådan udregner du et vægtet gennemsnit i gymnasiet
         </h2>
-        <p className="mt-2 text-muted-foreground">
+        <p className="mt-2 text-sm text-muted-foreground sm:text-base">
           I modsætning til et simpelt gennemsnit vægtes dine karakterer i
           gymnasiet efter fagets niveau. Sådan udregner du det, trin for
           trin.
         </p>
 
-        <div className="mt-8 rounded-xl border bg-background p-6 sm:p-8">
+        <div className="mt-8 rounded-xl border bg-background p-4 sm:p-8">
           <ol className="divide-y rounded-lg border">
             {CALCULATION_STEPS.map((step, index) => (
               <li key={step.title} className="flex gap-3 px-3 py-2.5 text-sm">
@@ -244,7 +244,7 @@ export default function GennemsnitGymnasiumPage() {
             </p>
 
             <div className="mt-4 text-sm font-semibold">Eksempel</div>
-            <p className="mt-2 leading-relaxed text-muted-foreground">
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
               Dansk A (karakter 7), Idræt C (karakter 10) og Engelsk B
               (karakter 4) giver
               (7 × 2 + 10 × 1 + 4 × 1,5) ÷ (2 + 1 + 1,5) ={" "}
@@ -293,13 +293,13 @@ export default function GennemsnitGymnasiumPage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-3xl px-6 pb-12 sm:pb-16">
-        <h2 className="text-[26px] font-extrabold">
+      <section className="mx-auto w-full max-w-3xl px-4 pb-12 sm:px-6 sm:pb-16">
+        <h2 className="text-[22px] font-extrabold sm:text-[26px]">
           Ofte stillede spørgsmål om gennemsnit i gymnasiet
         </h2>
         <div className="mt-8 divide-y rounded-xl border bg-background">
           {GYMNASIUM_FAQ_ITEMS.map((item) => (
-            <div key={item.question} className="p-6 sm:p-8">
+            <div key={item.question} className="p-4 sm:p-8">
               <div className="font-semibold">{item.question}</div>
               <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                 {item.answer}

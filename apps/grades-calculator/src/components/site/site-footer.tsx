@@ -33,7 +33,7 @@ const FOOTER_LINK_CLASSNAME =
 
 export function SiteFooter() {
   return (
-    <footer className="bg-indigo-950 px-6 py-12 sm:px-10 sm:py-16">
+    <footer className="bg-indigo-950 px-4 py-12 sm:px-10 sm:py-16">
       <div className="mx-auto max-w-5xl">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
           <div>
@@ -42,7 +42,7 @@ export function SiteFooter() {
                 src="/gennemsnitsberegner-logo-black.svg"
                 width={333}
                 height={30}
-                className="h-6 w-auto sm:h-7"
+                className="h-5 w-auto sm:h-7"
                 alt="Gennemsnitsberegner.dk"
               />
             </Link>

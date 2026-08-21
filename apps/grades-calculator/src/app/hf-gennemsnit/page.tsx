@@ -145,10 +145,10 @@ export default async function Hf2AarigtPage() {
         id="calc"
         className="mx-auto w-full max-w-3xl px-4 pt-10 pb-10 sm:px-6 sm:pt-22 sm:pb-18"
       >
-        <h1 className="mb-2.5 text-balance break-words text-[26px] leading-[1.15] font-extrabold sm:text-[38px]">
+        <h1 className="mb-2.5 text-balance break-words text-[21px] leading-[1.15] font-extrabold sm:text-[38px]">
           Beregn dit HF gennemsnit (2-årigt)
         </h1>
-        <p className="mb-8 text-base leading-relaxed text-muted-foreground">
+        <p className="mb-8 text-sm leading-relaxed text-muted-foreground sm:text-base">
           Gratis beregner til dit HF-eksamensbevis, forudfyldt med de
           obligatoriske fag. Tilføj dine valgfag, indtast dine opnåede
           eksamenskarakterer, og få dit niveauvægtede gennemsnit –
@@ -176,13 +176,13 @@ export default async function Hf2AarigtPage() {
 
       <Hf2AarigtVaegtningForklaretSection />
 
-      <section className="mx-auto w-full max-w-3xl px-6 pb-12 sm:pb-16">
-        <h2 className="text-[26px] font-extrabold">
+      <section className="mx-auto w-full max-w-3xl px-4 pb-12 sm:px-6 sm:pb-16">
+        <h2 className="text-[22px] font-extrabold sm:text-[26px]">
           Ofte stillede spørgsmål om HF gennemsnit
         </h2>
         <div className="mt-8 divide-y rounded-xl border bg-background">
           {HF_2AARIGT_FAQ_ITEMS.map((item) => (
-            <div key={item.question} className="p-6 sm:p-8">
+            <div key={item.question} className="p-4 sm:p-8">
               <div className="font-semibold">{item.question}</div>
               <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                 {item.answer}
