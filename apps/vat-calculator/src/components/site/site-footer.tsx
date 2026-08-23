@@ -33,9 +33,9 @@ export function SiteFooter() {
             <Link href="/" className="flex items-center">
               <Image
                 src="/moms-beregner-logo-6c-black.svg"
-                width={228}
-                height={36}
-                className="h-7 w-auto"
+                width={280}
+                height={44}
+                className="h-11 w-auto"
                 alt="moms-beregner.dk"
               />
             </Link>
