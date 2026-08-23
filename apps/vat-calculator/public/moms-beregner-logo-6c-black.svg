@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 60" width="380" height="60">
+  <g transform="translate(8,8)">
+    <rect x="2" y="22" width="42" height="18" rx="6" fill="#10B981"></rect>
+    <rect x="9" y="6" width="28" height="14" rx="5" fill="#065F46"></rect>
+  </g>
+  <text x="66" y="40" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="26" letter-spacing="-0.4" fill="#ffffff">moms<tspan fill="#6B7280" font-weight="400">-</tspan>beregner<tspan fill="#6EE7B7">.dk</tspan></text>
+</svg>

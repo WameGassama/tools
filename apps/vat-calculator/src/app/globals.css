@@ -1,0 +1,70 @@
+@import "@workspace/ui/globals.css";
+@import "vanilla-cookieconsent/dist/cookieconsent.css";
+
+#cc-main {
+  --cc-btn-primary-bg: var(--primary);
+  --cc-btn-primary-border-color: var(--primary);
+  --cc-btn-primary-hover-bg: var(--primary);
+  --cc-btn-primary-hover-border-color: var(--primary);
+  --cc-modal-border-radius: 1rem;
+}
+
+:root {
+  --background: var(--color-stone-50);
+  --foreground: var(--color-stone-800);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--color-stone-800);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--color-stone-800);
+  --primary: var(--color-emerald-700);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: var(--color-emerald-50);
+  --secondary-foreground: var(--color-emerald-800);
+  --muted: var(--color-stone-100);
+  --muted-foreground: var(--color-stone-500);
+  --accent: var(--color-emerald-50);
+  --accent-foreground: var(--color-emerald-800);
+  --destructive: var(--color-red-700);
+  --border: var(--color-stone-200);
+  --input: var(--color-stone-200);
+  --ring: var(--color-emerald-700);
+}
+
+.dark {
+  --background: var(--color-stone-900);
+  --foreground: var(--color-stone-100);
+  --card: var(--color-stone-800);
+  --card-foreground: var(--color-stone-100);
+  --popover: var(--color-stone-800);
+  --popover-foreground: var(--color-stone-100);
+  --primary: var(--color-emerald-500);
+  --primary-foreground: var(--color-stone-950);
+  --secondary: var(--color-stone-700);
+  --secondary-foreground: var(--color-stone-100);
+  --muted: var(--color-stone-700);
+  --muted-foreground: var(--color-stone-400);
+  --accent: var(--color-stone-700);
+  --accent-foreground: var(--color-emerald-300);
+  --destructive: var(--color-red-500);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: var(--color-emerald-500);
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::marker {
+  content: "";
+}
