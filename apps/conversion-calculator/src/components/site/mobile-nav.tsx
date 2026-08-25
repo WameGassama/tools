@@ -1,8 +1,9 @@
 "use client"
 
 import Link from "next/link"
-import { Menu, X } from "lucide-react"
+import { Menu, Share2, X } from "lucide-react"
 
+import { buttonVariants } from "@workspace/ui/components/button"
 import {
   Sheet,
   SheetClose,
@@ -10,6 +11,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@workspace/ui/components/sheet"
+import { cn } from "@workspace/ui/lib/utils"
 
 import {
   CATEGORY_ICONS,
@@ -51,6 +53,14 @@ export function MobileNav({ categories }: { categories: Category[] }) {
             className="rounded-lg p-2 text-sm font-medium hover:bg-muted"
           >
             Om os
+          </SheetClose>
+          <SheetClose
+            render={<Link href="/del-omregner" />}
+            nativeButton={false}
+            className={cn(buttonVariants({ size: "lg" }), "mt-2 w-full")}
+          >
+            <Share2 />
+            Del / indlejr
           </SheetClose>
         </nav>
 

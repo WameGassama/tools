@@ -1,5 +1,6 @@
 import { CategorySection } from "@/src/components/site/category-section"
 import { ConverterSearchBox } from "@/src/components/site/converter-search-box"
+import { PopularConverters } from "@/src/components/site/popular-converters"
 import { CATEGORIES } from "@/src/lib/converters"
 
 export function ConverterDirectory() {
@@ -38,6 +39,8 @@ export function ConverterDirectory() {
       </div>
 
       <CategorySection categories={CATEGORIES} />
+
+      <PopularConverters />
     </div>
   )
 }

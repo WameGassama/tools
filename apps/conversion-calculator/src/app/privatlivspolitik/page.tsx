@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 
 import { NavBar } from "@/src/components/site/nav-bar"
 import { SiteFooter } from "@/src/components/site/site-footer"
@@ -56,6 +57,24 @@ export default function PrivatlivspolitikPage() {
               sideviews, browsertype og omtrentlig geografisk placering.
               Denne information bruges udelukkende til at forbedre siden og
               deles ikke med tredjeparter til markedsføringsformål.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="mb-2 text-lg font-bold text-foreground">
+              Indlejrede omregnere
+            </h2>
+            <p>
+              Hvis du møder en af vores omregnere indlejret på en anden
+              hjemmeside (via{" "}
+              <Link
+                href="/del-omregner"
+                className="underline underline-offset-2 hover:text-foreground"
+              >
+                vores indlejringsfunktion
+              </Link>
+              ), sætter den indlejrede omregner ingen cookies og indeholder
+              ingen analyseværktøjer.
             </p>
           </div>
 

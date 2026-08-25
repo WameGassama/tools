@@ -9,6 +9,7 @@ import { openCookiePreferences } from "@/src/components/site/cookie-consent"
 const ABOUT_LINKS: Category[] = [
   { slug: "forside", title: "Forside", href: "/" },
   { slug: "om-os", title: "Om os", href: "/om-os" },
+  { slug: "del-omregner", title: "Del / indlejr", href: "/del-omregner" },
 ]
 
 const LEGAL_LINKS: Category[] = [

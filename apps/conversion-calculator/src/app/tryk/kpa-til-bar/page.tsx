@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 
 import { KpaBarConverter } from "@/src/components/site/kpa-bar-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
@@ -135,13 +134,6 @@ export default function KpaTilBarPage() {
             ))}
           </div>
         </div>
-
-        <p className="mt-8 text-center text-sm text-muted-foreground">
-          Vil du regne den anden vej?{" "}
-          <Link href="/tryk/bar-til-kpa" className="text-primary underline">
-            Omregn bar til kpa
-          </Link>
-        </p>
       </section>
       <SiteFooter />
     </div>

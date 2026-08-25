@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 
 import { MmCmConverter } from "@/src/components/site/mm-cm-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
@@ -124,13 +123,6 @@ export default function MmTilCmPage() {
             ))}
           </div>
         </div>
-
-        <p className="mt-8 text-center text-sm text-muted-foreground">
-          Vil du regne den anden vej?{" "}
-          <Link href="/laengde/cm-til-mm" className="text-primary underline">
-            Omregn cm til mm
-          </Link>
-        </p>
       </section>
       <SiteFooter />
     </div>

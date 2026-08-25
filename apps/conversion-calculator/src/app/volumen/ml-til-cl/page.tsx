@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 
 import { MlClConverter } from "@/src/components/site/ml-cl-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
@@ -122,13 +121,6 @@ export default function MlTilClPage() {
             ))}
           </div>
         </div>
-
-        <p className="mt-8 text-center text-sm text-muted-foreground">
-          Vil du regne den anden vej?{" "}
-          <Link href="/volumen/cl-til-ml" className="text-primary underline">
-            Omregn cl til ml
-          </Link>
-        </p>
       </section>
       <SiteFooter />
     </div>

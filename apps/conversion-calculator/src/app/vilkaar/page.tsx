@@ -6,7 +6,7 @@ import { SiteFooter } from "@/src/components/site/site-footer"
 
 const TITLE = "Vilkår for brug – omregning.dk"
 const DESCRIPTION =
-  "Læs vilkårene for brug af omregning.dk's gratis omregnere og beregnere."
+  "Læs vilkårene for at bruge omregning.dk's gratis omregnere og for at indlejre dem på din egen hjemmeside."
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -53,6 +53,25 @@ export default function VilkaarPage() {
               Design, tekst og kode på omregning.dk tilhører omregning.dk. Du
               må gerne linke til siden, men indhold må ikke kopieres eller
               genudgives uden tilladelse.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="mb-2 text-lg font-bold text-foreground">
+              Indlejring af vores omregnere
+            </h2>
+            <p>
+              Du er velkommen til at indlejre vores omregnere på din egen
+              hjemmeside via{" "}
+              <Link
+                href="/del-omregner"
+                className="text-primary underline"
+              >
+                vores indlejringsfunktion
+              </Link>
+              . Det eneste krav er, at krediteringen til omregning.dk forbliver
+              synligt og uændret. Det er denne synlige kreditering, der gør
+              det muligt for os at tilbyde indlejring gratis.
             </p>
           </div>
 

@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 
 import { MlDlConverter } from "@/src/components/site/ml-dl-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
@@ -134,13 +133,6 @@ export default function MlTilDlPage() {
             ))}
           </div>
         </div>
-
-        <p className="mt-8 text-center text-sm text-muted-foreground">
-          Vil du regne den anden vej?{" "}
-          <Link href="/volumen/dl-til-ml" className="text-primary underline">
-            Omregn dl til ml
-          </Link>
-        </p>
       </section>
       <SiteFooter />
     </div>

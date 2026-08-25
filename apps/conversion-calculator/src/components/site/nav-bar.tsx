@@ -1,6 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
+import { Share2 } from "lucide-react"
 
+import { buttonVariants } from "@workspace/ui/components/button"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -27,26 +29,32 @@ export function NavBar() {
         />
       </Link>
 
-      <NavigationMenu className="hidden sm:flex">
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuLink render={<Link href="/" />}>
-              Forside
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Kategori</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <CategoryNavMenu categories={CATEGORIES} />
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink render={<Link href="/om-os" />}>
-              Om os
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
+      <div className="hidden items-center gap-4 sm:flex">
+        <NavigationMenu>
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuLink render={<Link href="/" />}>
+                Forside
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Kategori</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <CategoryNavMenu categories={CATEGORIES} />
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink render={<Link href="/om-os" />}>
+                Om os
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+        <Link href="/del-omregner" className={buttonVariants({ size: "lg" })}>
+          <Share2 />
+          Del / indlejr
+        </Link>
+      </div>
 
       <MobileNav categories={CATEGORIES} />
     </nav>

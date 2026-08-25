@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 
 import { MmMConverter } from "@/src/components/site/mm-m-converter"
 import { NavBar } from "@/src/components/site/nav-bar"
@@ -124,13 +123,6 @@ export default function MmTilMPage() {
             ))}
           </div>
         </div>
-
-        <p className="mt-8 text-center text-sm text-muted-foreground">
-          Vil du regne den anden vej?{" "}
-          <Link href="/laengde/m-til-mm" className="text-primary underline">
-            Omregn meter til mm
-          </Link>
-        </p>
       </section>
       <SiteFooter />
     </div>
