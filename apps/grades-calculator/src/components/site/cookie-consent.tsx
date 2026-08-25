@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect } from "react"
-import { usePathname } from "next/navigation"
 import * as CC from "vanilla-cookieconsent"
 
 declare global {
@@ -18,12 +17,7 @@ function updateGtagConsent() {
 }
 
 export function CookieConsent() {
-  const pathname = usePathname()
-  const isEmbed = pathname?.startsWith("/embed/")
-
   useEffect(() => {
-    if (isEmbed) return
-
     CC.run({
       categories: {
         necessary: {
@@ -82,7 +76,7 @@ export function CookieConsent() {
       onConsent: () => updateGtagConsent(),
       onChange: () => updateGtagConsent(),
     })
-  }, [isEmbed])
+  }, [])
 
   return null
 }
