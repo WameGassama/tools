@@ -1,75 +1,110 @@
+"use client"
+
+import { useState } from "react"
+
 import Link from "next/link"
 
-import { StatusUp } from "@workspace/ui/icons"
+import { ArrowHorizontalSwap } from "@workspace/ui/icons"
+import { cn } from "@workspace/ui/lib/utils"
 
 import { CATEGORY_ICONS } from "@/src/components/site/category-icons"
+import { ALL_CONVERTERS } from "@/src/lib/all-converters"
+import { CATEGORIES } from "@/src/lib/converters"
 
-const POPULAR_CONVERTERS = [
-  { href: "/volumen/cl-til-ml", title: "Cl til ml", category: "volumen" },
-  { href: "/volumen/ml-til-dl", title: "Ml til dl", category: "volumen" },
-  { href: "/areal/hektar-til-m2", title: "Hektar til m²", category: "areal" },
-  { href: "/volumen/ml-til-l", title: "Ml til liter", category: "volumen" },
-  {
-    href: "/hastighed/km-t-til-ms",
-    title: "Km/t til m/s",
-    category: "hastighed",
-  },
-  { href: "/volumen/dl-til-ml", title: "Dl til ml", category: "volumen" },
-  { href: "/volumen/dl-til-cl", title: "Dl til cl", category: "volumen" },
-  { href: "/vaegt/gram-til-kg", title: "Gram til kg", category: "vaegt" },
-  { href: "/volumen/l-til-ml", title: "Liter til ml", category: "volumen" },
-  { href: "/volumen/ml-til-cl", title: "Ml til cl", category: "volumen" },
-  {
-    href: "/laengde/tommer-til-mm",
-    title: "Tommer til mm",
-    category: "laengde",
-  },
-  {
-    href: "/laengde/cm-til-tommer",
-    title: "Cm til tommer",
-    category: "laengde",
-  },
-  { href: "/areal/m2-til-hektar", title: "m² til hektar", category: "areal" },
-  {
-    href: "/hastighed/knob-til-km-t",
-    title: "Knob til km/t",
-    category: "hastighed",
-  },
-  {
-    href: "/laengde/mm-til-tommer",
-    title: "Mm til tommer",
-    category: "laengde",
-  },
-  { href: "/volumen/cl-til-dl", title: "Cl til dl", category: "volumen" },
-  {
-    href: "/temperatur/celsius-til-fahrenheit",
-    title: "Celsius til fahrenheit",
-    category: "temperatur",
-  },
-  { href: "/volumen/dl-til-l", title: "Dl til liter", category: "volumen" },
-  { href: "/tryk/bar-til-kpa", title: "Bar til kpa", category: "tryk" },
-  { href: "/tryk/kpa-til-bar", title: "Kpa til bar", category: "tryk" },
-] as const
+const POPULAR_HREFS = new Set([
+  "/volumen/cl-til-ml",
+  "/volumen/ml-til-dl",
+  "/areal/hektar-til-m2",
+  "/volumen/ml-til-l",
+  "/hastighed/km-t-til-ms",
+  "/volumen/dl-til-ml",
+  "/volumen/dl-til-cl",
+  "/vaegt/gram-til-kg",
+  "/volumen/l-til-ml",
+  "/volumen/ml-til-cl",
+  "/laengde/tommer-til-mm",
+  "/laengde/cm-til-tommer",
+  "/areal/m2-til-hektar",
+  "/hastighed/knob-til-km-t",
+  "/laengde/mm-til-tommer",
+  "/volumen/cl-til-dl",
+  "/temperatur/celsius-til-fahrenheit",
+  "/volumen/dl-til-l",
+  "/tryk/bar-til-kpa",
+  "/tryk/kpa-til-bar",
+])
+
+const POPULAR_CONVERTERS = ALL_CONVERTERS.filter((converter) =>
+  POPULAR_HREFS.has(converter.href),
+)
 
 export function PopularConverters() {
+  const [activeCategory, setActiveCategory] = useState<string>("populaer")
+
+  const converters =
+    activeCategory === "populaer"
+      ? POPULAR_CONVERTERS
+      : ALL_CONVERTERS.filter(
+          (converter) => converter.category === activeCategory,
+        )
+
   return (
     <div className="mb-10">
       <div className="mb-4 flex items-center gap-2">
-        <StatusUp className="h-5 w-5 text-primary" aria-hidden="true" />
-        <h2 className="text-lg font-bold">Populære omregninger</h2>
+        <ArrowHorizontalSwap
+          className="h-5 w-5 text-primary"
+          aria-hidden="true"
+        />
+        <h2 className="text-lg font-bold">Omregnere</h2>
       </div>
-      <div className="flex flex-wrap gap-2.5">
-        {POPULAR_CONVERTERS.map((converter) => {
+
+      <div className="mb-4 flex flex-wrap gap-2">
+        <button
+          type="button"
+          onClick={() => setActiveCategory("populaer")}
+          aria-pressed={activeCategory === "populaer"}
+          className={cn(
+            "cursor-pointer rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-colors",
+            activeCategory === "populaer"
+              ? "border-primary bg-primary text-primary-foreground"
+              : "bg-background text-muted-foreground hover:border-primary hover:text-foreground",
+          )}
+        >
+          Populær
+        </button>
+        {CATEGORIES.map((category) => (
+          <button
+            key={category.slug}
+            type="button"
+            onClick={() => setActiveCategory(category.slug)}
+            aria-pressed={activeCategory === category.slug}
+            className={cn(
+              "cursor-pointer rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-colors",
+              activeCategory === category.slug
+                ? "border-primary bg-primary text-primary-foreground"
+                : "bg-background text-muted-foreground hover:border-primary hover:text-foreground",
+            )}
+          >
+            {category.title}
+          </button>
+        ))}
+      </div>
+
+      <div
+        key={activeCategory}
+        className="grid animate-in grid-cols-2 gap-2.5 fade-in duration-300 sm:grid-cols-3 lg:grid-cols-4"
+      >
+        {converters.map((converter) => {
           const Icon = CATEGORY_ICONS[converter.category]
 
           return (
             <Link
               key={converter.href}
               href={converter.href}
-              className="group inline-flex items-center gap-2 rounded-full border bg-background py-2 pr-4 pl-2 transition-colors hover:border-primary hover:bg-primary/5"
+              className="group flex items-center gap-2.5 rounded-xl border bg-background p-3 transition-colors hover:border-primary hover:bg-primary/5"
             >
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-primary">
-                {Icon && <Icon className="h-3.5 w-3.5" aria-hidden="true" />}
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                {Icon && <Icon className="h-4 w-4" aria-hidden="true" />}
               </span>
               <span className="text-sm font-semibold group-hover:text-primary">
                 {converter.title}
