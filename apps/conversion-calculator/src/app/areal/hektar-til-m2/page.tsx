@@ -169,9 +169,14 @@ export default function HektarTilM2Page() {
 
         <div className="mt-8">
           <h2 className="mb-4 text-lg font-bold">Om hektar og kvadratmeter</h2>
-          <div className="flex flex-col gap-4 rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
-            <div>
-              <h3 className="mb-1.5 font-semibold">Om hektar (ha)</h3>
+          <div className="grid overflow-hidden rounded-2xl border bg-background shadow-sm md:grid-cols-2">
+            <div className="p-6 sm:p-8">
+              <div className="mb-2.5 flex items-center gap-2.5">
+                <span className="shrink-0 rounded-full border px-2.5 py-1 font-mono text-[11px] font-semibold text-primary">
+                  ha
+                </span>
+                <h3 className="text-sm font-semibold">Hektar</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Hektar er en arealenhed i det metriske system, der er
                 defineret som 10.000 kvadratmeter. Navnet er sat sammen af
@@ -189,8 +194,13 @@ export default function HektarTilM2Page() {
                 areal ude i landskabet.
               </p>
             </div>
-            <div>
-              <h3 className="mb-1.5 font-semibold">Om kvadratmeter (m²)</h3>
+            <div className="border-t p-6 sm:p-8 md:border-t-0 md:border-l">
+              <div className="mb-2.5 flex items-center gap-2.5">
+                <span className="shrink-0 rounded-full border px-2.5 py-1 font-mono text-[11px] font-semibold text-primary">
+                  m²
+                </span>
+                <h3 className="text-sm font-semibold">Kvadratmeter</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Kvadratmeter er grundenheden for areal i SI-systemet og
                 svarer til et kvadrat, hvor hver side er en meter lang.

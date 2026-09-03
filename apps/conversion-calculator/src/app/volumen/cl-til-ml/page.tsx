@@ -157,9 +157,14 @@ export default function ClTilMlPage() {
 
         <div className="mt-8">
           <h2 className="mb-4 text-lg font-bold">Om centiliter og milliliter</h2>
-          <div className="flex flex-col gap-4 rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
-            <div>
-              <h3 className="mb-1.5 font-semibold">Om centiliter (cl)</h3>
+          <div className="grid overflow-hidden rounded-2xl border bg-background shadow-sm md:grid-cols-2">
+            <div className="p-6 sm:p-8">
+              <div className="mb-2.5 flex items-center gap-2.5">
+                <span className="shrink-0 rounded-full border px-2.5 py-1 font-mono text-[11px] font-semibold text-primary">
+                  cl
+                </span>
+                <h3 className="text-sm font-semibold">Centiliter</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Centiliter (cl) er en rumfangsenhed i det metriske system, der
                 svarer til en hundrededel af en liter, eller ti milliliter.
@@ -177,8 +182,13 @@ export default function ClTilMlPage() {
                 og indhold angives præcist.
               </p>
             </div>
-            <div>
-              <h3 className="mb-1.5 font-semibold">Om milliliter (ml)</h3>
+            <div className="border-t p-6 sm:p-8 md:border-t-0 md:border-l">
+              <div className="mb-2.5 flex items-center gap-2.5">
+                <span className="shrink-0 rounded-full border px-2.5 py-1 font-mono text-[11px] font-semibold text-primary">
+                  ml
+                </span>
+                <h3 className="text-sm font-semibold">Milliliter</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Milliliter (ml) er den mindste af de rumfangsenheder, som
                 bruges i hverdagen, og svarer til en tusindedel af en liter,

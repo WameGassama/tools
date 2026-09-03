@@ -181,9 +181,14 @@ export default function DlTilLPage() {
 
         <div className="mt-8">
           <h2 className="mb-4 text-lg font-bold">Om deciliter og liter</h2>
-          <div className="flex flex-col gap-4 rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
-            <div>
-              <h3 className="mb-1.5 font-semibold">Om deciliter (dl)</h3>
+          <div className="grid overflow-hidden rounded-2xl border bg-background shadow-sm md:grid-cols-2">
+            <div className="p-6 sm:p-8">
+              <div className="mb-2.5 flex items-center gap-2.5">
+                <span className="shrink-0 rounded-full border px-2.5 py-1 font-mono text-[11px] font-semibold text-primary">
+                  dl
+                </span>
+                <h3 className="text-sm font-semibold">Deciliter</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Deciliter (dl) svarer til en tiendedel af en liter, altså
                 100 milliliter, og er den mest anvendte rumfangsenhed i
@@ -196,8 +201,13 @@ export default function DlTilLPage() {
                 standard i nordisk madlavning gennem generationer.
               </p>
             </div>
-            <div>
-              <h3 className="mb-1.5 font-semibold">Om liter (l)</h3>
+            <div className="border-t p-6 sm:p-8 md:border-t-0 md:border-l">
+              <div className="mb-2.5 flex items-center gap-2.5">
+                <span className="shrink-0 rounded-full border px-2.5 py-1 font-mono text-[11px] font-semibold text-primary">
+                  l
+                </span>
+                <h3 className="text-sm font-semibold">Liter</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Liter (l) er grundenheden for rumfang i det metriske system
                 og svarer til 10 deciliter eller 1.000 milliliter. Liter

@@ -171,9 +171,14 @@ export default function KnobTilKmTPage() {
 
         <div className="mt-8">
           <h2 className="mb-4 text-lg font-bold">Om knob og km/t</h2>
-          <div className="flex flex-col gap-4 rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
-            <div>
-              <h3 className="mb-1.5 font-semibold">Om knob (kn)</h3>
+          <div className="grid overflow-hidden rounded-2xl border bg-background shadow-sm md:grid-cols-2">
+            <div className="p-6 sm:p-8">
+              <div className="mb-2.5 flex items-center gap-2.5">
+                <span className="shrink-0 rounded-full border px-2.5 py-1 font-mono text-[11px] font-semibold text-primary">
+                  kn
+                </span>
+                <h3 className="text-sm font-semibold">Knob</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Knob er en hastighedsenhed, der betyder en sømil i timen.
                 Enheden har rødder i sejlskibstiden, hvor besætningen målte
@@ -188,10 +193,13 @@ export default function KnobTilKmTPage() {
                 cockpittet angives også i knob.
               </p>
             </div>
-            <div>
-              <h3 className="mb-1.5 font-semibold">
-                Om kilometer i timen (km/t)
-              </h3>
+            <div className="border-t p-6 sm:p-8 md:border-t-0 md:border-l">
+              <div className="mb-2.5 flex items-center gap-2.5">
+                <span className="shrink-0 rounded-full border px-2.5 py-1 font-mono text-[11px] font-semibold text-primary">
+                  km/t
+                </span>
+                <h3 className="text-sm font-semibold">Kilometer i timen</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Kilometer i timen er den hastighedsenhed, de fleste møder i
                 hverdagen. Fartgrænser, speedometre, løbe- og cykelapps og

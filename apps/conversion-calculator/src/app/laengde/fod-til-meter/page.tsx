@@ -166,9 +166,14 @@ export default function FodTilMeterPage() {
 
         <div className="mt-8">
           <h2 className="mb-4 text-lg font-bold">Om fod og meter</h2>
-          <div className="flex flex-col gap-4 rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
-            <div>
-              <h3 className="mb-1.5 font-semibold">Om fod (ft)</h3>
+          <div className="grid overflow-hidden rounded-2xl border bg-background shadow-sm md:grid-cols-2">
+            <div className="p-6 sm:p-8">
+              <div className="mb-2.5 flex items-center gap-2.5">
+                <span className="shrink-0 rounded-full border px-2.5 py-1 font-mono text-[11px] font-semibold text-primary">
+                  ft
+                </span>
+                <h3 className="text-sm font-semibold">Fod</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Fod er en af de ældste længdeenheder og tog oprindeligt
                 udgangspunkt i længden af en voksen mands fod. Gennem
@@ -182,8 +187,13 @@ export default function FodTilMeterPage() {
                 nyttigt at huske, at tre fod er lidt under en meter.
               </p>
             </div>
-            <div>
-              <h3 className="mb-1.5 font-semibold">Om meter (m)</h3>
+            <div className="border-t p-6 sm:p-8 md:border-t-0 md:border-l">
+              <div className="mb-2.5 flex items-center gap-2.5">
+                <span className="shrink-0 rounded-full border px-2.5 py-1 font-mono text-[11px] font-semibold text-primary">
+                  m
+                </span>
+                <h3 className="text-sm font-semibold">Meter</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Meter er SI-systemets grundenhed for længde og defineres i
                 dag ud fra den strækning, lyset tilbagelægger i vakuum på en

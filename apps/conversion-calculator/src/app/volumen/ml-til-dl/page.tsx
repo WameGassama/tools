@@ -177,9 +177,14 @@ export default function MlTilDlPage() {
 
         <div className="mt-8">
           <h2 className="mb-4 text-lg font-bold">Om milliliter og deciliter</h2>
-          <div className="flex flex-col gap-4 rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
-            <div>
-              <h3 className="mb-1.5 font-semibold">Om milliliter (ml)</h3>
+          <div className="grid overflow-hidden rounded-2xl border bg-background shadow-sm md:grid-cols-2">
+            <div className="p-6 sm:p-8">
+              <div className="mb-2.5 flex items-center gap-2.5">
+                <span className="shrink-0 rounded-full border px-2.5 py-1 font-mono text-[11px] font-semibold text-primary">
+                  ml
+                </span>
+                <h3 className="text-sm font-semibold">Milliliter</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Milliliter (ml) svarer til en tusindedel af en liter og er
                 den mindste rumfangsenhed, der bruges i hverdagen. Fordi
@@ -193,8 +198,13 @@ export default function MlTilDlPage() {
                 olie, eddike og andre flydende ingredienser.
               </p>
             </div>
-            <div>
-              <h3 className="mb-1.5 font-semibold">Om deciliter (dl)</h3>
+            <div className="border-t p-6 sm:p-8 md:border-t-0 md:border-l">
+              <div className="mb-2.5 flex items-center gap-2.5">
+                <span className="shrink-0 rounded-full border px-2.5 py-1 font-mono text-[11px] font-semibold text-primary">
+                  dl
+                </span>
+                <h3 className="text-sm font-semibold">Deciliter</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Deciliter (dl) er hundrede gange større end en milliliter
                 og svarer til en tiendedel af en liter. Det er den mest
