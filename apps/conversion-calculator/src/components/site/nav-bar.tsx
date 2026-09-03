@@ -18,7 +18,7 @@ import { CATEGORIES } from "@/src/lib/converters"
 
 export function NavBar() {
   return (
-    <nav className="sticky top-0 z-10 flex items-center justify-between gap-6 border-b bg-background px-4 py-3 sm:px-10 sm:py-4">
+    <nav className="sticky top-0 z-50 flex items-center justify-between gap-6 border-b bg-background px-4 py-3 sm:px-10 sm:py-4">
       <Link href="/" className="flex shrink-0 items-center gap-2">
         <Image
           src="/omregning-logo-light.svg"
