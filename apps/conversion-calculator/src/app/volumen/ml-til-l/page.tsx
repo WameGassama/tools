@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import { Fragment } from "react"
 import Link from "next/link"
 
 import { MlLConverter } from "@/src/components/site/ml-l-converter"
@@ -75,23 +74,29 @@ const FAQ_ITEMS = [
     answer:
       "En almindelig sodavand på 330 ml svarer til 0,33 liter, og en vandflaske på 500 ml svarer til 0,5 liter.",
   },
-]
-
-const UNIT_FACT_ROWS = [
   {
-    label: "Definition",
-    ml: "En milliliter (forkortet ml) er en enhed for rumfang i det metriske system. Én milliliter svarer til én kubikcentimeter og udgør en tusindedel af en liter.",
-    l: "En liter (forkortet l) er grundenheden for rumfang i det metriske system. Én liter svarer til 1.000 milliliter eller én kubikdecimeter.",
+    question: "Hvor mange liter er 2.500 ml?",
+    answer: "2.500 ml svarer til 2,5 liter, da du deler med 1.000.",
   },
   {
-    label: "Historie",
-    ml: "Milliliteren stammer fra det franske metriske system fra slutningen af 1700-tallet, hvor liter blev indført som grundenhed for rumfang, og milliliter blev defineret som en tusindedel heraf.",
-    l: "Liter blev oprindeligt indført under den franske revolution som en del af det nye metriske system og er siden blevet en af verdens mest udbredte rumfangsenheder.",
+    question: "Hvorfor er nogle produkter mærket i ml og andre i liter?",
+    answer:
+      "Mindre emballager, fx medicin og kosmetik, bruger ofte ml for at angive indholdet præcist, mens større emballager som mælk og sodavand typisk bruger liter for at give et mere overskueligt tal.",
   },
   {
-    label: "Brug i dag",
-    ml: "Milliliter bruges typisk til mindre mængder væske, fx medicin, parfume og drikkevarer i mindre emballager. De fleste målebægre og sprøjter er skaleret i milliliter.",
-    l: "Liter bruges til stort set alle væskemængder i hverdagen, fra mælk og vand til benzin, og er den enhed de fleste tænker i, når de taler om rumfang.",
+    question: "Kan jeg regne ml om til liter uden lommeregner?",
+    answer:
+      "Ja, du skal blot flytte kommaet tre pladser mod venstre, da du deler med 1.000. Fx bliver 1.250 ml til 1,25 liter.",
+  },
+  {
+    question: "Hvad er den mest almindelige fejl ved omregning fra ml til liter?",
+    answer:
+      "Mange glemmer at dele med 1.000 og ganger i stedet, hvilket giver et alt for stort tal. Husk, at liter altid er et markant mindre tal end ml.",
+  },
+  {
+    question: "Bruges ml og liter i madlavning uden for Danmark?",
+    answer:
+      "Ja, begge enheder bruges i stort set alle lande med metrisk system, mens lande som USA og Storbritannien ofte bruger cups, pints og fluid ounces i stedet for ml og liter i deres opskrifter.",
   },
 ]
 
@@ -156,10 +161,10 @@ export default function MlTilLPage() {
               Ml til Liter Omregner
             </h1>
             <p className="text-base leading-relaxed text-primary-foreground/70 sm:text-base">
-              Brug vores ml til liter omregner til hurtigt og nemt at omregne
-              milliliter til liter. Indtast det antal milliliter, du vil
-              omregne, og få resultatet med det samme, eller brug vores tabel
-              til hurtigt at finde den ønskede omregning.
+              1.000 milliliter (ml) svarer til 1 liter, da milliliter er en
+              tusindedel af grundenheden liter. Brug vores ml til liter
+              omregner til at omregne mellem enhederne på et øjeblik, eller
+              find den ønskede værdi i tabellen herunder.
             </p>
           </div>
         </div>
@@ -170,49 +175,45 @@ export default function MlTilLPage() {
 
         <div className="mt-8">
           <h2 className="mb-4 text-lg font-bold">Om milliliter og liter</h2>
-          <div className="grid grid-cols-[90px_1fr_1fr] overflow-hidden rounded-xl border text-sm sm:grid-cols-[110px_1fr_1fr]">
-            <div className="border-b bg-background p-3" />
-            <div className="border-b bg-background p-3 font-semibold">
-              Milliliter
+          <div className="flex flex-col gap-4 rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
+            <div>
+              <h3 className="mb-1.5 font-semibold">Om milliliter (ml)</h3>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                Milliliter (ml) er en tusindedel af en liter og den mest
+                finmaskede rumfangsenhed, vi bruger i hverdagen. Fordi
+                tallene forbliver præcise selv ved meget små mængder, er
+                ml den foretrukne enhed inden for medicin, kosmetik og
+                madlavning, hvor selv få milliliter kan gøre en forskel
+                for resultatet. Milliliter blev indført sammen med resten
+                af det metriske system i Frankrig i slutningen af
+                1700-tallet, hvor forstavelsen &quot;milli&quot; betyder
+                en tusindedel af grundenheden liter.
+              </p>
             </div>
-            <div className="border-b bg-background p-3 font-semibold">
-              Liter
+            <div>
+              <h3 className="mb-1.5 font-semibold">Om liter (l)</h3>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                Liter (l) er grundenheden for rumfang i det metriske
+                system og svarer til 1.000 milliliter. Det er den enhed,
+                de fleste tænker i, når mængderne bliver store nok til at
+                gøre milliliter upraktisk, fx når man taler om indholdet i
+                en mælkekarton eller en literflaske sodavand. Liter blev
+                indført under den franske revolution som en del af det
+                nye metriske system og er i dag en af verdens mest
+                udbredte rumfangsenheder, brugt i stort set alle lande med
+                metrisk system.
+              </p>
             </div>
-            {UNIT_FACT_ROWS.map((row, i) => (
-              <Fragment key={row.label}>
-                <div
-                  className={
-                    "bg-background p-3 text-xs font-semibold tracking-wide text-muted-foreground uppercase" +
-                    (i < UNIT_FACT_ROWS.length - 1 ? " border-b" : "")
-                  }
-                >
-                  {row.label}
-                </div>
-                <div
-                  className={
-                    "bg-background p-3 text-xs leading-relaxed text-muted-foreground" +
-                    (i < UNIT_FACT_ROWS.length - 1 ? " border-b" : "")
-                  }
-                >
-                  {row.ml}
-                </div>
-                <div
-                  className={
-                    "bg-background p-3 text-xs leading-relaxed text-muted-foreground" +
-                    (i < UNIT_FACT_ROWS.length - 1 ? " border-b" : "")
-                  }
-                >
-                  {row.l}
-                </div>
-              </Fragment>
-            ))}
           </div>
         </div>
 
         <div className="mt-8">
-          <h2 className="mb-5 text-lg font-bold">
+          <h2 className="mb-2 text-lg font-bold">
             Sådan konverterer du ml til liter
           </h2>
+          <p className="mb-5 font-mono text-sm text-muted-foreground">
+            Formel: liter = ml ÷ 1.000
+          </p>
           <div className="relative grid grid-cols-3">
             <div className="absolute top-[15px] right-[15px] left-[15px] h-0.5 bg-border" />
             {CONVERT_STEPS.map((step, i) => (
@@ -230,6 +231,17 @@ export default function MlTilLPage() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="mt-8 rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
+          <h2 className="mb-3 text-lg font-bold">Praktisk eksempel</h2>
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            Forestil dig, at en opskrift til hjemmelavet limonade kræver
+            1.500 ml vand, men du helst vil måle det op i en literkande. Du
+            deler 1.500 med 1.000 og får 1,5 liter. På samme måde kan du
+            omregne 750 ml saft til 0,75 liter, hvis du fx skal fylde en
+            flaske, der kun er mærket med literinddelinger.
+          </p>
         </div>
 
         <div className="mt-8">
