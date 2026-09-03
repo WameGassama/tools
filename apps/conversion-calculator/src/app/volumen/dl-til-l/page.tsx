@@ -183,10 +183,12 @@ export default function DlTilLPage() {
           <h2 className="mb-4 text-lg font-bold">Om deciliter og liter</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
-              <span className="mb-3 inline-block rounded-lg bg-primary/10 px-2.5 py-1 font-mono text-xs font-semibold text-primary">
-                dl
-              </span>
-              <h3 className="mb-1.5 font-semibold">Om deciliter</h3>
+              <div className="mb-3 flex items-center gap-3">
+                <span className="shrink-0 rounded-full border bg-background px-3 py-1 font-mono text-[13px] font-medium text-primary">
+                  dl
+                </span>
+                <h3 className="text-lg font-semibold">Deciliter</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Deciliter (dl) svarer til en tiendedel af en liter, altså
                 100 milliliter, og er den mest anvendte rumfangsenhed i
@@ -200,10 +202,12 @@ export default function DlTilLPage() {
               </p>
             </div>
             <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
-              <span className="mb-3 inline-block rounded-lg bg-primary/10 px-2.5 py-1 font-mono text-xs font-semibold text-primary">
-                l
-              </span>
-              <h3 className="mb-1.5 font-semibold">Om liter</h3>
+              <div className="mb-3 flex items-center gap-3">
+                <span className="shrink-0 rounded-full border bg-background px-3 py-1 font-mono text-[13px] font-medium text-primary">
+                  l
+                </span>
+                <h3 className="text-lg font-semibold">Liter</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Liter (l) er grundenheden for rumfang i det metriske system
                 og svarer til 10 deciliter eller 1.000 milliliter. Liter

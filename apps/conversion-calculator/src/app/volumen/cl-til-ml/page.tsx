@@ -159,10 +159,12 @@ export default function ClTilMlPage() {
           <h2 className="mb-4 text-lg font-bold">Om centiliter og milliliter</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
-              <span className="mb-3 inline-block rounded-lg bg-primary/10 px-2.5 py-1 font-mono text-xs font-semibold text-primary">
-                cl
-              </span>
-              <h3 className="mb-1.5 font-semibold">Om centiliter</h3>
+              <div className="mb-3 flex items-center gap-3">
+                <span className="shrink-0 rounded-full border bg-background px-3 py-1 font-mono text-[13px] font-medium text-primary">
+                  cl
+                </span>
+                <h3 className="text-lg font-semibold">Centiliter</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Centiliter (cl) er en rumfangsenhed i det metriske system, der
                 svarer til en hundrededel af en liter, eller ti milliliter.
@@ -181,10 +183,12 @@ export default function ClTilMlPage() {
               </p>
             </div>
             <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
-              <span className="mb-3 inline-block rounded-lg bg-primary/10 px-2.5 py-1 font-mono text-xs font-semibold text-primary">
-                ml
-              </span>
-              <h3 className="mb-1.5 font-semibold">Om milliliter</h3>
+              <div className="mb-3 flex items-center gap-3">
+                <span className="shrink-0 rounded-full border bg-background px-3 py-1 font-mono text-[13px] font-medium text-primary">
+                  ml
+                </span>
+                <h3 className="text-lg font-semibold">Milliliter</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Milliliter (ml) er den mindste af de rumfangsenheder, som
                 bruges i hverdagen, og svarer til en tusindedel af en liter,

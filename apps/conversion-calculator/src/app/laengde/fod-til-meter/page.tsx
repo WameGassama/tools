@@ -168,10 +168,12 @@ export default function FodTilMeterPage() {
           <h2 className="mb-4 text-lg font-bold">Om fod og meter</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
-              <span className="mb-3 inline-block rounded-lg bg-primary/10 px-2.5 py-1 font-mono text-xs font-semibold text-primary">
-                ft
-              </span>
-              <h3 className="mb-1.5 font-semibold">Om fod</h3>
+              <div className="mb-3 flex items-center gap-3">
+                <span className="shrink-0 rounded-full border bg-background px-3 py-1 font-mono text-[13px] font-medium text-primary">
+                  ft
+                </span>
+                <h3 className="text-lg font-semibold">Fod</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Fod er en af de ældste længdeenheder og tog oprindeligt
                 udgangspunkt i længden af en voksen mands fod. Gennem
@@ -186,10 +188,12 @@ export default function FodTilMeterPage() {
               </p>
             </div>
             <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
-              <span className="mb-3 inline-block rounded-lg bg-primary/10 px-2.5 py-1 font-mono text-xs font-semibold text-primary">
-                m
-              </span>
-              <h3 className="mb-1.5 font-semibold">Om meter</h3>
+              <div className="mb-3 flex items-center gap-3">
+                <span className="shrink-0 rounded-full border bg-background px-3 py-1 font-mono text-[13px] font-medium text-primary">
+                  m
+                </span>
+                <h3 className="text-lg font-semibold">Meter</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Meter er SI-systemets grundenhed for længde og defineres i
                 dag ud fra den strækning, lyset tilbagelægger i vakuum på en

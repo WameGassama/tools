@@ -213,7 +213,7 @@ export default function HoejdeOmregnerPage() {
           </h2>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
-              <h3 className="mb-1.5 font-semibold">Om fod og tommer</h3>
+              <h3 className="mb-3 text-lg font-semibold">Fod og tommer</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Fod og tommer hører til det angelsaksiske målesystem, hvor 12
                 tommer udgør en fod. En fod er præcis 30,48 cm, og en tomme er
@@ -228,10 +228,12 @@ export default function HoejdeOmregnerPage() {
               </p>
             </div>
             <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
-              <span className="mb-3 inline-block rounded-lg bg-primary/10 px-2.5 py-1 font-mono text-xs font-semibold text-primary">
-                cm
-              </span>
-              <h3 className="mb-1.5 font-semibold">Om centimeter</h3>
+              <div className="mb-3 flex items-center gap-3">
+                <span className="shrink-0 rounded-full border bg-background px-3 py-1 font-mono text-[13px] font-medium text-primary">
+                  cm
+                </span>
+                <h3 className="text-lg font-semibold">Centimeter</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Centimeter er den enhed, danskere bruger til at måle højde.
                 Den er en hundrededel af en meter og indgår i det metriske

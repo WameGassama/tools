@@ -167,10 +167,12 @@ export default function M2TilHektarPage() {
           <h2 className="mb-4 text-lg font-bold">Om kvadratmeter og hektar</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
-              <span className="mb-3 inline-block rounded-lg bg-primary/10 px-2.5 py-1 font-mono text-xs font-semibold text-primary">
-                m²
-              </span>
-              <h3 className="mb-1.5 font-semibold">Om kvadratmeter</h3>
+              <div className="mb-3 flex items-center gap-3">
+                <span className="shrink-0 rounded-full border bg-background px-3 py-1 font-mono text-[13px] font-medium text-primary">
+                  m²
+                </span>
+                <h3 className="text-lg font-semibold">Kvadratmeter</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Kvadratmeter er SI-systemets grundenhed for areal og
                 beskriver et kvadrat med en sidelængde på en meter. Enheden
@@ -185,10 +187,12 @@ export default function M2TilHektarPage() {
               </p>
             </div>
             <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
-              <span className="mb-3 inline-block rounded-lg bg-primary/10 px-2.5 py-1 font-mono text-xs font-semibold text-primary">
-                ha
-              </span>
-              <h3 className="mb-1.5 font-semibold">Om hektar</h3>
+              <div className="mb-3 flex items-center gap-3">
+                <span className="shrink-0 rounded-full border bg-background px-3 py-1 font-mono text-[13px] font-medium text-primary">
+                  ha
+                </span>
+                <h3 className="text-lg font-semibold">Hektar</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Hektar er en større arealenhed i det metriske system,
                 defineret som 10.000 kvadratmeter, eller hundrede ar.

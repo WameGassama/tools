@@ -168,10 +168,12 @@ export default function CmTilTommerPage() {
           <h2 className="mb-4 text-lg font-bold">Om centimeter og tommer</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
-              <span className="mb-3 inline-block rounded-lg bg-primary/10 px-2.5 py-1 font-mono text-xs font-semibold text-primary">
-                cm
-              </span>
-              <h3 className="mb-1.5 font-semibold">Om centimeter</h3>
+              <div className="mb-3 flex items-center gap-3">
+                <span className="shrink-0 rounded-full border bg-background px-3 py-1 font-mono text-[13px] font-medium text-primary">
+                  cm
+                </span>
+                <h3 className="text-lg font-semibold">Centimeter</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Centimeter er en længdeenhed i det metriske system og svarer
                 til en hundrededel af en meter. Forstavelsen &quot;centi&quot;
@@ -186,10 +188,12 @@ export default function CmTilTommerPage() {
               </p>
             </div>
             <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
-              <span className="mb-3 inline-block rounded-lg bg-primary/10 px-2.5 py-1 font-mono text-xs font-semibold text-primary">
-                inch
-              </span>
-              <h3 className="mb-1.5 font-semibold">Om tommer</h3>
+              <div className="mb-3 flex items-center gap-3">
+                <span className="shrink-0 rounded-full border bg-background px-3 py-1 font-mono text-[13px] font-medium text-primary">
+                  inch
+                </span>
+                <h3 className="text-lg font-semibold">Tommer</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Tommer, på engelsk inch, er en længdeenhed fra det
                 angelsaksiske system, hvor 12 tommer udgør en fod. Navnet

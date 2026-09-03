@@ -168,10 +168,12 @@ export default function KmTTilMsPage() {
           <h2 className="mb-4 text-lg font-bold">Om km/t og m/s</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
-              <span className="mb-3 inline-block rounded-lg bg-primary/10 px-2.5 py-1 font-mono text-xs font-semibold text-primary">
-                km/t
-              </span>
-              <h3 className="mb-1.5 font-semibold">Om kilometer i timen</h3>
+              <div className="mb-3 flex items-center gap-3">
+                <span className="shrink-0 rounded-full border bg-background px-3 py-1 font-mono text-[13px] font-medium text-primary">
+                  km/t
+                </span>
+                <h3 className="text-lg font-semibold">Kilometer i timen</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Kilometer i timen er den hastighedsenhed, danskerne bruger i
                 trafikken. Fartgrænser, bilers speedometre, cykelcomputere og
@@ -185,10 +187,12 @@ export default function KmTTilMsPage() {
               </p>
             </div>
             <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
-              <span className="mb-3 inline-block rounded-lg bg-primary/10 px-2.5 py-1 font-mono text-xs font-semibold text-primary">
-                m/s
-              </span>
-              <h3 className="mb-1.5 font-semibold">Om meter i sekundet</h3>
+              <div className="mb-3 flex items-center gap-3">
+                <span className="shrink-0 rounded-full border bg-background px-3 py-1 font-mono text-[13px] font-medium text-primary">
+                  m/s
+                </span>
+                <h3 className="text-lg font-semibold">Meter i sekundet</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Meter i sekundet er SI-systemets grundenhed for hastighed og
                 den, videnskab og teknik regner i. Fordi både længde og tid

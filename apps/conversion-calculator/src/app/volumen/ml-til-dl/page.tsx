@@ -179,10 +179,12 @@ export default function MlTilDlPage() {
           <h2 className="mb-4 text-lg font-bold">Om milliliter og deciliter</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
-              <span className="mb-3 inline-block rounded-lg bg-primary/10 px-2.5 py-1 font-mono text-xs font-semibold text-primary">
-                ml
-              </span>
-              <h3 className="mb-1.5 font-semibold">Om milliliter</h3>
+              <div className="mb-3 flex items-center gap-3">
+                <span className="shrink-0 rounded-full border bg-background px-3 py-1 font-mono text-[13px] font-medium text-primary">
+                  ml
+                </span>
+                <h3 className="text-lg font-semibold">Milliliter</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Milliliter (ml) svarer til en tusindedel af en liter og er
                 den mindste rumfangsenhed, der bruges i hverdagen. Fordi
@@ -197,10 +199,12 @@ export default function MlTilDlPage() {
               </p>
             </div>
             <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
-              <span className="mb-3 inline-block rounded-lg bg-primary/10 px-2.5 py-1 font-mono text-xs font-semibold text-primary">
-                dl
-              </span>
-              <h3 className="mb-1.5 font-semibold">Om deciliter</h3>
+              <div className="mb-3 flex items-center gap-3">
+                <span className="shrink-0 rounded-full border bg-background px-3 py-1 font-mono text-[13px] font-medium text-primary">
+                  dl
+                </span>
+                <h3 className="text-lg font-semibold">Deciliter</h3>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Deciliter (dl) er hundrede gange større end en milliliter
                 og svarer til en tiendedel af en liter. Det er den mest
