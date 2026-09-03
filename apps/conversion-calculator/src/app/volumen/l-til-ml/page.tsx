@@ -180,14 +180,12 @@ export default function LTilMlPage() {
 
         <div className="mt-8">
           <h2 className="mb-4 text-lg font-bold">Om liter og milliliter</h2>
-          <div className="grid overflow-hidden rounded-2xl border bg-background shadow-sm md:grid-cols-2">
-            <div className="p-6 sm:p-8">
-              <div className="mb-2.5 flex items-center gap-2.5">
-                <span className="shrink-0 rounded-full border px-2.5 py-1 font-mono text-[11px] font-semibold text-primary">
-                  l
-                </span>
-                <h3 className="text-sm font-semibold">Liter</h3>
-              </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
+              <span className="mb-3 inline-block rounded-lg bg-primary/10 px-2.5 py-1 font-mono text-xs font-semibold text-primary">
+                l
+              </span>
+              <h3 className="mb-1.5 font-semibold">Om liter</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Liter (l) er grundenheden for rumfang i det metriske system
                 og er den enhed, de fleste tænker i, når de taler om
@@ -200,13 +198,11 @@ export default function LTilMlPage() {
                 brugt i stort set alle lande med metrisk system.
               </p>
             </div>
-            <div className="border-t p-6 sm:p-8 md:border-t-0 md:border-l">
-              <div className="mb-2.5 flex items-center gap-2.5">
-                <span className="shrink-0 rounded-full border px-2.5 py-1 font-mono text-[11px] font-semibold text-primary">
-                  ml
-                </span>
-                <h3 className="text-sm font-semibold">Milliliter</h3>
-              </div>
+            <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
+              <span className="mb-3 inline-block rounded-lg bg-primary/10 px-2.5 py-1 font-mono text-xs font-semibold text-primary">
+                ml
+              </span>
+              <h3 className="mb-1.5 font-semibold">Om milliliter</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Milliliter (ml) er den mindste af de gængse rumfangsenheder
                 og udgør en tusindedel af en liter. Fordi enheden giver

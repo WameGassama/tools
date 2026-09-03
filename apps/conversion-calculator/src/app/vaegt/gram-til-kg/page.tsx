@@ -162,14 +162,12 @@ export default function GramTilKgPage() {
 
         <div className="mt-8">
           <h2 className="mb-4 text-lg font-bold">Om gram og kilogram</h2>
-          <div className="grid overflow-hidden rounded-2xl border bg-background shadow-sm md:grid-cols-2">
-            <div className="p-6 sm:p-8">
-              <div className="mb-2.5 flex items-center gap-2.5">
-                <span className="shrink-0 rounded-full border px-2.5 py-1 font-mono text-[11px] font-semibold text-primary">
-                  g
-                </span>
-                <h3 className="text-sm font-semibold">Gram</h3>
-              </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
+              <span className="mb-3 inline-block rounded-lg bg-primary/10 px-2.5 py-1 font-mono text-xs font-semibold text-primary">
+                g
+              </span>
+              <h3 className="mb-1.5 font-semibold">Om gram</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Gram er en masseenhed i det metriske system og oprindeligt
                 defineret som massen af en kubikcentimeter rent vand.
@@ -183,13 +181,11 @@ export default function GramTilKgPage() {
                 gram, bliver tallene lange, og så skifter man til kilogram.
               </p>
             </div>
-            <div className="border-t p-6 sm:p-8 md:border-t-0 md:border-l">
-              <div className="mb-2.5 flex items-center gap-2.5">
-                <span className="shrink-0 rounded-full border px-2.5 py-1 font-mono text-[11px] font-semibold text-primary">
-                  kg
-                </span>
-                <h3 className="text-sm font-semibold">Kilogram</h3>
-              </div>
+            <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
+              <span className="mb-3 inline-block rounded-lg bg-primary/10 px-2.5 py-1 font-mono text-xs font-semibold text-primary">
+                kg
+              </span>
+              <h3 className="mb-1.5 font-semibold">Om kilogram</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Kilogram er SI-systemets grundenhed for masse og den eneste
                 grundenhed med en forstavelse indbygget i navnet. Et kilogram

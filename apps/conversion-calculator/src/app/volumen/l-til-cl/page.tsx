@@ -181,14 +181,12 @@ export default function LTilClPage() {
 
         <div className="mt-8">
           <h2 className="mb-4 text-lg font-bold">Om liter og centiliter</h2>
-          <div className="grid overflow-hidden rounded-2xl border bg-background shadow-sm md:grid-cols-2">
-            <div className="p-6 sm:p-8">
-              <div className="mb-2.5 flex items-center gap-2.5">
-                <span className="shrink-0 rounded-full border px-2.5 py-1 font-mono text-[11px] font-semibold text-primary">
-                  l
-                </span>
-                <h3 className="text-sm font-semibold">Liter</h3>
-              </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
+              <span className="mb-3 inline-block rounded-lg bg-primary/10 px-2.5 py-1 font-mono text-xs font-semibold text-primary">
+                l
+              </span>
+              <h3 className="mb-1.5 font-semibold">Om liter</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Liter (l) er grundenheden for rumfang i det metriske system
                 og bruges til de fleste større væskemængder i hverdagen, fx
@@ -201,13 +199,11 @@ export default function LTilClPage() {
                 husholdningen.
               </p>
             </div>
-            <div className="border-t p-6 sm:p-8 md:border-t-0 md:border-l">
-              <div className="mb-2.5 flex items-center gap-2.5">
-                <span className="shrink-0 rounded-full border px-2.5 py-1 font-mono text-[11px] font-semibold text-primary">
-                  cl
-                </span>
-                <h3 className="text-sm font-semibold">Centiliter</h3>
-              </div>
+            <div className="rounded-2xl border bg-background p-6 shadow-sm sm:p-8">
+              <span className="mb-3 inline-block rounded-lg bg-primary/10 px-2.5 py-1 font-mono text-xs font-semibold text-primary">
+                cl
+              </span>
+              <h3 className="mb-1.5 font-semibold">Om centiliter</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Centiliter (cl) er en hundrededel af en liter og bruges
                 typisk til mindre portionsstørrelser, især inden for
