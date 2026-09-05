@@ -10,7 +10,7 @@ const manrope = Manrope({ subsets: ["latin"], variable: "--font-sans" })
 
 const SITE_URL = "https://www.fodtilmeter.dk"
 const SITE_NAME = "fodtilmeter.dk"
-const TITLE = "Fod til meter og meter til fod | Gratis omregner"
+const TITLE = "Fod til Meter Omregning"
 const DESCRIPTION =
   "Omregn fod til meter eller meter til fod med det samme. Gratis omregner med tabel, tommer og valgfrie decimaler."
 
