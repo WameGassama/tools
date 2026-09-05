@@ -1,0 +1,103 @@
+@import "@workspace/ui/globals.css";
+@import "vanilla-cookieconsent/dist/cookieconsent.css";
+
+#cc-main {
+  --cc-btn-primary-bg: var(--primary);
+  --cc-btn-primary-border-color: var(--primary);
+  --cc-btn-primary-hover-bg: var(--primary);
+  --cc-btn-primary-hover-border-color: var(--primary);
+  --cc-modal-border-radius: 0.75rem;
+}
+
+:root {
+  --background: var(--color-neutral-50);
+  --foreground: var(--color-neutral-900);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--color-neutral-900);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--color-neutral-900);
+  --primary: var(--color-orange-700);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: var(--color-orange-50);
+  --secondary-foreground: var(--color-orange-900);
+  --muted: var(--color-neutral-100);
+  --muted-foreground: var(--color-neutral-500);
+  --accent: var(--color-orange-50);
+  --accent-foreground: var(--color-orange-900);
+  --destructive: var(--color-red-700);
+  --border: var(--color-neutral-200);
+  --input: var(--color-neutral-300);
+  --ring: var(--color-orange-700);
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: var(--color-neutral-950);
+  --foreground: var(--color-neutral-100);
+  --card: var(--color-neutral-900);
+  --card-foreground: var(--color-neutral-100);
+  --popover: var(--color-neutral-900);
+  --popover-foreground: var(--color-neutral-100);
+  --primary: var(--color-orange-500);
+  --primary-foreground: var(--color-neutral-950);
+  --secondary: var(--color-neutral-800);
+  --secondary-foreground: var(--color-neutral-100);
+  --muted: var(--color-neutral-800);
+  --muted-foreground: var(--color-neutral-400);
+  --accent: var(--color-neutral-800);
+  --accent-foreground: var(--color-orange-300);
+  --destructive: var(--color-red-500);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 18%);
+  --ring: var(--color-orange-500);
+}
+
+/* Målebånd: en stribe af skalastreger brugt som visuelt kendetegn på siden. */
+.ruler-strip {
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      var(--color-neutral-400) 0 1px,
+      transparent 1px 12px
+    ),
+    repeating-linear-gradient(
+      to right,
+      var(--primary) 0 1.5px,
+      transparent 1.5px 60px
+    );
+  background-position:
+    top left,
+    top left;
+  background-repeat: repeat-x;
+  background-size:
+    12px 40%,
+    60px 100%;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::marker {
+  content: "";
+}
+
+@media print {
+  @page {
+    margin: 1.5cm;
+  }
+
+  body {
+    background: white;
+  }
+}
